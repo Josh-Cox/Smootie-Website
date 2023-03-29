@@ -1,0 +1,23 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+
+<div>
+    <form class="form-checkout" action="">
+        <div class="info-user">
+            <input required class="form-item" type="text" name="name" placeholder="Name...">
+            <input required class="form-item" type="text" name="email" placeholder="Email...">
+        </div>
+        <div class="info-shipping">
+            <input class="form-item" type="text" name="address" placeholder="Address..">
+            <input class="form-item" type="text" name="city" placeholder="City..">
+            <input class="form-item" type="text" name="state" placeholder="State..">
+            <input class="form-item" type="text" name="zipcode" placeholder="ZIP code..">
+            <input class="form-item" type="text" name="country" placeholder="Country..">
+        </div>
+        <input id="form-button" type="submit" value="Continue">
+    </form>
+</div>
+
+{% endblock %}

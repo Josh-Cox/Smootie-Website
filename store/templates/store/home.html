@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="main-container">
+    <video class="background-vid" autoplay loop>
+        <source src="{% static 'img/home.mp4' %}" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <button style="height: 4rem; width: 8rem;" id="submit-button">TEST POST</button>
+</div>
+{% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> {% endcomment %}
+{% comment %} <script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script> {% endcomment %}
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+
+<div>
+    <a class="btn-cont" href="{% url 'home' %}">&#x2190; Continue Shopping</a>
+
+    <table class="table">
+        <tr>
+            <th><h5>Items: <strong>3</strong></h5></th>
+            <th><h5>Total: <strong>£43</strong></h5></th>
+            <th>
+                <a href="{% url 'checkout' %}" class="btn-checkout">Checkout</a>
+            </th>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

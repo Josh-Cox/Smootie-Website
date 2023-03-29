@@ -1,0 +1,80 @@
+/* --------------- Styles for the navigation bar --------------- */
+
+:root {
+    --color-yellow: #fed233;
+    --color-light-yellow: #fde152;
+    --faq-yellow: #ffd234;
+    --faq-grey: #fafafa;
+    --faq-border: #f5f5f5;
+    --faq-text: #f5f5f333333;
+    --color-orange: #f4a316;
+    --color-cream: #feffd7;
+    --color-white: #ffffff;
+    --color-grey: #faf9f6;
+    --text-light: #6b6964;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.top-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 2rem;
+    text-align: center;
+    background-color: white;
+}
+
+.top-text p {
+    margin: 0;
+    text-align: center;
+    color: #6f98b1;
+    font-family: "Poppins";
+}
+
+.navbar {
+    position: relative;
+    margin: auto;
+    margin-top: 2rem;
+    max-width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    font-family: "Poppins";
+    color: white;
+}
+
+.nav-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.title p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.3rem;
+}
+
+.title-text {
+    font-size: 1.5rem;
+}
+
+.bag {
+    margin-left: auto;
+}
+
+.bag-dupe {
+    margin-right: auto;
+    visibility: hidden;
+}
+
+.icon {
+    color: white;
+}
