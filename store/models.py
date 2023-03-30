@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
@@ -12,10 +14,18 @@ class Customer(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
-    #image = models.ImageField(upload_to='product_images/', null=True, blank=True
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
+    
+    @property
+    def image_url(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''    
+        return url
     
 class Order(models.Model):
     customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.SET_NULL)
@@ -63,3 +73,14 @@ class ShippingAddress(models.Model):
     
     def __str__(self):
         return self.address
+    
+class UserPayment(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    payment_bool = models.BooleanField(default=False)
+    stripe_checkout_id = models.CharField(max_length=500, null=True)
+    
+@receiver(post_save, sender=Customer)
+def create_user_payment(sender, instance, created, **kwargs):
+    if created:
+        UserPayment.objects.create(customer=instance)
+    

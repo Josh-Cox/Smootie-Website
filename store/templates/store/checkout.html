@@ -18,6 +18,10 @@
         </div>
         <input id="form-button" type="submit" value="Continue">
     </form>
+    <form enctype="multipart/form-data" method="post" role="home">
+        {% csrf_token %}
+        <button type="submit" href="{% static 'home' %}" data-bind-href="pricing">Payment</button>
+    </form>
 </div>
 
 {% endblock %}
