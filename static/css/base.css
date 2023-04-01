@@ -18,6 +18,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100%;
 }
 
 .top-text {
@@ -38,21 +39,21 @@ html, body {
 }
 
 .navbar {
-    position: relative;
-    margin: auto;
-    margin-top: 2rem;
-    max-width: 75%;
+    top: 2rem;
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4rem;
     font-family: "Poppins";
     color: white;
+    transition: ease all 300ms;
 }
 
 .nav-link a {
-    color: white;
     text-decoration: none;
+    color: white;
 }
 
 .title p {
@@ -77,4 +78,8 @@ html, body {
 
 .icon {
     color: white;
+}
+
+.container {
+    margin-top: 8rem;
 }

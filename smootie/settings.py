@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)h*^2@3ay4&dr04p#h&f-(4nz79z9mat0$dp75ac%_vgpo47@c'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -134,6 +135,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## Stripe
-STRIPE_SECRET_KEY_TEST = 'sk_test_51MqimUG6wRtrCgRCwe7aUhZfGZONXxPYyVLTbVz68bFn7DRNjR3e34FGx19VqL9szR0G2YQMSo89fRlU914hiaW800xSzXiacw'
+STRIPE_SECRET_KEY_TEST = config('STRIPE_SECRET_KEY_TEST')
+
+PRODUCT_PRICE = config('PRODUCT_PRICE')
 
 REDIRECT_DOMAIN = 'http://127.0.0.1:8000'

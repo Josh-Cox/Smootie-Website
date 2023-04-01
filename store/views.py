@@ -69,7 +69,7 @@ def checkout(request):
             payment_method_types = ['card'],
             line_items = [
                 {
-                    'price': "price_1MrTIPG6wRtrCgRCZ4HqAYSB",
+                    'price': settings.PRODUCT_PRICE,
                     'quantity': 1,
                 },
             ],

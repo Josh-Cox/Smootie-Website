@@ -40,23 +40,23 @@
   <div class="top-text">
     <p>Official #1 UK Portable Blender</p>
   </div>
-  <nav class="navbar">
-    <div class="bag-dupe icon">
+  <nav class="navbar" id="navbar">
+    <div class="bag-dupe icon nav-element">
         <span class="material-symbols-rounded">
         shopping_bag
         </span>
     </div>
-    <div class="nav-element nav-link"><a href="#shop">SHOP</a></div>
-    <div class="nav-element nav-link"><a href="#reviews">REVIEWS</a></div>
+    <div class="nav-element nav-link"><a class="nav-item" href="#shop">SHOP</a></div>
+    <div class="nav-element nav-link"><a class="nav-item" href="#reviews">REVIEWS</a></div>
     <div class="nav-element nav-link title">
-        <p class="title-text"><a href="/"> SMOOTIE</a></p>
-        <p><a href="/">FRESH JUICE</a></p>
+        <p class="title-text"><a class="nav-item" href="/"> SMOOTIE</a></p>
+        <p><a class="nav-item" href="/">FRESH JUICE</a></p>
     </div>
-    <div class="nav-element nav-link"><a href="#user_guide">USER GUIDE</a></div>
-    <div class="nav-element nav-link"><a href="#faq">FAQs</a></div>
+    <div class="nav-element nav-link"><a class="nav-item" href="#user_guide">USER GUIDE</a></div>
+    <div class="nav-element nav-link"><a class="nav-item" href="#faq">FAQs</a></div>
     <div class="bag icon nav-link">
         <a href="{% url 'cart' %}">
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded nav-item">
             shopping_bag
             </span>
         </a>
@@ -68,6 +68,49 @@
     {% block content %}
     {% endblock %}
   </div>
+
+  <script>
+    const body = document.body;
+    const nav = document.getElementById("navbar").style
+    const nav_items = document.querySelectorAll('.nav-item')
+    let body_scroll = 0;
+
+    document.addEventListener("scroll", (event) => {
+      body_scroll = body.scrollTop;
+    });
+
+    let prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+
+      if(body.scrollTop == 0) {
+        nav.top = "2rem";
+        nav.backgroundColor = "transparent";
+        set_items_color(nav_items, "white");
+      }
+      else if (prevScrollpos > currentScrollPos) {
+        nav.top = "0";
+        nav.backgroundColor = "#ffffff";
+        set_items_color(nav_items, "black");
+      } else {
+        nav.top = "-6rem";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+
+    /**
+    * Sets the color of a list of items to a given color
+    */
+    function set_items_color(items, color) {
+      items.forEach(item => {
+        item.style.color = color;
+      });
+    }
+
+    
+    
+  </script>
 
   <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 
