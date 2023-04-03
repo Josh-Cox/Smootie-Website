@@ -6,11 +6,135 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <div class="main-container">
-    <video class="background-vid" autoplay loop>
+    <video class="background-vid" autoplay muted loop>
         <source src="{% static 'images/home.mp4' %}" type="video/mp4">
         <source src="movie.ogg" type="video/ogg">
         Your browser does not support the video tag.
     </video>
+
+    <div class="banner-container">
+        <div class="banner banner-back">
+            <div class="inner-banner inner-back">
+                <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
+            </div>
+            <div class="inner-banner inner-back">
+                <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
+            </div>
+        </div>
+        <div class="banner banner-front">
+            <div class="inner-banner inner-front">
+                <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
+            </div>
+            <div class="inner-banner inner-front">
+                <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
+                <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-info-container">
+        <div class="circle-element pink">
+            <div class="circle-info-icon">
+                <span class="material-symbols-rounded">blender</span>
+            </div>
+            <div class="circle-info-title">Perfectly Portable</div>
+            <div class="circle-info-content">
+                With dishwasher safe parts and fully waterproof,
+                cleaning the blender will be the easiest part of your day. 
+                Fresh Juice Blender is the only portable blender in the market that is fully waterproof.
+            </div>
+        </div>
+        <div class="circle-element blue">
+            <div class="circle-info-icon">
+                <span class="material-symbols-rounded">format_color_reset</span>
+            </div>
+            <div class="circle-info-title">Dishwasher Safe</div>
+            <div class="circle-info-content">
+                With dishwasher safe parts and fully waterproof, 
+                cleaning the blender will be the easiest part of your day.
+                Fresh Juice Blender is the only portable blender in the market that is fully waterproof.
+            </div>
+        </div>
+        <div class="circle-element pink">
+            <div class="circle-info-icon">
+                <span class="material-symbols-rounded">mode_fan</span>
+            </div>
+            <div class="circle-info-title">Stainless steel blades</div>
+            <div class="circle-info-content">
+                304SUS stainless steel blades and a powerful motor means you can turn frozen fruits, 
+                nuts, leafy greens and more into the perfect smoothie in 30 seconds.
+            </div>
+        </div>
+        <div class="circle-element blue">
+            <div class="circle-info-icon">
+                <span class="material-symbols-rounded">wifi</span>
+            </div>
+            <div class="circle-info-title">Wireless charging</div>
+            <div class="circle-info-content">
+                Just place the blender on the charging pad and it will start to charge. 
+                One charge lasts for 15+ blends & recharges quickly.
+            </div>
+        </div>
+    </div>
+
+    <div class="info-one-container">
+        <div class="info-one-img">
+            <img src="../images/mountains.gif" alt="blender in the mountains">
+        </div>
+        <div class="info-one-content">
+            <div class="one-top-text">Move over, kale smoothies and acai bowls</div>
+            <div class="one-title">Meet the new Fresh Juice Blender!</div>
+            <div class="one-content">
+                With a bigger capacity and a ripple cup, 
+                she's got the power to pulverize any fruit or 
+                veggie that gets in her way, and she comes with 
+                a handy-dandy self-cleaning feature.
+            </div>
+            <div class="one-link">
+                <a href="#shop">Get yours now!</a>
+            </div>
+        </div>
+    </div>
+
     {% for product in products %}
     <h3>{{product.name}}</h3>
     <img style="width: 4rem;" src="{{product.image_url}}"></img>

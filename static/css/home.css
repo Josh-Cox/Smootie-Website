@@ -1,6 +1,196 @@
+:root {
+    --gap: 2rem;
+    --duration: 20s;
+    --scroll-start: 2rem;
+    --scroll-end: -100%;
+}
+
 .background-vid {
-    position: absolute;
     top: 0;
+    margin-top: 0;
     width: 100%;
     z-index: -1;
 }
+
+/* ---------- Moving Banners ---------- */
+
+.banner-container {
+    max-width: 100%;
+    height: 20rem;
+    margin-top: -1%;
+}
+
+.banner {
+    margin-left: -1rem;
+    width: 120%;
+    display: flex;
+    gap: var(--gap);
+}
+
+.inner-banner {
+   flex-shrink: 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   min-width: 100%;
+}
+
+.inner-front {
+    animation: moving-front var(--duration) linear infinite;
+}
+
+.inner-back {
+    animation: moving-front var(--duration) linear infinite;
+    animation-direction: reverse;
+}
+
+.banner-front {
+    background-color: white;
+    transform: rotate(-3deg);
+    margin-top: -4.5%;
+}
+
+.banner-back {
+    background-color: fdf4e5;
+    transform: rotate(3deg);
+}
+
+
+.banner-img {
+    width: 4rem;
+    margin: clamp(.4rem, .5%, 1rem);
+    filter: grayscale(1%);
+}
+
+/* ---------- Circle Infos ---------- */
+
+.circle-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.circle-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 22rem;
+    height: 22rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Poppins";
+    color: white;
+    text-align: center;
+}
+
+.circle-element.blue {
+    background-image: url("../images/circle_blue.svg");
+}
+
+.circle-element.pink {
+    background-image: url("../images/circle_pink.svg");
+}
+
+.circle-info-icon {
+    margin-bottom: 1rem;
+}
+
+.circle-info-icon span {
+    font-size: 3rem;
+}
+
+.circle-info-title {
+    font-weight: 800;
+    text-decoration: underline;
+    margin-bottom: .5rem;
+}
+
+.circle-info-content {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    font-size: .7rem;
+}
+
+/* ---------- First Info Section ---------- */
+
+.info-one-container {
+    margin-top: 15rem;
+    width: 100%;
+    background-color: #eaf7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    height: 28rem;
+}
+
+.info-one-img img {
+    max-width: 32rem;
+}
+
+.info-one-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 5rem;
+    max-width: 32rem;
+}
+
+.one-top-text {
+    color: black;
+}
+
+.one-title {
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.one-content {
+    color: #666666;
+}
+
+.one-link {
+    margin-top: 1rem;
+}
+
+.one-link a {
+    text-decoration: underline;
+    color: black;
+}
+
+/* ---------- Animation ---------- */
+
+@keyframes moving-front {
+    from {
+        transform: translateX(var(--scroll-start));
+    }
+    to {
+        transform: translateX(var(--scroll-end));
+    }
+}
+
+@keyframes moving-back {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ---------- Media Queries ---------- */
+/* 
+@media only screen and (max-width: 2100px) {
+    .banner-container {
+        margin-top: 48%;
+    }
+
+    .banner-front {
+        margin-top: -5%;
+    }
+  } */
