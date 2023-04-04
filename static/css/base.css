@@ -22,7 +22,6 @@ html, body {
     width: 100%;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
 }
 
 html::-webkit-scrollbar {
@@ -57,6 +56,8 @@ html::-webkit-scrollbar {
     font-family: "Poppins";
     color: white;
     transition: ease all 300ms;
+    min-height: 6rem;
+    z-index: 1;
 }
 
 .nav-title {

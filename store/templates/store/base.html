@@ -41,10 +41,12 @@
     <p>Official #1 UK Portable Blender</p>
   </div>
   <nav class="navbar" id="navbar">
-    <div class="bag-dupe icon nav-element">
-        <span class="material-symbols-rounded">
-        shopping_bag
-        </span>
+    <div class="bag-dupe icon nav-link">
+      <a href="{% url 'cart' %}" class="nav-link">
+          <span class="material-symbols-rounded nav-item">
+          shopping_bag
+          </span>
+      </a>
     </div>
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#shop">SHOP</a></div>
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#reviews">REVIEWS</a></div>
@@ -60,7 +62,6 @@
             shopping_bag
             </span>
         </a>
-        <p>Cart Total: {{cart_items}}
     </div>
   </nav>
 
