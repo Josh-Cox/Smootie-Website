@@ -14,6 +14,36 @@
     z-index: -1;
 }
 
+.shop-link {
+    width: 7.5rem;
+    text-decoration: none;
+    color: white;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.shop-link:hover {
+    opacity: 1;
+  }
+  
+.shop-link::before {
+    transition: 300ms;
+    height: .15rem;
+    content: "";
+    position: absolute;
+    background-color: black;
+}
+
+.shop-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+}
+
+.shop-link-ltr:hover::before {
+    width: 100%;
+}
 /* ---------- Moving Banners ---------- */
 
 .banner-container {
@@ -159,7 +189,7 @@
 }
 
 .shop-link a {
-    text-decoration: underline;
+    text-decoration: none;
     color: black;
 }
 
