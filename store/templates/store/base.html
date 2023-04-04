@@ -46,16 +46,16 @@
         shopping_bag
         </span>
     </div>
-    <div class="nav-element nav-link"><a class="nav-item" href="#shop">SHOP</a></div>
-    <div class="nav-element nav-link"><a class="nav-item" href="#reviews">REVIEWS</a></div>
-    <div class="nav-element nav-link title">
-        <p class="title-text"><a class="nav-item" href="/"> SMOOTIE</a></p>
-        <p><a class="nav-item" href="/">FRESH JUICE</a></p>
+    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#shop">SHOP</a></div>
+    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#reviews">REVIEWS</a></div>
+    <div class="nav-element title">
+        <p class="title-text"><a class="nav-item nav-title" href="/"> SMOOTIE</a></p>
+        <p><a class="nav-item nav-title" href="/">FRESH JUICE</a></p>
     </div>
-    <div class="nav-element nav-link"><a class="nav-item" href="#user_guide">USER GUIDE</a></div>
-    <div class="nav-element nav-link"><a class="nav-item" href="#faq">FAQs</a></div>
+    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#user_guide">USER GUIDE</a></div>
+    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#faq">FAQs</a></div>
     <div class="bag icon nav-link">
-        <a href="{% url 'cart' %}">
+        <a href="{% url 'cart' %}" class="nav-link">
             <span class="material-symbols-rounded nav-item">
             shopping_bag
             </span>
@@ -87,11 +87,13 @@
       if(body.scrollTop == 0) {
         nav.top = "2rem";
         nav.backgroundColor = "transparent";
+        document.documentElement.style.setProperty("--underline-color", "white");
         set_items_color(nav_items, "white");
       }
       else if (prevScrollpos > currentScrollPos) {
         nav.top = "0";
         nav.backgroundColor = "#ffffff";
+        document.documentElement.style.setProperty("--underline-color", "black");
         set_items_color(nav_items, "black");
       } else {
         nav.top = "-6rem";

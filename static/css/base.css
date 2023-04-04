@@ -12,6 +12,7 @@
     --color-white: #ffffff;
     --color-grey: #faf9f6;
     --text-light: #6b6964;
+    --underline-color: white;
 }
 
 html, body {
@@ -58,10 +59,40 @@ html::-webkit-scrollbar {
     transition: ease all 300ms;
 }
 
-.nav-link a {
+.nav-title {
     text-decoration: none;
     color: white;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    opacity: 1;
+  }
+  
+  .nav-link::before {
+    transition: 300ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: var(--underline-color);
+  }
+  
+  .nav-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+  }
+  
+  .nav-link-ltr:hover::before {
+    width: 100%;
+  }
 
 .title p {
     margin: 0;
