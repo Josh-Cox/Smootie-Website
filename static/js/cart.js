@@ -13,12 +13,12 @@ for(let i = 0; i < btns_update_cart.length; i++) {
         action = this.dataset.action;
 
         // check if user is logged in
-        if(user === 'AnonymousUser') {
-            console.log('Not logged in');
-        }
-        else {
-            update_user_order(product_id, action);
-        }
+        update_user_order(product_id, action);
+        // if(user === 'AnonymousUser') {
+        //     console.log('Not logged in');
+        // }
+        // else {
+        // }
     });
 
     

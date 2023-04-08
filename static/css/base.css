@@ -52,12 +52,17 @@ html::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 4rem;
     font-family: "Poppins";
     color: white;
     transition: ease all 300ms;
     min-height: 6rem;
     z-index: 1;
+}
+
+.nav-element {
+    width: 8rem;
 }
 
 .nav-title {
@@ -69,31 +74,30 @@ html::-webkit-scrollbar {
     text-decoration: none;
     color: white;
     padding: 10px 0px;
-    margin: 0px 20px;
     display: inline-block;
     position: relative;
-  }
-  
-  .nav-link:hover {
+}
+
+.nav-link:hover {
     opacity: 1;
-  }
-  
-  .nav-link::before {
+}
+
+.nav-link::before {
     transition: 300ms;
     height: 2px;
     content: "";
     position: absolute;
     background-color: var(--underline-color);
-  }
-  
-  .nav-link-ltr::before {
+}
+
+.nav-link-ltr::before {
     width: 0%;
     bottom: 10px;
-  }
-  
-  .nav-link-ltr:hover::before {
+}
+
+.nav-link-ltr:hover::before {
     width: 100%;
-  }
+}
 
 .title p {
     margin: 0;
@@ -107,10 +111,12 @@ html::-webkit-scrollbar {
 }
 
 .bag {
+    margin-right: 2rem;
     margin-left: auto;
 }
 
 .bag-dupe {
+    margin-left: 2rem;
     margin-right: auto;
     visibility: hidden;
 }

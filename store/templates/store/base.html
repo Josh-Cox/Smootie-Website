@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>{% block title %}Home{% endblock %}</title>
-      
+
   <script>
+    // guest user devices
+
     let user = '{{request.user}}';
 
     // get csrf token
@@ -33,6 +35,23 @@
     }
 
     let csrftoken = get_token('csrftoken');
+
+    function uuidv4() {
+		  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+		    let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+		    return v.toString(16);
+		  });
+		}
+
+    let device = get_token('device');
+
+    if(device == null || device == undefined) {
+      device = uuidv4();
+    }
+    
+    document.cookie = "device=" + device + ";domain=;path=/";
+
+    
   </script>
 
 </head>
@@ -41,6 +60,7 @@
     <p>Official #1 UK Portable Blender</p>
   </div>
   <nav class="navbar" id="navbar">
+
     <div class="bag-dupe icon nav-link">
       <a href="{% url 'cart' %}" class="nav-link">
           <span class="material-symbols-rounded nav-item">
@@ -48,14 +68,18 @@
           </span>
       </a>
     </div>
+
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#shop">SHOP</a></div>
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#reviews">REVIEWS</a></div>
+
     <div class="nav-element title">
         <p class="title-text"><a class="nav-item nav-title" href="/"> SMOOTIE</a></p>
         <p><a class="nav-item nav-title" href="/">FRESH JUICE</a></p>
     </div>
+    
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#user_guide">USER GUIDE</a></div>
     <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="#faq">FAQs</a></div>
+
     <div class="bag icon nav-link">
         <a href="{% url 'cart' %}" class="nav-link">
             <span class="material-symbols-rounded nav-item">
@@ -63,6 +87,7 @@
             </span>
         </a>
     </div>
+
   </nav>
 
   <div class="container">

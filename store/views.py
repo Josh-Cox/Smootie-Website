@@ -37,11 +37,14 @@ def cart(request):
     """ 
     Cart page for each user
     """
-    # if user is logged in return cart items
-    if request.user.is_authenticated:
+
+    # get customer
+    try:
         customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
+        
     else:
         items = []
         order = {
@@ -49,6 +52,9 @@ def cart(request):
             "get_cart_items": 0,
         }
         
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    items = order.orderitem_set.all()
+    
     context = {
         "items": items,
         "order": order,
@@ -105,15 +111,23 @@ def update_item(request):
     Add/remove an item to/from the cart
     """
     
+    
     data = json.loads(request.body)
     product_id = data['product_id']
     action = data['action']
     
     print("Action: " + action)
     print("Product ID: " + product_id)
+
+    # get the logged in customer
+    try:
+        customer = request.user.customer
+    # create customer based on device cookie
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
     
-    customer = request.user.customer
-    
+    # get the selected product
     try:
         product = Product.objects.get(id=product_id)
     except Product.DoesNotExist:
@@ -134,8 +148,8 @@ def update_item(request):
     # delete the item from the database
     if order_item.quantity <= 0:
         order_item.delete()
-    
-    
+        
+        
     return JsonResponse('Item was added', safe=False)
 
 
