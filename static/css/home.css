@@ -4,6 +4,8 @@
     --scroll-start: 2rem;
     --scroll-end: -100%;
 
+    --color-lime: rgb(184, 241, 89);
+
     font-family: "Poppins";
 }
 
@@ -19,7 +21,6 @@
     text-decoration: none;
     color: white;
     padding: 10px 0px;
-    margin: 0px 20px;
     display: inline-block;
     position: relative;
 }
@@ -30,7 +31,7 @@
   
 .shop-link::before {
     transition: 300ms;
-    height: .15rem;
+    height: .1rem;
     content: "";
     position: absolute;
     background-color: black;
@@ -294,6 +295,72 @@
 
 .seen-on-container img {
     width: 40rem;
+}
+
+/* ---------- Endless Grid ---------- */
+
+.endless-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.endless-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    font: "Poppins";
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.second {
+    color: var(--color-lime);
+}
+
+.lime-underline img {
+    position: relative;
+    margin-top: -4rem;
+    width: 8rem;
+}
+
+.img-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    width: 60%;
+}
+
+.imgs-first, .imgs-last {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 29%;
+}
+
+.imgs-first img, .imgs-last img {
+    width: 100%;
+}
+
+.imgs-scroll {
+    width: 42%;
+}
+
+.img-cell {
+    width: 100%;
+    height: fit-content;
+}
+
+.img-cell img {
+    width: 100%;
+    object-fit: cover;
 }
 
 /* ---------- Animation ---------- */

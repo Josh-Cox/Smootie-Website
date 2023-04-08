@@ -167,6 +167,37 @@
         <img src="{% static 'images/seen_on.jpg' %}" alt="American TV Channels">
     </div>
 
+    <div class="endless-section">
+        <div class="endless-title">
+            <p class="first">One Blender.</p>
+            <p class="second">Endless</p>
+            <p class="third"> Possibilites!</p>
+        </div>
+        <div class="lime-underline">
+            <img src="{% static 'images/lime_underline.svg' %}" alt="" class="underline">
+        </div>
+        <div class="img-grid">
+            <div class="imgs-first">
+                <img src="{% static 'images/blender.jpg' %}" alt="">
+                <img src="{% static 'images/blender.jpg' %}" alt="">
+            </div>
+            <div class="imgs-scroll">
+                <div class="img-carousel">
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                </div>
+            </div>
+            <div class="imgs-last">
+                <img src="{% static 'images/blender.jpg' %}" alt="">
+                <img src="{% static 'images/blender.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+
     {% comment %} {% for product in products %}
     <h3>{{product.name}}</h3>
     <img style="width: 4rem;" src="{{product.image_url}}"></img>
@@ -182,6 +213,12 @@
         cellAlign: 'left',
         wrapAround: true,
         freeScroll: true
+    })
+
+    $('.img-carousel').flickity({
+        cellAlign: 'left',
+        wrapAround: true,
+        prevNextButtons: false
     })
 </script>
 {% endblock %}
