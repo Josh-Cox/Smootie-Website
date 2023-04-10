@@ -1,0 +1,63 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}User Guide{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/faq.css' %}">
+<div class="main-container">
+    <div class="faq-text">
+        <h1 class="title">FAQ</h1>
+        <h2 class="title-small">Frequently Asked Questions</h2>
+        <p class="helper-text">Here you can find the most asked questions about our product and service.</p>
+    </div>
+
+    <div class="questions">
+        <div class="drop-down-question">
+            <div class="question-heading">
+                <p class="question-text">Return policy</p>
+                <span class="question-icon material-symbols-rounded add active">add</span>
+                <span class="question-icon material-symbols-rounded">remove</span>
+            </div>
+            <div class="question-content">
+                <p class="content-text">
+                    Smootie has a 30-day return policy on all orders, which means you have 30 days after receiving your item to request a return.
+                </p>
+                <p class="content-text">
+                    To be eligible for a return, your item must be in the same condition that you received it, unused with its original packaging.
+                    You'll also need proof of purchase.
+                </p>
+            </div>
+        </div>
+        <div class="drop-down-question">
+            <div class="question-heading">
+                <p class="question-text">How do I submit a Return?</p>
+                <span class="question-icon material-symbols-rounded add active">add</span>
+                <span class="question-icon material-symbols-rounded">remove</span>
+            </div>
+            <div class="question-content">
+                <p class="content-text">
+                    To start a return, you can contact us at (insert email) informing us of your request. Once we've received and inspected your return,
+                    you will be notified to let you know if the refund was approved or not. If approved, you'll be automatically refunded on your original
+                    payment method. Note, items sent back to us without first requesting a return will not be accepted. 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script >
+    const dropdown = document.querySelectorAll('.drop-down-question');
+
+    dropdown.forEach(dropdown => {
+        dropdown.addEventListener('click', () => {
+            let content = dropdown.childNodes[3];
+            let heading = dropdown.childNodes[1].childNodes[3];
+            content.classList.toggle('active');
+            heading.classList.toggle('active');
+        });
+    });
+</script>
+
+{% endblock %}
+

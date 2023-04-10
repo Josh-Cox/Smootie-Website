@@ -1,0 +1,80 @@
+/* --------------- Styles for the main content --------------- */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15rem;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    min-height: 60rem;
+    margin-top: 10rem;
+    gap: 1rem;
+    z-index: 2;
+}
+
+.heading {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.text-easy {
+    font-family: "Poppins";
+    margin: 0;
+}
+
+.vid-container {
+    min-width: 80rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.vid {
+    min-width: 22rem;
+    margin: .5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 10rem;
+    gap: 6rem;
+    padding: 1rem;
+}
+
+.step {
+    width: 20rem;
+    height: 8rem;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.step .heading {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.step .text {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}

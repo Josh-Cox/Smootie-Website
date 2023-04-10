@@ -33,6 +33,12 @@ def home(request):
         }
     return render(request, 'store/home.html', context)
 
+def user_guide(request):
+    return render(request, 'store/user_guide.html')
+
+def faq(request):
+    return render(request, 'store/faq.html')
+
 def cart(request):
     """ 
     Cart page for each user

@@ -1,0 +1,41 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}User Guide{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="{% static 'css/user_guide.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<div class="main-container">
+    <div class="content-container">
+      
+      <p class="heading">Easy to Use!</p>
+      <p class="text-easy">It's as easy as 1, 2, 3.</p>
+  
+      <div class="vid-container">
+            <img class="vid vid1" src="{% static 'images/guide_step_1.gif' %}" alt="">
+            <img class="vid vid2" src="{% static 'images/guide_step_2.gif' %}" alt="">
+            <img class="vid vid3" src="{% static 'images/guide_step_3.gif' %}" alt="">
+      </div>
+  
+      <div class="text-container">
+        <div class="step step1">
+          <p class="heading">Step 1</p>
+          <p class="text">Set the Blend It Bottle upside down and twist to remove the bottom.</p>
+        </div>
+        
+        <div class="step step2">
+          <p class="heading">Step 2</p>
+          <p class="text">Add your favourite ingredients and fill with any liquids passed 3/4 of the bottle.</p>
+        </div>
+  
+        <div class="step step3">
+          <p class="heading">Step 3</p>
+          <p class="text">Firmly attach the bottom of your Blend It Bottle back on and double tap the power button.</p>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
