@@ -20,7 +20,7 @@
             <div class="heading-text">My Cart</div>
         </div>
 
-        <div class="item-count">[3 Items]</div>
+        <div class="item-count">[{{num_items}} Items]</div>
     </div>
 
     <div class="cart-content">
@@ -73,6 +73,8 @@
     <script>
         // update cart quantities and prices without refresh
         let btns_update = document.querySelectorAll(".btn-update");
+        let item_count = document.querySelector(".item-count");
+        let item_num = {{num_items}};
 
         btns_update.forEach(function (item) {
             item.addEventListener("click", function () {
@@ -85,13 +87,18 @@
                 if(type == "add") {
                     total.innerText = (parseFloat(total.innerText) + parseFloat(price)).toFixed(2);;
                     quantity.innerText = parseInt(quantity.innerText) + 1;
+                    item_num ++;
                 }
                 else if (type == "remove") {
                     if(parseInt(quantity.innerText) > 0) {
                         total.innerText = (parseFloat(total.innerText) - parseFloat(price)).toFixed(2);
                         quantity.innerText = parseInt(quantity.innerText) - 1;
+                        item_num --;
                     }
                 }
+
+                // change item number
+                item_count.innerText = "[" + item_num +" Items]";
             });
         });
     </script>

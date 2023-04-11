@@ -61,9 +61,14 @@ def cart(request):
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
     items = order.orderitem_set.all()
     
+    num_items=  0
+    for item in items:
+        num_items += item.quantity
+    
     context = {
         "items": items,
         "order": order,
+        "num_items": num_items,
         }
     
     return render(request, 'store/cart.html', context)
