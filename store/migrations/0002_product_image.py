@@ -15,4 +15,10 @@ class Migration(migrations.Migration):
             name='image',
             field=models.ImageField(blank=True, null=True, upload_to='product_images/'),
         ),
+        
+        migrations.AddField(
+            model_name='product',
+            name='color',
+            field=models.CharField(max_length=200, null=True),
+        ),
     ]

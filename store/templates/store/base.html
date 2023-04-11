@@ -64,9 +64,7 @@
 
     <div class="bag-dupe icon nav-link">
       <a href="{% url 'cart' %}" class="nav-link">
-          <span class="material-symbols-rounded nav-item">
-          shopping_bag
-          </span>
+          <img class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
       </a>
     </div>
 
@@ -83,9 +81,7 @@
 
     <div class="bag icon nav-link">
         <a href="{% url 'cart' %}" class="nav-link">
-            <span class="material-symbols-rounded nav-item">
-            shopping_bag
-            </span>
+          <img id="cart-icon" class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
         </a>
     </div>
 
@@ -100,7 +96,7 @@
 
   <script>
     const body = document.body;
-    const nav = document.getElementById("navbar").style
+    const nav = document.getElementById("navbar")
     const nav_items = document.querySelectorAll('.nav-item')
     let body_scroll = 0;
 
@@ -114,12 +110,17 @@
       let currentScrollPos = window.pageYOffset;
 
       if(body.scrollTop == 0) {
-        nav.top = "2rem";
+        nav.style.top = "2rem";
+        nav.classList.toggle("active");
+        setTimeout(function() {
+          nav.classList.toggle("active");
+        }, 1000);
+          
       }
       else if (prevScrollpos > currentScrollPos) {
-        nav.top = "0";
+        nav.style.top = "0";
       } else {
-        nav.top = "-6rem";
+        nav.style.top = "-6rem";
       }
       prevScrollpos = currentScrollPos;
     }

@@ -147,6 +147,8 @@ def update_item(request):
         order_item.quantity += 1
     elif action == 'remove':
         order_item.quantity -= 1
+    elif action == 'clear':
+        order_item.quantity = 0
     
     # save the item
     order_item.save()
@@ -154,9 +156,16 @@ def update_item(request):
     # delete the item from the database
     if order_item.quantity <= 0:
         order_item.delete()
+        return JsonResponse({
+            'data': 'Item updated',
+            'redirect': True,
+            }, safe=False)
         
         
-    return JsonResponse('Item was added', safe=False)
+    return JsonResponse({
+            'data': 'Item updated',
+            'redirect': False,
+            }, safe=False)
 
 
 def payment_successful(request):

@@ -1,12 +1,104 @@
 {% extends 'store/base.html' %}
+{% load store_extras %}
 {% load static %}
 {% block title %}Cart{% endblock %}
 {% block content %}
 
-<div>
-    <a class="btn-cont" href="{% url 'home' %}">&#x2190; Continue Shopping</a>
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
-    <table class="table">
+<div class="cart-page">
+    <div class="cart-heading">
+
+        <div class="cart-header">
+            <lord-icon
+                src="https://cdn.lordicon.com/udbbfuld.json"
+                trigger="loop"
+                delay="2000"
+                style="width:150px;height:150px">
+            </lord-icon>
+            <div class="heading-text">My Cart</div>
+        </div>
+
+        <div class="item-count">[3 Items]</div>
+    </div>
+
+    <div class="cart-content">
+
+        <div class="cart-subheadings">
+            <div class="product-sub">Product</div>
+            <div class="total-sub">Total</div>
+            <div class="quantity-sub">Quantity</div>
+            <div class="price-sub">Price</div>
+        </div>
+
+        {% for item in items %}
+            <div class="item">
+                <div class="break"></div>
+
+                <div class="item-content">
+                    <img src="{{item.product.image_url}}" alt="Product image" class="item-img">
+
+                    <div class="item-details">
+                        <div class="item-title">{{item.product.name}}</div>
+                        <div class="item-color">
+                            <p class="subtext">Colour: {{item.product.color}}</p>
+                            <div class="color-picker">
+
+                            </div>
+                        </div>
+                        <div class="stock-check subtext">In Stock</div>
+                        <div class="remove">
+                            <span class="material-symbols-rounded">close</span>
+                            <div data-product={{item.product.id}} data-action="clear" style="cursor: pointer;" class="remove-text update-cart">Remove</div>
+                        </div>
+                    </div>
+
+                    <span class="item-total">£<div class="item-total-inner" price="{{item.product.price}}" id="total_{{item.product.id}}">{{item.quantity|multiply:item.product.price}}</div></span>
+
+                    <div class="item-quantity">
+                        <span data-product={{item.product.id}} data-action="remove" style="cursor: pointer;" type="remove" class="btn-update material-symbols-rounded update-cart">remove</span>
+                        <div id="{{item.product.id}}" class="quantity-number">{{item.quantity}}</div>
+                        <span data-product={{item.product.id}} data-action="add" style="cursor: pointer;" type="add" class="btn-update material-symbols-rounded update-cart">add</span>
+                    </div>
+
+
+                    <div class="item-price">£{{item.product.price}}</div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <script>
+        // update cart quantities and prices without refresh
+        let btns_update = document.querySelectorAll(".btn-update");
+
+        btns_update.forEach(function (item) {
+            item.addEventListener("click", function () {
+                let id = item.getAttribute("data-product");
+                let quantity = document.getElementById(id);
+                let total = document.getElementById("total_" + id);
+                let price = total.getAttribute("price");
+                let type = item.getAttribute("type");
+
+                if(type == "add") {
+                    total.innerText = (parseFloat(total.innerText) + parseFloat(price)).toFixed(2);;
+                    quantity.innerText = parseInt(quantity.innerText) + 1;
+                }
+                else if (type == "remove") {
+                    if(parseInt(quantity.innerText) > 0) {
+                        total.innerText = (parseFloat(total.innerText) - parseFloat(price)).toFixed(2);
+                        quantity.innerText = parseInt(quantity.innerText) - 1;
+                    }
+                }
+            });
+        });
+    </script>
+
+    {% comment %} <a class="btn-cont" href="{% url 'home' %}">&#x2190; Continue Shopping</a> {% endcomment %}
+
+    {% comment %} <table class="table">
         <tr>
             {% for item in items %}
             <img style="width: 4rem;" src="{{item.product.image_url}}" alt="">
@@ -20,7 +112,7 @@
                 <a href="{% url 'checkout' %}" class="btn-checkout">Checkout</a>
             </th>
         </tr>
-    </table>
+    </table> {% endcomment %}
 </div>
 
 {% endblock %}

@@ -1,0 +1,131 @@
+.cart-page {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+    width: 60%;
+    font-family: "Poppins";
+}
+
+.cart-heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.heading-text {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.item-count {
+    margin: auto;
+    font-weight: 700;
+}
+
+.cart-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-subheadings {
+    margin-top: 5rem;
+}
+
+.cart-subheadings div {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.product-sub {
+    float: left;
+}
+
+.price-sub, .quantity-sub {
+    float: right;
+    margin-right: 6rem;
+}
+
+.total-sub {
+    float: right;
+}
+
+.break {
+    width: 100%;
+    background-color: var(--break-color);
+    opacity: .25;
+    height: .1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item-content img {
+    position: relative;
+    float: left;
+    width: 8rem;
+}
+
+.remove {
+    display: flex;
+}
+
+.item-price, .item-quantity, .item-total {
+    position: relative;
+    float: right;
+    font-weight: 700;
+}
+
+.item-total {
+    display: flex;
+}
+
+.item-price {
+    margin-right: 7rem;
+}
+
+.item-details {
+    position: relative;
+    float: left;
+    margin-left: 3rem;
+}
+
+.subtext {
+    margin-top: .5rem;
+    color: var(--break-color);
+    font-size: .8rem;
+}
+
+.remove {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.remove-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.remove span {
+    color: var(--remove-color);
+    margin-left: -.2rem;
+}
+
+.item-quantity {
+    display: flex;
+    margin-right: 7rem;
+}
+
+.quantity-number {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

@@ -206,6 +206,21 @@
     
 </div>
 
+<script>
+    let add_cart_btn = document.querySelectorAll(".update-cart");
+    let cart_icon = document.getElementById("cart-icon");
+
+    add_cart_btn.forEach(function (item) {
+        item.addEventListener("click", () => {
+            cart_icon.src = "/static/images/cart.gif";
+            setTimeout(function () {
+                cart_icon.src = "/static/images/cart.png";
+            }, 1000);
+        });
+    });
+
+</script>
+
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
