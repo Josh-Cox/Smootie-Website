@@ -68,6 +68,49 @@
             </div>
 
         {% endfor %}
+        <div class="break"></div>
+
+        <div class="bottom-container">
+
+            <div class="delivery-info-container">
+                <div class="devliery-info">
+                    <div class="info-header">Delivery Info</div>
+                    <div class="info-content">See our delivery & returns info <a href='#'>here</a></div>
+                </div>
+                <div class="payment-info">
+                    <div class="info-header">Payment Info</div>
+                    <div class="info-content">We accept the following methods of payment</div>
+                </div>
+
+                <div class="cart-payments">
+                    <img src="{% static 'images/payments.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="checkout-area-container">
+                <div class="promo-container">
+                    <div class="promo-icon"></div>
+                    <div class="promo-text">Promo Code</div>
+                </div>
+
+                <div class="free-shipping-container">
+                    <div class="free-shipping-text"><span>£25.80</span> away from <span>FREE Shipping</span></div>
+                    <div class="free-shipping-icon"></div>
+                </div>
+                
+                <div class="free-shipping-bar"></div>
+
+                <div class="subtotal">
+                    <div class="subtotal-text">Subtotal</div>
+                    <div class="subtotal-amount">£113.97</div>
+                </div>
+
+                <div class="taxes">Taxes & shipping calculated at checkout</div>
+
+                <button class="shipping-btn" role="button">CHECKOUT</button>
+                
+            </div>
+        </div>
     </div>
 
     <script>
