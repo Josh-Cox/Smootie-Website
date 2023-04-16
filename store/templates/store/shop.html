@@ -1,0 +1,244 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% comment %} <div class="gallery-container">
+    <div class="gallery-picker">
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/gallery-img-1.jpg' %}" alt="Image of handheld blender">
+        </div>
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/blender_white.jpg' %}" alt="Image of handheld blender">
+        </div>
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/blender_pink.jpg' %}" alt="Image of handheld blender">
+        </div>
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/gallery-img-1.jpg' %}" alt="Image of handheld blender">
+        </div>
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/gallery-img-1.jpg' %}" alt="Image of handheld blender">
+        </div>
+        <div class="gallery-image">
+            <img class="gallery-image-img" src="{% static 'images/gallery-img-1.jpg' %}" alt="Image of handheld blender">
+        </div>
+    </div>
+    <div class="gallery-selected">
+        <img class="gallery-selected-img" src="{% static 'images/gallery-img-1.jpg' %}" alt="">
+    </div>
+</div> {% endcomment %}
+
+
+<div class="main-container">
+    
+    <div class="product-container">
+
+        <div class="container my-4">
+            <div class="row">
+              <div class="col-2">
+                 <div class="carousel carousel-nav" 
+                      data-flickity='{
+                        "asNavFor": ".carousel-main",
+                        "draggable": false,
+                        "percentPosition": false,
+                        "groupCells": "100%",
+                        "prevNextButtons": false,
+                        "pageDots": false
+                      }'>
+
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/gallery-img-1.jpg' %}" alt="">
+                  </div>
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/gallery-img-2.jpg' %}" alt="">
+                  </div>
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/gallery-img-3.jpg' %}" alt="">
+                  </div>
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/gallery-img-4.jpg' %}" alt="">
+                  </div>
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/blender_pink.jpg' %}" alt="">
+                  </div>
+                  <div class="carousel-cell">
+                    <img src="{% static 'images/blender_white.jpg' %}" alt="">
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="carousel carousel-main"
+                     data-flickity='{
+                       "contain": true,
+                       "pageDots": true,
+                       "prevNextButtons": false
+                     }'>
+
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/gallery-img-1.jpg' %}" alt="">
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/gallery-img-2.jpg' %}" alt="">
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/gallery-img-3.jpg' %}" alt="">
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/gallery-img-4.jpg' %}" alt="">
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/blender_white.jpg' %}" alt="">
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="{% static 'images/blender_pink.jpg' %}" alt="">
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
+        <div class="details-container">
+            <div class="product-name">Fresh Juice Portable Blender</div>
+
+            <div class="product-reviews">
+                <div class="review-stars">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="review-text">(254 Reviews)</div>
+            </div>
+
+            <div class="price-container">
+                <div class="product-price">£37.99</div>
+                <div class="product-prev-price">£57.99</div>
+                <div class="discount-amount">
+                    <span>SAVE</span> 35%
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tab-header-container">
+                    <div class="tab-header active">Information</div>
+                    <div class="tab-header">Specifications</div>
+                    <div class="tab-header">What's In the Box</div>
+                </div>
+
+                <div class="tab-content tab-one">
+                    <div class="estimated-delivery-container">
+                        <div class="info-icon">
+                            <span class="material-symbols-rounded">airport_shuttle</span>
+                        </div>
+                        <div class="delivery-text">Estimated Delivery (US-CA): Apr 14 - Apr 18</div>
+                    </div>
+                    <div class="shipping-returns-container">
+                        <div class="info-icon">
+                            <span class="material-symbols-rounded">deployed_code</span>
+                        </div>
+                        <div class="shipping-text">Free Shipping & Returns</div>
+                    </div>
+
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">The Original Fresh Juice<span>TM</span> Bottle Blender.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Drink your fruits and vegetables.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">2-in-1 blender and bottle.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Create nutrient rich smoothie and juice anywhere.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Super easy to use and self-clean.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Safe for kids (9+ years).</div>
+                        </div>
+                    </div>
+
+                    <div class="color-picker-container">
+                        <label class="white">
+                            <input class="item-color" type="radio" name="color" value="white">
+                            <div class="layer"></div>
+                            <div class="button"><span></span></div>
+                        </label>
+                        <label class="pink">
+                            <input class="item-color" type="radio" name="color" value="pink">
+                            <div class="layer"></div>
+                            <div class="button"><span></span></div>
+                        </label>
+                        <label class="yellow">
+                            <input class="item-color" type="radio" name="color" value="yellow">
+                            <div class="layer"></div>
+                            <div class="button"><span></span></div>
+                        </label>
+                        <label class="black">
+                            <input class="item-color" type="radio" name="color" value="black">
+                            <div class="layer"></div>
+                            <div class="button"><span></span></div>
+                        </label>
+
+                        <div class="color-selected">Colour: Pink</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    let gallery_images = document.querySelectorAll(".gallery-image-img");
+    let gallery_selected = document.querySelector(".gallery-selected-img");
+
+    // image selection
+    gallery_images.forEach(function(image) {
+        image.addEventListener("click", function () {
+            $(".gallery-selected-img")
+            .fadeOut(300, function() {
+                $(".gallery-selected-img").attr('src', image.src);
+            })
+            .fadeIn(300);
+        });
+    });
+
+    // tab selection
+    let tab_headers = document.querySelectorAll('.tab-header');
+
+    tab_headers.forEach(function(header) {
+        header.addEventListener("click", function() {
+            tab_headers.forEach(function(item) {
+                item.classList.remove("active");
+            })
+
+            header.classList.add("active");
+        });
+    }); 
+    
+</script>
+{% endblock %}

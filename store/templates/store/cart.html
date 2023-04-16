@@ -4,8 +4,10 @@
 {% block title %}Cart{% endblock %}
 {% block content %}
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
 <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
 
 <div class="cart-page">
     <div class="cart-heading">
@@ -88,26 +90,42 @@
             </div>
 
             <div class="checkout-area-container">
+
                 <div class="promo-container">
-                    <div class="promo-icon"></div>
+                    <div class="promo-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/itnlluqc.json"
+                            trigger="hover"
+                            colors="primary:#000000">
+                        </lord-icon>
+                    </div>
                     <div class="promo-text">Promo Code</div>
                 </div>
 
+                {% if total_price >= 50 %}
                 <div class="free-shipping-container">
-                    <div class="free-shipping-text"><span>£25.80</span> away from <span>FREE Shipping</span></div>
+                    <div class="free-shipping-text">You qualify for<span> FREE Shipping</span></div>
                     <div class="free-shipping-icon"></div>
                 </div>
+                {% else %}
+                <div class="free-shipping-container">
+                    <div class="free-shipping-text"><span>£</span><span>{{shipping_price|floatformat:2}}</span> away from <span>FREE Shipping</span></div>
+                    <div class="free-shipping-icon"></div>
+                </div>
+                {% endif %}
                 
-                <div class="free-shipping-bar"></div>
+                <div class="w3-light-grey" style="border-radius: 1rem;">
+                    <div class="w3-orange" id="bar" style="width: calc({{total_price}} * 2.23%); height:.4rem;border-radius: 1rem;"></div>
+                </div><br>
 
                 <div class="subtotal">
                     <div class="subtotal-text">Subtotal</div>
-                    <div class="subtotal-amount">£113.97</div>
+                    <div class="subtotal-amount">£<span id="subtotal">{{total_price|floatformat:2}}</span></div>
                 </div>
 
                 <div class="taxes">Taxes & shipping calculated at checkout</div>
 
-                <button class="shipping-btn" role="button">CHECKOUT</button>
+                <button class="shipping-btn" role="button"><a href="{% url 'checkout' %}" class="btn-checkout">CHECKOUT</a></button>
                 
             </div>
         </div>
@@ -118,30 +136,51 @@
         let btns_update = document.querySelectorAll(".btn-update");
         let item_count = document.querySelector(".item-count");
         let item_num = {{num_items}};
+        let shipping = parseFloat("{{shipping_price}}");
+        let bar_element = document.getElementById("bar");
 
         btns_update.forEach(function (item) {
             item.addEventListener("click", function () {
                 let id = item.getAttribute("data-product");
                 let quantity = document.getElementById(id);
                 let total = document.getElementById("total_" + id);
+                let sub_total = document.getElementById("subtotal");
                 let price = total.getAttribute("price");
                 let type = item.getAttribute("type");
+                
 
                 if(type == "add") {
-                    total.innerText = (parseFloat(total.innerText) + parseFloat(price)).toFixed(2);;
+                    total.innerText = (parseFloat(total.innerText) + parseFloat(price)).toFixed(2);
+                    sub_total.innerText = (parseFloat(sub_total.innerText) + parseFloat(price)).toFixed(2);
                     quantity.innerText = parseInt(quantity.innerText) + 1;
+                    shipping -= parseFloat(price);
                     item_num ++;
                 }
                 else if (type == "remove") {
                     if(parseInt(quantity.innerText) > 0) {
                         total.innerText = (parseFloat(total.innerText) - parseFloat(price)).toFixed(2);
+                        sub_total.innerText = (parseFloat(sub_total.innerText) - parseFloat(price)).toFixed(2);
                         quantity.innerText = parseInt(quantity.innerText) - 1;
+                        shipping += parseFloat(price);
                         item_num --;
                     }
                 }
 
                 // change item number
                 item_count.innerText = "[" + item_num +" Items]";
+
+                // check for free shipping
+                let free_shipping = document.querySelector(".free-shipping-container");
+                
+
+                if(parseFloat((sub_total.innerText)) >= 45) {
+                    free_shipping.innerHTML = '<div class="free-shipping-text">You qualify for<span> FREE Shipping</span></div><div class="free-shipping-icon"></div>';
+                }
+                else {
+                    free_shipping.innerHTML = '<div class="free-shipping-text"><span>£</span><span>' + shipping.toFixed(2) + '</span> away from <span>FREE Shipping</span></div><div class="free-shipping-icon"></div>';
+                }
+
+                bar_element.style.width = (parseFloat(sub_total.innerText) * 2.23).toString() + "%";
             });
         });
     </script>
@@ -159,7 +198,7 @@
             <th><h5>Items: <strong>3</strong></h5></th>
             <th><h5>Total: <strong>£43</strong></h5></th>
             <th>
-                <a href="{% url 'checkout' %}" class="btn-checkout">Checkout</a>
+                
             </th>
         </tr>
     </table> {% endcomment %}

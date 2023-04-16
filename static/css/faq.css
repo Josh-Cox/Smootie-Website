@@ -40,8 +40,9 @@
 }
 
 .question-heading {
+    width: 50rem;
     position: relative;
-    margin-top: 1rem;
+    margin-top: .4rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -80,11 +81,13 @@
 }
 
 .question-content {
-    border: .1rem solid var(--faq-border);
-    max-width: 50rem;
+    border-left: .3rem solid var(--color-add);
+    max-width: 46rem;
     overflow: hidden;
     max-height: 0;
 	transition: all ease 600ms;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .question-content.active {

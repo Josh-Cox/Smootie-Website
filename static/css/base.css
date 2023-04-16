@@ -2,7 +2,6 @@
 
 :root {
     /* base */
-
     --color-white: #ffffff;
     --color-black: #000000;
     --color-grey: #faf9f6;
@@ -14,11 +13,20 @@
     --faq-grey: #fafafa;
     --faq-border: #f5f5f5;
 
+    /* shop */
+    --color-star: #fbb03b;
+    --color-discount: #100f0d;
+    --color-tab-border: #7eb1d1;
+    --color-pink: #ffbde7;
+    --color-yellow: #ffd234;
+
     /* cart */
     --break-color: #323232;
     --remove-color: #a60000;
     --btn-color-one: #ff3131;
     --btn-color-two: #ff914d;
+    --shipping-bar-one: #e1e1e1;
+    --shipping-bar-two: #ff9100;
 
     /* footer */
     --color-background: #eef4f8;

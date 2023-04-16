@@ -39,6 +39,9 @@ def user_guide(request):
 def faq(request):
     return render(request, 'store/faq.html')
 
+def shop(request):
+    return render(request, 'store/shop.html')
+
 def cart(request):
     """ 
     Cart page for each user
@@ -64,12 +67,22 @@ def cart(request):
     num_items=  0
     for item in items:
         num_items += item.quantity
+        
+    total = 0
+    for order_item in items:
+        total += (order_item.product.price * order_item.quantity)
+        
+    shipping_price = 45 - total
     
     context = {
         "items": items,
         "order": order,
         "num_items": num_items,
+        "total_price": total,
+        "shipping_price": shipping_price
         }
+    
+    print(total)
     
     return render(request, 'store/cart.html', context)
 
@@ -78,18 +91,120 @@ def checkout(request):
     Checkout page for each user
     """
     
+    # get customer
+    try:
+        customer = request.user.customer
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
+        
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    
     stripe.api_key = settings.STRIPE_SECRET_KEY_TEST
+    
+    white_q = 0
+    black_q = 0
+    pink_q = 0
+    yellow_q = 0
+    
+    try:
+        white_q = OrderItem.objects.get(order=order, product=Product.objects.get(color="White")).quantity
+    except:
+        pass
+    try:
+        pink_q = OrderItem.objects.get(order=order, product=Product.objects.get(color="Pink")).quantity
+    except:
+        pass
+    try:
+        black_q = OrderItem.objects.get(order=order, product=Product.objects.get(color="Black")).quantity
+    except:
+        pass
+    try:
+        yellow_q = OrderItem.objects.get(order=order, product=Product.objects.get(color="Yellow")).quantity
+    except:
+        pass
+    
+    # products in cart
+    if order.get_cart_total >= 50:
+        white_dict = {
+            'price': settings.PRODUCT_DISCOUNT_WHITE,
+            'quantity': white_q
+        }
+        
+        black_dict = {
+        'price': settings.PRODUCT_DISCOUNT_BLACK,
+        'quantity': black_q
+        }
+        
+        pink_dict = {
+            'price': settings.PRODUCT_DISCOUNT_PINK,
+            'quantity': pink_q
+        }
+        
+        yellow_dict = {
+            'price': settings.PRODUCT_DISCOUNT_YELLOW,
+            'quantity': yellow_q
+        }
+    else: 
+        white_dict = {
+            'price': settings.PRODUCT_PRICE_WHITE,
+            'quantity': white_q
+        }
+        
+        black_dict = {
+        'price': settings.PRODUCT_PRICE_BLACK,
+        'quantity': black_q
+        }
+        
+        pink_dict = {
+            'price': settings.PRODUCT_PRICE_PINK,
+            'quantity': pink_q
+        }
+        
+        yellow_dict = {
+            'price': settings.PRODUCT_PRICE_YELLOW,
+            'quantity': yellow_q
+        }
+    
+    product_arr = [white_dict, black_dict, pink_dict, yellow_dict]
+    
+    items = []
+    
+    for product in product_arr:
+        if product['quantity'] > 0:
+            items.append(product)
+            
+    print(items)
     
     # post checkout request
     if request.method == 'POST':
         checkout_session = stripe.checkout.Session.create(
             payment_method_types = ['card'],
-            line_items = [
+            shipping_options=[
                 {
-                    'price': settings.PRODUCT_PRICE,
-                    'quantity': 1,
+                "shipping_rate_data": {
+                    "type": "fixed_amount",
+                    "fixed_amount": {"amount": 199, "currency": "gbp"},
+                    "display_name": "Standard",
+                    "delivery_estimate": {
+                    "minimum": {"unit": "business_day", "value": 1},
+                    "maximum": {"unit": "business_day", "value": 3},
+                    },
+                },
+                },
+                {
+                "shipping_rate_data": {
+                    "type": "fixed_amount",
+                    "fixed_amount": {"amount": 399, "currency": "gbp"},
+                    "display_name": "Next day (Before 10am)",
+                    "delivery_estimate": {
+                    "minimum": {"unit": "business_day", "value": 1},
+                    "maximum": {"unit": "business_day", "value": 1},
+                    },
+                },
                 },
             ],
+            line_items = items,
             mode = 'payment',
             customer_creation = 'always',
             success_url = settings.REDIRECT_DOMAIN + '/payment_successful?session_id={CHECKOUT_SESSION_ID}',
@@ -98,18 +213,9 @@ def checkout(request):
         
         return redirect(checkout_session.url, code=303)
     
-    # if user is logged in return checkout items
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-    else:
-        items = []
-        order = {
-            "get_cart_total": 0,
-            "get_cart_items": 0,
-        }
-        
+
+    items = order.orderitem_set.all()
+    
     context = {
         "items": items,
         "order": order,

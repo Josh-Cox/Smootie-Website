@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 
-<div>
+<div style="margin-top: 10rem;">
     <form id="form-checkout" class="form-checkout" action="">
         <div class="info-user">
             <input required class="form-item" type="text" name="name" placeholder="Name...">
@@ -32,7 +32,6 @@
     let form = document.getElementById('form-checkout');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log("form submitted");
         document.getElementById('form-button').classList.add('hidden');
         document.getElementById('form-payment').classList.remove('hidden');
     });

@@ -30,7 +30,6 @@ for(let i = 0; i < btns_update_cart.length; i++) {
  * @param {*} action 
  */
 function update_user_order(product_id, action) {
-    console.log('Logged in as ' + user);
 
     let url = '/update_item/';
 
