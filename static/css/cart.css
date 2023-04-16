@@ -196,11 +196,26 @@
 }
 
 .free-shipping-container {
+    margin-top: 2rem;
     margin-bottom: .1rem;
+    display: flex;
+}
+
+.free-shipping-icon {
+    display: flex;
+    height: 1rem;
+    margin-left: .2rem;
+    cursor: pointer;
+}
+
+.free-shipping-icon span {
+    font-size: .9rem;
+    height: 1rem;
+    fill: 0;
 }
 
 .free-shipping-text {
-    margin-top: 2rem;
+    margin-top: -.15rem;
     color: var(--break-color);
     font-size: .8rem;
 }
@@ -262,6 +277,33 @@
     text-decoration: none;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 9rem;
+    background-color: var(--break-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    height: fit-content;
+    font-size: .6rem;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -4.5rem;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 /* @media (min-width: 768px) {
   .shipping-btn {
     font-size: 24px;

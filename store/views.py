@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from datetime import datetime, time
 import stripe
 import json
 import time
@@ -72,7 +73,7 @@ def cart(request):
     for order_item in items:
         total += (order_item.product.price * order_item.quantity)
         
-    shipping_price = 45 - total
+    shipping_price = 50 - total
     
     context = {
         "items": items,
@@ -174,14 +175,8 @@ def checkout(request):
         if product['quantity'] > 0:
             items.append(product)
             
-    print(items)
-    
-    # post checkout request
-    if request.method == 'POST':
-        checkout_session = stripe.checkout.Session.create(
-            payment_method_types = ['card'],
-            shipping_options=[
-                {
+    #Shipping options
+    shipping = [{
                 "shipping_rate_data": {
                     "type": "fixed_amount",
                     "fixed_amount": {"amount": 199, "currency": "gbp"},
@@ -191,8 +186,11 @@ def checkout(request):
                     "maximum": {"unit": "business_day", "value": 3},
                     },
                 },
-                },
-                {
+                }
+                ]
+    
+    if datetime.now().strftime("%H:%M:%S") < "10:00:00":
+        shipping.append({
                 "shipping_rate_data": {
                     "type": "fixed_amount",
                     "fixed_amount": {"amount": 399, "currency": "gbp"},
@@ -202,8 +200,16 @@ def checkout(request):
                     "maximum": {"unit": "business_day", "value": 1},
                     },
                 },
-                },
-            ],
+                })
+    
+    
+    
+    
+    # post checkout request
+    if request.method == 'POST':
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types = ['card'],
+            shipping_options=shipping,
             line_items = items,
             mode = 'payment',
             customer_creation = 'always',

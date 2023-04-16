@@ -3,7 +3,6 @@
 {% load static %}
 {% block title %}Cart{% endblock %}
 {% block content %}
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
 <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
@@ -104,13 +103,17 @@
 
                 {% if total_price >= 50 %}
                 <div class="free-shipping-container">
-                    <div class="free-shipping-text">You qualify for<span> FREE Shipping</span></div>
-                    <div class="free-shipping-icon"></div>
+                    <div class="free-shipping-text">You qualify for<span> 15% off your order</span></div>
+                    <div class="free-shipping-icon tooltip"><span class="material-symbols-rounded">info</span>
+                    <span class="tooltiptext">Spend £50 to get 15% off</span>
+                    </div>
                 </div>
                 {% else %}
                 <div class="free-shipping-container">
-                    <div class="free-shipping-text"><span>£</span><span>{{shipping_price|floatformat:2}}</span> away from <span>FREE Shipping</span></div>
-                    <div class="free-shipping-icon"></div>
+                    <div class="free-shipping-text"><span>£</span><span>{{shipping_price|floatformat:2}}</span> away from <span>15% off your order</span></div>
+                    <div class="free-shipping-icon tooltip"><span class="material-symbols-rounded">info</span>
+                    <span class="tooltiptext">Spend £50 to get 15% off</span>
+                    </div>
                 </div>
                 {% endif %}
                 
@@ -174,10 +177,10 @@
                 
 
                 if(parseFloat((sub_total.innerText)) >= 45) {
-                    free_shipping.innerHTML = '<div class="free-shipping-text">You qualify for<span> FREE Shipping</span></div><div class="free-shipping-icon"></div>';
+                    free_shipping.innerHTML = '<div class="free-shipping-text">You qualify for<span> 15% off your order</span></div><div class="free-shipping-icon tooltip"><span class="material-symbols-rounded">info</span><span class="tooltiptext">Spend £50 to get 15% off</span></div>';
                 }
                 else {
-                    free_shipping.innerHTML = '<div class="free-shipping-text"><span>£</span><span>' + shipping.toFixed(2) + '</span> away from <span>FREE Shipping</span></div><div class="free-shipping-icon"></div>';
+                    free_shipping.innerHTML = '<div class="free-shipping-text"><span>£</span><span>' + shipping.toFixed(2) + '</span> away from <span>15% off your order</span></div><div class="free-shipping-icon tooltip"><span class="material-symbols-rounded">info</span><span class="tooltiptext">Spend £50 to get 15% off</span></div>';
                 }
 
                 bar_element.style.width = (parseFloat(sub_total.innerText) * 2.23).toString() + "%";
