@@ -19,7 +19,7 @@
 }
 
 .product__main-image {
-  width: 25rem;
+  height: 35rem;
   object-fit: cover;
   cursor: pointer;
 }
@@ -29,6 +29,7 @@
   min-height: 100px;
   display: flex;
   align-items: center;
+
 }
 
 .product__slider {
@@ -38,6 +39,8 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   flex-direction: column;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .product__image {
@@ -60,13 +63,8 @@
   opacity: 1;
 }
 
-.product__slider::-webkit-scrollbar {
-  height: 10px;
-}
-
-.product__slider::-webkit-scrollbar-thumb {
-  background-color: #f9564f;
-  border-radius: 50px;
+.product__slider::-webkit-scrollbar{
+  display: none;
 }
 
 /* ---------- Product Details ---------- */
