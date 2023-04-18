@@ -67,7 +67,15 @@
   display: none;
 }
 
-/* ---------- Product Details ---------- */
+/* ---------- Product Details 1 ---------- */
+.tab-one {
+  display: none;
+}
+
+.tab-one.active {
+  display: block;
+}
+
 .details-container {
   font-family: "Poppins";
   margin-top: 2rem;
@@ -198,6 +206,24 @@
   color: var(--break-color);
 }
 
+/* ---------- Product Details 2 ---------- */
+.tab-two {
+  display: none;
+}
+
+.tab-two.active {
+  display: block;
+}
+
+/* ---------- Product Details 3 ---------- */
+.tab-three {
+  display: none;
+}
+
+.tab-three.active {
+  display: block;
+}
+
 /* ---------- Color Picker ---------- */
 .color-picker-container {
   margin-top: 2rem;
@@ -266,4 +292,262 @@
 
 .color-selected {
   margin-left: 1rem;
+}
+
+/* ---------- Function Section ---------- */
+
+.function-container {
+  background-color: var(--color-function);
+  padding-bottom: 5rem;
+}
+
+.function-header {
+  position: relative;
+}
+
+.wave-text {
+  font-size: .5rem;
+  
+}
+.wave-path {
+  fill: transparent;
+}
+
+text {
+  fill: black;
+  font-family: "Poppins";
+}
+
+.yellow-circle {
+  position: absolute;
+  background-color: #f2f9a1;
+  width: 5rem;
+  height: 5rem;
+  z-index: -1;
+
+  border-radius: 100%;
+
+  top: 2rem;
+  right: 60%;
+  margin: 0;
+}
+
+.function-content {
+  display: flex;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.function-left {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.function-right {
+  margin-left: 4rem;
+  width: 100%;
+}
+
+.function-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.icon img, .icon span {
+  width: 3rem;
+  font-size: 3rem;
+  color: black;
+  font-weight: 300;
+}
+
+.function-info {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Poppins";
+}
+
+.function-header {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 7rem;
+}
+
+.function-text {
+  font-size: .8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.function-line {
+  margin-top: 1rem;
+  height: .2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-add);
+}
+
+/* ---------- Videos ---------- */
+
+.vid-container {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85rem;
+  height: fit-content;
+  text-align: center;
+}
+
+.vid-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.vid-top-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.cell {
+  width: 25%;
+  height: fit-content;
+}
+
+.cell video {
+  width: 20rem;
+  object-fit: cover;
+}
+
+.flickity-button {
+  background: black;
+}
+
+.flickity-button:hover {
+  background: black;
+}
+
+.flickity-button-icon {
+  fill: white;
+}
+
+.flickity-prev-next-button {
+  width: 2rem;
+  height: 2rem;
+}
+
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+
+.flickity-prev-next-button.next {
+  right: -40px;
+}
+
+/* ---------- FAQ Container ---------- */
+
+.faq-container {
+  margin-bottom: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-text {
+  max-width: 45rem;
+}
+
+.faq-text .title {
+  margin-top: 1rem;
+  font-size: 3rem;
+}
+
+.faq-text .title-small {
+  font-weight: 600;
+}
+
+.faq-text .helper-text {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.questions {
+  max-width: 52rem;
+  margin-top: 1rem;
+}
+
+.drop-down-question {
+  margin-left: 1rem;
+}
+
+.question-heading {
+  width: 50rem;
+  position: relative;
+  margin-top: .4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--faq-grey);
+  border: .1rem solid var(--faq-border);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--faq-text);
+  cursor: pointer;
+  transition: ease all 300ms;
+}
+
+.question-heading:hover {
+  background: var(--color-background);
+}
+
+.add {
+  opacity: 0%;
+}
+
+.question-icon {
+  transition: 300ms;
+  position: absolute;
+  margin-left: 1rem;
+  font-weight: 600;
+  right: 2rem;
+  color: var(--color-add);
+}
+
+.question-icon.active {
+  opacity: 100%;
+}
+
+.question-text {
+  margin-left: 1rem;
+}
+
+.question-content {
+  border-left: .3rem solid var(--color-add);
+  max-width: 46rem;
+  overflow: hidden;
+  max-height: 0;
+transition: all ease 600ms;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question-content.active {
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.content-text {
+  font-weight: 300;
+  color: var(--text-light);
+  margin: 2rem;
+  text-align: left;
 }

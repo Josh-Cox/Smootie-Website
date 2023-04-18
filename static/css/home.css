@@ -15,36 +15,6 @@
     width: 100%;
     z-index: -1;
 }
-
-.shop-link {
-    width: 7.5rem;
-    text-decoration: none;
-    color: white;
-    padding: 10px 0px;
-    display: inline-block;
-    position: relative;
-}
-
-.shop-link:hover {
-    opacity: 1;
-  }
-  
-.shop-link::before {
-    transition: 300ms;
-    height: .1rem;
-    content: "";
-    position: absolute;
-    background-color: black;
-}
-
-.shop-link-ltr::before {
-    width: 0%;
-    bottom: 10px;
-}
-
-.shop-link-ltr:hover::before {
-    width: 100%;
-}
 /* ---------- Moving Banners ---------- */
 
 .banner-container {
@@ -93,6 +63,63 @@
     width: 4rem;
     margin: clamp(.4rem, .5%, 1rem);
     filter: grayscale(1%);
+}
+
+/* ---------- Videos ---------- */
+
+.vid-container {
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85rem;
+    height: fit-content;
+    text-align: center;
+}
+
+.vid-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.vid-top-text {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    width: 25%;
+    height: fit-content;
+}
+
+.cell video {
+    width: 20rem;
+    object-fit: cover;
+}
+
+.flickity-button {
+    background: black;
+}
+
+.flickity-button:hover {
+    background: black;
+}
+
+.flickity-button-icon {
+    fill: white;
+}
+
+.flickity-prev-next-button {
+    width: 2rem;
+    height: 2rem;
+}
+
+.flickity-prev-next-button.previous {
+    left: -40px;
+}
+
+.flickity-prev-next-button.next {
+    right: -40px;
 }
 
 /* ---------- Circle Infos ---------- */
@@ -192,63 +219,6 @@
 .shop-link a {
     text-decoration: none;
     color: black;
-}
-
-/* ---------- Videos ---------- */
-
-.vid-container {
-    margin-top: 10rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 85rem;
-    height: fit-content;
-    text-align: center;
-}
-
-.vid-title {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.vid-top-text {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.cell {
-    width: 25%;
-    height: fit-content;
-}
-
-.cell video {
-    width: 20rem;
-    object-fit: cover;
-}
-
-.flickity-button {
-    background: black;
-}
-
-.flickity-button:hover {
-    background: black;
-}
-
-.flickity-button-icon {
-    fill: white;
-}
-
-.flickity-prev-next-button {
-    width: 2rem;
-    height: 2rem;
-}
-
-.flickity-prev-next-button.previous {
-    left: -40px;
-}
-
-.flickity-prev-next-button.next {
-    right: -40px;
 }
 
 /* ---------- Info banner ---------- */

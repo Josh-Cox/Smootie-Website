@@ -19,6 +19,7 @@
     --color-tab-border: #7eb1d1;
     --color-pink: #ffbde7;
     --color-yellow: #ffd234;
+    --color-function: rgba(93, 222, 250, .08);
 
     /* cart */
     --break-color: #323232;
@@ -32,6 +33,8 @@
     --color-background: #eef4f8;
     --color-text-light: #606060;
     --color-stop-looking: #f4a216;
+
+    font-family: "Poppins";
 }
 
 html, body {
@@ -41,6 +44,40 @@ html, body {
     width: 100%;
 }
 
+.shop-link {
+    width: 7.5rem;
+    text-decoration: none;
+    color: white;
+    padding: 10px 0px;
+    display: inline-block;
+    position: relative;
+}
+
+.shop-link a {
+    text-decoration: none;
+    color: black;
+}
+
+.shop-link:hover {
+    opacity: 1;
+  }
+  
+.shop-link::before {
+    transition: 300ms;
+    height: .1rem;
+    content: "";
+    position: absolute;
+    background-color: black;
+}
+
+.shop-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+}
+
+.shop-link-ltr:hover::before {
+    width: 100%;
+}
 
 .top-text {
     display: flex;

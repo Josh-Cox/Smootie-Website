@@ -4,9 +4,11 @@
 
 
 {% block content %}
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <link rel="stylesheet" href="{% static 'css/shop.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <div class="main-container">
 
@@ -91,12 +93,12 @@
 
             <div class="tab-container">
                 <div class="tab-header-container">
-                    <div class="tab-header active">Information</div>
-                    <div class="tab-header">Specifications</div>
-                    <div class="tab-header">What's In the Box</div>
+                    <div id="tab-one" class="tab-header active">Information</div>
+                    <div id="tab-two" class="tab-header">Specifications</div>
+                    <div id="tab-three" class="tab-header">What's In the Box</div>
                 </div>
 
-                <div class="tab-content tab-one">
+                <div class="tab-content tab-one active">
                     <div class="estimated-delivery-container">
                         <div class="info-icon">
                             <span class="material-symbols-rounded">airport_shuttle</span>
@@ -137,36 +139,243 @@
                         </div>
                     </div>
 
-                    <div class="color-picker-container">
-                        <label class="white">
-                            <input class="item-color" type="radio" name="color" value="white">
-                            <div class="layer"></div>
-                            <div class="button"><span></span></div>
-                        </label>
-                        <label class="pink">
-                            <input class="item-color" type="radio" name="color" value="pink">
-                            <div class="layer"></div>
-                            <div class="button"><span></span></div>
-                        </label>
-                        <label class="yellow">
-                            <input class="item-color" type="radio" name="color" value="yellow">
-                            <div class="layer"></div>
-                            <div class="button"><span></span></div>
-                        </label>
-                        <label class="black">
-                            <input class="item-color" type="radio" name="color" value="black">
-                            <div class="layer"></div>
-                            <div class="button"><span></span></div>
-                        </label>
+                </div>
 
-                        <div class="color-selected">Colour: Pink</div>
+                <div class="tab-content tab-two">
+
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Temperature-resistant & dishwasher safe</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Wireless charging dock & cable (USB)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">1400mAh battery (good for 20 blends with 3h charge)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">BPA-Free Plastic</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Waterproof</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Lightweight: 1.1 lb (490 g)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">304SUS stainless steel blades</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Compact Size: 8.5” x 3” (218mm x 82mm)Capacity: 350 mL</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content tab-three">
+
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Blending Vessel with Silicon Carry Handle</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Magnetic Wireless Charging Dock</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Blender Base 350ml</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">User Guide</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-picker-container">
+                    <label class="white">
+                        <input class="item-color" type="radio" name="color" value="White">
+                        <div class="layer"></div>
+                        <div class="button"><span></span></div>
+                    </label>
+                    <label class="pink">
+                        <input class="item-color" type="radio" name="color" value="Pink">
+                        <div class="layer"></div>
+                        <div class="button"><span></span></div>
+                    </label>
+                    <label class="yellow">
+                        <input class="item-color" type="radio" name="color" value="Yellow">
+                        <div class="layer"></div>
+                        <div class="button"><span></span></div>
+                    </label>
+                    <label class="black">
+                        <input class="item-color" type="radio" name="color" value="Black">
+                        <div class="layer"></div>
+                        <div class="button"><span></span></div>
+                    </label>
+
+                    <div id="color-text" class="color-selected">Colour: Pink</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="function-container">
+        <div class="function-header">
+            <div class="yellow-circle"></div>
+            <svg class="function-header-text" viewBox="0 0 600 50">
+                <path class="wave-path" id="curve" d="M 172.2503 7.0201 C 218.7147 48.7221 340.8783 -4.8787 418.0454 41.2216" />
+                <text x="25">
+                <textPath class="wave-text" xlink:href="#curve">
+                    Helping you function your best, everywhere.
+                </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <div class="function-content">
+            <div class="function-left">
+                <div class="function-video">
+                    <img src="{% static 'images/shop-function.gif' %}" alt="Blender in use">
+                </div>
+            </div>
+            <div class="function-right">
+                <div class="function-icons">
+                    <div class="icon blades">
+                        <img src="{% static 'images/blades.png' %}" alt="Blender blades">
+                    </div>
+                    <div class="icon wifi">
+                        <img src="{% static 'images/wifi-connection.png' %}" alt="Blender blades">
+                    </div>
+                    <div class="icon waterproof">
+                        <img src="{% static 'images/waterproof.png' %}" alt="Blender blades">
+                    </div>
+                    <div class="icon world">
+                        <span class="material-symbols-rounded">language</span>
+                    </div>
+                    <div class="icon battery">
+                        <img src="{% static 'images/battery.png' %}" alt="Blender blades">
+                    </div>
+                </div>
+                <div class="function-info function-one">
+                    <div class="function-header">Powerful Blend</div>
+                    <div class="function-text">
+                        Quadruple-blade SUS304 stainless steel head made by food-grade
+                        electrolysis technology means the Smootie blender can turn any fruit, vegetable and 
+                        more into the smoothest smoothie at the quickest of speeds.
+                    </div>
+                    <div class="function-line"></div>
+                    <div class="shop-link-ltr shop-link">
+                        <a href="#shop">Get yours now!</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="vid-container function-vid-container">
+        <div class="vid-title">Mini. Fast. Portable.</div>
+        <div class="vid-top-text">See it in Action</div>
+        <div class="vid-carousel">
+            <div class="cell"><video controls src="{% static 'images/action-vid-1.mp4' %}"></video></div>
+            <div class="cell"><video controls src="{% static 'images/action-vid-2.mp4' %}"></video></div>
+            <div class="cell"><video controls src="{% static 'images/action-vid-3.mp4' %}"></video></div>
+            <div class="cell"><video controls src="{% static 'images/action-vid-4.mp4' %}"></video></div>
+            <div class="cell"><video controls src="{% static 'images/action-vid-5.mp4' %}"></video></div>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-text">
+            <h1 class="title">FAQ</h1>
+            <h2 class="title-small">Frequently Asked Questions</h2>
+            <p class="helper-text">Here you can find the most asked questions about our product and service.</p>
+        </div>
+    
+        <div class="questions">
+
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">When will I receive my order?</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <p class="content-text">
+                        Orders are shipped directly from the Smootie Warehouse within 1-2 business days. You should receive your
+                         order within 1-2 days from distribution.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">How do I submit a Return?</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <p class="content-text">
+                        To start a return, you can contact us at (insert email) informing us of your request. Once we've received and inspected your return,
+                        you will be notified to let you know if the refund was approved or not. If approved, you'll be automatically refunded on your original
+                        payment method. Note, items sent back to us without first requesting a return will not be accepted. 
+                    </p>
+                </div>
+            </div>
+    
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">How much is shipping?</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <p class="content-text">
+                        Shipping is £1.99 for all orders. 
+                    </p>
+                </div>
+            </div>
+    
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">How does delivery work?</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <p class="content-text">
+                        All orders are shipped and processed through Evri. You can expect your parcel within 1-2 business days 
+                        from when it leaves our warehouse.
+                    </p>
+                    <p class="content-text">
+                        When your order has been shipped, a confirmation email will be sent within 24 hours.
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
 </div>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+    $('.vid-carousel').flickity({
+        cellAlign: 'left',
+        wrapAround: true,
+        freeScroll: true
+    })
+</script>
 
 <script src={% static 'js/shop.js' %} type="text/javascript"></script>
 
@@ -187,6 +396,7 @@
 
     // tab selection
     let tab_headers = document.querySelectorAll('.tab-header');
+    let tab_contents = document.querySelectorAll('.tab-content');
 
     tab_headers.forEach(function(header) {
         header.addEventListener("click", function() {
@@ -194,9 +404,33 @@
                 item.classList.remove("active");
             })
 
+            tab_contents.forEach(function(item) {
+                item.classList.remove("active");
+            })
+
+            let temp_id = "." + header.id;
+
+            document.querySelector(temp_id).classList.add("active");
             header.classList.add("active");
         });
     }); 
-    
+
+    // color picker
+    let color_text = document.getElementById("color-text");
+    $("input:radio[name=color]").change(function() {
+        color_text.innerText = ("Colour: " + this.value);
+    });
+
+    // faq section
+    const dropdown = document.querySelectorAll('.drop-down-question');
+
+    dropdown.forEach(dropdown => {
+        dropdown.addEventListener('click', () => {
+            let content = dropdown.childNodes[3];
+            let heading = dropdown.childNodes[1].childNodes[3];
+            content.classList.toggle('active');
+            heading.classList.toggle('active');
+        });
+    });
 </script>
 {% endblock %}
