@@ -203,22 +203,22 @@
 
                 <div class="color-picker-container">
                     <label class="white">
-                        <input class="item-color" type="radio" name="color" value="White">
+                        <input productId={{blender_white.id}} class="item-color" type="radio" name="color" value="White">
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="pink">
-                        <input class="item-color" type="radio" name="color" value="Pink">
+                        <input productId={{blender_pink.id}} class="item-color" type="radio" name="color" value="Pink">
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="yellow">
-                        <input class="item-color" type="radio" name="color" value="Yellow">
+                        <input productId={{blender_yellow.id}} class="item-color" type="radio" name="color" value="Yellow">
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="black">
-                        <input class="item-color" type="radio" name="color" value="Black">
+                        <input productId={{blender_black.id}} class="item-color" type="radio" name="color" value="Black">
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
@@ -226,6 +226,26 @@
                     <div id="color-text" class="color-selected">Colour: Pink</div>
                 </div>
             </div>
+
+            <div class="add-cart-section">
+                <div class="quantity-picker">
+                    <div class="remove-quantity quantity-change">
+                        <span action="remove" class="quantity-update material-symbols-rounded">remove</span>
+                    </div>
+                    <div value="1" class="quantity-number">1</div>
+                    <div class="add-quantity quantity-change">
+                        <span action="add" class="quantity-update material-symbols-rounded">add</span>
+                    </div>
+                    
+                </div>
+
+                <button data-quantity="1" data-product="1" data-action="add" class="add-cart-btn update-cart" id="submit-button">Add to cart</button>
+            </div>
+
+            
+
+            <div class="safe-checkout"></div>
+
         </div>
     </div>
 
@@ -250,20 +270,30 @@
             </div>
             <div class="function-right">
                 <div class="function-icons">
-                    <div class="icon blades">
-                        <img src="{% static 'images/blades.png' %}" alt="Blender blades">
+                    <div class="function-icon blades active">
+                        <img class="function-img" src="{% static 'images/blades.png' %}" alt="Blender blades">
+                        <div class="outer-circle"></div>
+                        <div class="inner-circle"></div>
                     </div>
-                    <div class="icon wifi">
-                        <img src="{% static 'images/wifi-connection.png' %}" alt="Blender blades">
+                    <div class="function-icon wifi">
+                        <img class="function-img" src="{% static 'images/wifi-connection.png' %}" alt="Blender blades">
+                        <div class="outer-circle"></div>
+                        <div class="inner-circle"></div>
                     </div>
-                    <div class="icon waterproof">
-                        <img src="{% static 'images/waterproof.png' %}" alt="Blender blades">
+                    <div class="function-icon waterproof">
+                        <img class="function-img" src="{% static 'images/waterproof.png' %}" alt="Blender blades">
+                        <div class="outer-circle"></div>
+                        <div class="inner-circle"></div>
                     </div>
-                    <div class="icon world">
-                        <span class="material-symbols-rounded">language</span>
+                    <div class="function-icon world">
+                        <span class="function-img material-symbols-rounded">language</span>
+                        <div class="outer-circle"></div>
+                        <div class="inner-circle"></div>
                     </div>
-                    <div class="icon battery">
-                        <img src="{% static 'images/battery.png' %}" alt="Blender blades">
+                    <div class="function-icon battery">
+                        <img class="function-img" src="{% static 'images/battery.png' %}" alt="Blender blades">
+                        <div class="outer-circle"></div>
+                        <div class="inner-circle"></div>
                     </div>
                 </div>
                 <div class="function-info function-one">
@@ -415,11 +445,7 @@
         });
     }); 
 
-    // color picker
-    let color_text = document.getElementById("color-text");
-    $("input:radio[name=color]").change(function() {
-        color_text.innerText = ("Colour: " + this.value);
-    });
+    
 
     // faq section
     const dropdown = document.querySelectorAll('.drop-down-question');

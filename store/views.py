@@ -41,7 +41,23 @@ def faq(request):
     return render(request, 'store/faq.html')
 
 def shop(request):
-    return render(request, 'store/shop.html')
+    
+    # get each product
+    try:
+        blender_white = Product.objects.get(color="White")
+        blender_black = Product.objects.get(color="Black")
+        blender_pink = Product.objects.get(color="Pink")
+        blender_yellow = Product.objects.get(color="Yellow")
+    except:
+        HttpResponse(404, "Object not found")
+    
+    context = {
+        "blender_white": blender_white,
+        "blender_black": blender_black,
+        "blender_pink": blender_pink,
+        "blender_yellow": blender_yellow,
+    }
+    return render(request, 'store/shop.html', context)
 
 def cart(request):
     """ 
@@ -234,13 +250,14 @@ def update_item(request):
     Add/remove an item to/from the cart
     """
     
-    
     data = json.loads(request.body)
     product_id = data['product_id']
     action = data['action']
+    quantity = data['quantity']
     
     print("Action: " + action)
     print("Product ID: " + product_id)
+    print("Quantity: " + quantity)
 
     # get the logged in customer
     try:
@@ -261,7 +278,7 @@ def update_item(request):
     
     # check if action is add or remove
     if action == 'add':
-        order_item.quantity += 1
+        order_item.quantity += int(quantity)
     elif action == 'remove':
         order_item.quantity -= 1
     elif action == 'clear':

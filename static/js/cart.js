@@ -11,9 +11,10 @@ for(let i = 0; i < btns_update_cart.length; i++) {
     btns_update_cart[i].addEventListener("click", function() {
         product_id = this.dataset.product;
         action = this.dataset.action;
+        quantity = this.dataset.quantity;
 
         // check if user is logged in
-        update_user_order(product_id, action);
+        update_user_order(product_id, action, quantity);
         // if(user === 'AnonymousUser') {
         //     console.log('Not logged in');
         // }
@@ -41,7 +42,8 @@ function update_user_order(product_id, action) {
         },
         body: JSON.stringify({
             'product_id': product_id,
-            'action': action
+            'action': action,
+            'quantity': quantity
         }),
     })
 
