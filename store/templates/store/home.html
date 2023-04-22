@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-<div class="main-container">
+
     <video class="background-vid" autoplay muted loop>
         <source src="{% static 'images/home.mp4' %}" type="video/mp4">
         <source src="movie.ogg" type="video/ogg">
@@ -183,11 +183,11 @@
             </div>
             <div class="imgs-scroll">
                 <div class="img-carousel">
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.jpg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.svg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-2.svg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-3.svg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-4.svg' %}"></img></div>
+                    <div class="img-cell"><img src="{% static 'images/img-carousel-5.svg' %}"></img></div>
                 </div>
             </div>
             <div class="imgs-last">
@@ -196,45 +196,44 @@
             </div>
         </div>
     </div>
-
-
-    {% for product in products %}
-    <h3>{{product.name}}</h3>
-    <img style="width: 4rem;" src="{{product.image_url}}"></img>
-    <button data-product={{product.id}} data-action="add" class="update-cart" style="height: 4rem; width: 8rem;" id="submit-button">Add to Cart</button>
-    {% endfor %}
     
-</div>
 
-<script>
-    let add_cart_btn = document.querySelectorAll(".update-cart");
-    let cart_icon = document.getElementById("cart-icon");
-
-    add_cart_btn.forEach(function (item) {
-        item.addEventListener("click", () => {
-            cart_icon.src = "/static/images/cart.gif";
-            setTimeout(function () {
-                cart_icon.src = "/static/images/cart.png";
-            }, 1000);
-        });
-    });
-
-</script>
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <script>
-    $('.vid-carousel').flickity({
+
+    $vid_carousel = $('.vid-carousel')
+    
+    $vid_carousel.flickity({
         cellAlign: 'left',
         wrapAround: true,
-        freeScroll: true
+        freeScroll: true,
+        imagesLoaded: true
     })
 
     $('.img-carousel').flickity({
         cellAlign: 'left',
         wrapAround: true,
-        prevNextButtons: false
+        prevNextButtons: false,
+        imagesLoaded: true
     })
+    
+    // stops videos/images getting cut off
+    $(document).ready(function(){
+        $(".flickity-viewport").height("33rem");
+    });
+
+    function listener() {
+        $(".flickity-viewport").height("33rem");
+    }
+
+    // bind event listener
+    $vid_carousel.on( 'select.flickity', listener);
+
+   
+
+   
 </script>
 {% endblock %}

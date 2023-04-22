@@ -21,6 +21,7 @@
     --color-yellow: #ffd234;
     --color-function: rgba(93, 222, 250, .08);
     --color-add-cart: #69bef4;
+    --color-review-title: #7ec6f4;
 
     /* cart */
     --break-color: #323232;
@@ -43,6 +44,7 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100%;
+    
 }
 
 .shop-link {
@@ -201,4 +203,7 @@ html, body {
 .container {
     margin: 0;
     overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    overflow: hidden;
 }

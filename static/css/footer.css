@@ -1,7 +1,5 @@
 
 .footer {
-    margin-left: 3rem;
-    margin-right: 3rem;
     background: var(--color-background);
     padding: 5rem;
     display: flex;
@@ -122,7 +120,7 @@
 .stop-looking {
     width: 100%;
     text-align: center;
-    color: var(--color-stop-looking);
+    color: var(--color-add);
     font-family: "Poppins";
 }
 

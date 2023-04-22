@@ -12,7 +12,7 @@
 .background-vid {
     top: 0;
     margin-top: 0;
-    width: 100%;
+    width: 100vw;
     z-index: -1;
 }
 /* ---------- Moving Banners ---------- */
@@ -87,7 +87,12 @@
     margin-bottom: 1rem;
 }
 
+.vid-carousel {
+    height: fit-content;
+}
+
 .cell {
+    cursor: pointer;
     width: 25%;
     height: fit-content;
 }
@@ -136,8 +141,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 22rem;
-    height: 22rem;
+    width: clamp(15rem, 22rem, 22rem);
+    height: clamp(15rem, 22rem, 22rem);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -224,6 +229,7 @@
 /* ---------- Info banner ---------- */
 
 .info-banner-container {
+    position: relative;
     width: 100%;
     height: 26rem;
     margin-top: 10rem;
@@ -247,7 +253,7 @@
 
 .banner-text {
     width: 35.5%;
-    font-size: 1rem;
+    font-size: clamp(.5rem, .5rem + .5vw, 1rem);
     font-weight: 400;
     margin-bottom: 2rem;
     text-align: center;
@@ -274,6 +280,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 5rem;
 }
 
 .endless-title {
@@ -312,7 +319,7 @@
     align-items: center;
     flex-direction: column;
 
-    width: 29%;
+    width: 31.5%;
 }
 
 .imgs-first img, .imgs-last img {
@@ -323,6 +330,10 @@
     width: 42%;
 }
 
+.img-carousel {
+    width: 100%;
+}
+
 .img-cell {
     width: 100%;
     height: fit-content;
@@ -331,6 +342,10 @@
 .img-cell img {
     width: 100%;
     object-fit: cover;
+}
+
+.endless-section {
+    margin-bottom: 10rem;
 }
 
 /* ---------- Animation ---------- */

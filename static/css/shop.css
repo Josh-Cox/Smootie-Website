@@ -1,6 +1,6 @@
 .main-container {
   margin-top: 10rem;
-  margin-bottom: 30rem;
+  margin-bottom: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
 }
 
 .product__main-image {
-  height: 35rem;
+  width: 25rem;
   object-fit: cover;
   cursor: pointer;
 }
@@ -334,6 +334,18 @@ button.add-cart-btn {
   cursor: pointer;
 }
 
+.safe-checkout {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.safe-checkout img {
+  width: 60%;
+}
+
 /* ---------- Function Section ---------- */
 
 .function-container {
@@ -535,6 +547,7 @@ text {
 .cell {
   width: 25%;
   height: fit-content;
+  cursor: pointer;
 }
 
 .cell video {
@@ -668,4 +681,113 @@ transition: all ease 600ms;
   color: var(--text-light);
   margin: 2rem;
   text-align: left;
+}
+
+/* ---------- Review Section ---------- */
+
+.review-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10rem;
+}
+
+.review-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+
+  font: "Poppins";
+  font-size: 2rem;
+}
+
+.second {
+  position: relative;
+  color: var(--color-star);
+  font-weight: 700;
+}
+
+.orange-underline {
+  left: 0;
+  bottom: -1.2rem;
+  position: absolute;
+  width: 8rem;
+}
+
+.review-cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  padding: 5rem;
+  gap: 1rem;
+  height: fit-content;
+}
+
+.review-top {
+  margin-left: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-name {
+  font-weight: 700;
+}
+
+.author-date {
+  color: var(--text-light);
+  font-size: .7rem;
+}
+
+.review-img {
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.review-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: .7rem;
+  text-align: center;
+}
+
+.author-name, .author-date, .review-stars{
+  transition: font-size 300ms ease;
+}
+
+.review-cell.is-selected {
+  margin-top: -2rem;
+}
+
+.review-cell.is-selected .review-top .review-img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.review-cell.is-selected .review-top .review-author {
+  font-size: 2rem;
+}
+
+.review-cell.is-selected .review-top .review-author .author-date {
+  font-size: 1rem;
+}
+
+.review-cell.is-selected .review-bottom .review-text {
+  font-size: 1rem;
+  width: 130%;
+}
+
+.review-cell.is-selected .review-bottom .review-stars {
+  font-size: 1.5rem;
 }
