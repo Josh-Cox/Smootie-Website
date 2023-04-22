@@ -1,12 +1,14 @@
 .main-container {
   margin-top: 10rem;
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .product {
+  height: 20rem;
+  margin-top: 10rem;
   margin-right: 3rem;
 }
 
@@ -78,7 +80,7 @@
 
 .details-container {
   font-family: "Poppins";
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .product-name {
@@ -323,7 +325,7 @@
   cursor: pointer;
 }
 
-button.add-cart-btn {
+/* button.add-cart-btn {
   margin-left: 3rem;
   background-color: var(--color-add-cart);
   color: var(--color-white);
@@ -332,7 +334,7 @@ button.add-cart-btn {
   outline: none;
   font-size: 1.3rem;
   cursor: pointer;
-}
+} */
 
 .safe-checkout {
   margin-top: 1rem;
@@ -790,4 +792,131 @@ transition: all ease 600ms;
 
 .review-cell.is-selected .review-bottom .review-stars {
   font-size: 1.5rem;
+}
+
+
+.cart__button {
+  position: relative;
+  width: 22rem;
+  margin-left: 3rem;
+  height: 3.5rem;
+  background-color: var(--color-add-cart);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.cart__button:hover {
+  background-color: var(--color-add-cart-after);
+}
+
+.cart__button:active {
+  transform: scale(0.9);
+}
+
+.cart__button .fa-cart-shopping {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -10%;
+  font-size: 1.5rem;
+  transform: translate(-50%, -50%);
+}
+
+.cart__button .fa-blender {
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 52%;
+  font-size: 0.875rem;
+  transform: translate(-50%, -50%);
+}
+
+.cart__button span {
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cart__button span.add__to-cart {
+  opacity: 1;
+}
+
+.cart__button span.added {
+  opacity: 0;
+}
+
+.cart__button.clicked .fa-cart-shopping {
+  animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked .fa-blender {
+  animation: box 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked span.add__to-cart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked span.added {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+
+  40%,
+  60% {
+    left: 50%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+
+  60% {
+    top: 40%;
+    left: 52%;
+  }
+
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes txt2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

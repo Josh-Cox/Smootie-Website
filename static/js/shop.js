@@ -56,3 +56,53 @@ icons.forEach(function(icon) {
         icon.classList.add("active");
     });
 });
+
+
+let gallery_images = document.querySelectorAll(".gallery-image-img");
+let gallery_selected = document.querySelector(".gallery-selected-img");
+
+// image selection
+gallery_images.forEach(function(image) {
+    image.addEventListener("click", function () {
+        $(".gallery-selected-img")
+        .fadeOut(300, function() {
+            $(".gallery-selected-img").attr('src', image.src);
+        })
+        .fadeIn(300);
+    });
+});
+
+// tab selection
+let tab_headers = document.querySelectorAll('.tab-header');
+let tab_contents = document.querySelectorAll('.tab-content');
+
+tab_headers.forEach(function(header) {
+    header.addEventListener("click", function() {
+        tab_headers.forEach(function(item) {
+            item.classList.remove("active");
+        })
+
+        tab_contents.forEach(function(item) {
+            item.classList.remove("active");
+        })
+
+        let temp_id = "." + header.id;
+
+        document.querySelector(temp_id).classList.add("active");
+        header.classList.add("active");
+    });
+}); 
+
+
+
+// faq section
+const dropdown = document.querySelectorAll('.drop-down-question');
+
+dropdown.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+        let content = dropdown.childNodes[3];
+        let heading = dropdown.childNodes[1].childNodes[3];
+        content.classList.toggle('active');
+        heading.classList.toggle('active');
+    });
+});
