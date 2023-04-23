@@ -1,0 +1,228 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}FAQs{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/reviews.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="main-container">
+    <div class="reviews-top">
+        <div class="top-top">
+            <div class="rating">
+                <div class="points rating-text">4.9/5</div>
+                <div class="review-stars">
+                    <span class="fa fa-star star-top"></span>
+                    <span class="fa fa-star star-top"></span>
+                    <span class="fa fa-star star-top"></span>
+                    <span class="fa fa-star star-top"></span>
+                    <span class="fa fa-star star-top"></span>
+                </div>
+            </div>
+
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">4.9/5</div>
+                    <div class="rank-text">Build Quality</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 98%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">4.7/5</div>
+                    <div class="rank-text">Capacity (300ml)</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 94%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">4.9/5</div>
+                    <div class="rank-text">Blend Power</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 98%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="top-bottom">
+            <div class="rating">
+                <div class="percentage rating-text">100%</div>
+                <div class="recommend">Would recommend to a friend</div>
+            </div>
+
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">4.7/5</div>
+                    <div class="rank-text">Charging Speed</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 94%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">5/5</div>
+                    <div class="rank-text">Ease of Use</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 100%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+            <div class="rank">
+                <div class="rank-content">
+                    <div class="rank-number rating-small">5/5</div>
+                    <div class="rank-text">Cleaning</div>
+                </div>
+
+                <div class="rank-bar">
+                    <div class="w3-light-grey" style="border-radius: 1rem;">
+                        <div class="w3-light-green" id="bar" style="width: 100%; height:.4rem;"></div>
+                    </div><br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="review-container function-review-container">
+        
+        <div class="review-carousel">
+            <div class="review-cell">
+                <div class="review-top">
+                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <div class="review-author">
+                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-date">November 20, 2022</div>
+                    </div>
+                </div>
+                <div class="review-bottom">
+                    <div class="review-stars">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="review-text">
+                        Finally received the baby I need, things are very good, good price, 
+                        the purchase of this one in the range I picked is the best value for 
+                        money. I feel very satisfied.
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="review-cell">
+                <div class="review-top">
+                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <div class="review-author">
+                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-date">November 20, 2022</div>
+                    </div>
+                </div>
+                <div class="review-bottom">
+                    <div class="review-stars">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="review-text">
+                        Finally received the baby I need, things are very good, good price, 
+                        the purchase of this one in the range I picked is the best value for 
+                        money. I feel very satisfied.
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="review-cell">
+                <div class="review-top">
+                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <div class="review-author">
+                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-date">November 20, 2022</div>
+                    </div>
+                </div>
+                <div class="review-bottom">
+                    <div class="review-stars">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="review-text">
+                        Finally received the baby I need, things are very good, good price, 
+                        the purchase of this one in the range I picked is the best value for 
+                        money. I feel very satisfied.
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="review-cell">
+                <div class="review-top">
+                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <div class="review-author">
+                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-date">November 20, 2022</div>
+                    </div>
+                </div>
+                <div class="review-bottom">
+                    <div class="review-stars">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="review-text">
+                        Finally received the baby I need, things are very good, good price, 
+                        the purchase of this one in the range I picked is the best value for 
+                        money. I feel very satisfied.
+                    </div>
+                    
+                </div>
+            </div>
+            
+    </div>
+</div>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+    $('.review-carousel').flickity({
+        cellAlign: 'center',
+        wrapAround: true,
+        prevNextButtons: false,
+        imagesLoaded: true,
+        autoPlay: true
+    })
+</script>
+
+{% endblock %}
+

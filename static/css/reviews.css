@@ -1,0 +1,134 @@
+
+* {
+    font-family: "Poppins";
+}
+
+.reviews-top {
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-top, .top-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    width: 20rem;
+}
+
+.rating-text {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.rating-small {
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.star-top {
+    font-size: 2rem;
+}
+
+.rank {
+    width: 13rem;
+}
+
+.rank-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .3rem;
+}
+
+.rank-text {
+    font-size: .9rem;
+}
+
+.rank-bar {
+    height: .7rem;
+}
+
+.fa {
+    color: var(--color-yellow);
+}
+
+.percentage {
+    font-weight: 700;
+}
+
+.review-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+    width: 80rem;
+  }
+  
+  .review-cell {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 33%;
+    gap: 1rem;
+    height: fit-content;
+  }
+  
+  .review-top {
+    margin-left: -2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .author-name {
+    font-weight: 700;
+  }
+  
+  .author-date {
+    color: var(--text-light);
+    font-size: .7rem;
+  }
+  
+  .review-img {
+    width: 4rem;
+    height: 4rem;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  
+  .review-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: .7rem;
+    text-align: center;
+  }
+  
+  .author-name, .author-date, .review-stars{
+    transition: font-size 300ms ease;
+  }
+
+  .review-text {
+    font-size: .8rem;
+  }

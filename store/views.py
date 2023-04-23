@@ -34,6 +34,9 @@ def home(request):
         }
     return render(request, 'store/home.html', context)
 
+def reviews(request):
+    return render(request, 'store/reviews.html')
+
 def user_guide(request):
     return render(request, 'store/user_guide.html')
 
