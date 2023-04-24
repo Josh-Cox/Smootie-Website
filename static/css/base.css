@@ -32,6 +32,10 @@
     --shipping-bar-one: #e1e1e1;
     --shipping-bar-two: #ff9100;
 
+    /* cart */
+    --color-tile-background: rgba(153, 153, 153, .17);
+    --color-carousel-btn: rgba(50, 50, 50, .32);
+
     /* footer */
     --color-background: #eef4f8;
     --color-text-light: #606060;
