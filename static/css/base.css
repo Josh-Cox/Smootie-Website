@@ -41,7 +41,11 @@
     --color-text-light: #606060;
     --color-stop-looking: #f4a216;
 
+    /* reviews */
+    --color-green-icon: #4dbc15;
+
     font-family: "Poppins";
+    overflow-x: hidden;
 }
 
 html, body {
@@ -49,7 +53,6 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100%;
-    
 }
 
 .shop-link {
@@ -211,4 +214,15 @@ html, body {
     overflow-y: scroll;
     height: 100vh;
     overflow: hidden;
+}
+
+/* Stars */
+
+.fa {
+    color: var(--color-yellow);
+}
+
+/* links */
+a {
+    color: var(--text-light);
 }

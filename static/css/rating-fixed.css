@@ -1,0 +1,63 @@
+.rating-fixed-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 10rem;
+    border-radius: .5rem;
+    width: 12rem;
+    padding: 1rem;
+    height: fit-content;
+    background: var(--faq-grey);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    z-index: 4;
+    font-size: 1rem;
+    box-sizing: content-box;
+}
+
+.rating-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: .2rem;
+    background: var(--color-green-icon);
+    border-radius: 100%;
+    
+}
+
+.rating-icon span {
+    font-variation-settings:
+    'FILL' 1;
+    font-size: 1.2rem;
+    font-weight: 200;
+    
+}
+
+.rating-header {
+    font-size: 1.2rem;
+}
+
+.rating-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.rating-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.rating-stars {
+    font-size: 1.2rem;
+}
+
+.rating-link a {
+    font-size: .8rem;
+    color: var(--text-light);
+}
