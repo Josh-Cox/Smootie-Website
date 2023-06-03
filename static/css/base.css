@@ -9,9 +9,10 @@
     --underline-color: white;
 
     /* faq */
-    --color-add: #6e96af;
+    --color-add: #f4a216;
     --faq-grey: #fafafa;
     --faq-border: #f5f5f5;
+    --faq-yellow: #f4bc16;
 
     /* shop */
     --color-star: #fbb03b;
@@ -19,7 +20,7 @@
     --color-tab-border: #7eb1d1;
     --color-pink: #ffbde7;
     --color-yellow: #ffd234;
-    --color-function: rgba(93, 222, 250, .08);
+    --color-function: rgba(255, 188, 73, .08);
     --color-add-cart: #69bef4;
     --color-add-cart-after: #5ea4cf;
     --color-review-title: #7ec6f4;
@@ -37,12 +38,25 @@
     --color-carousel-btn: rgba(50, 50, 50, .32);
 
     /* footer */
-    --color-background: #eef4f8;
+    --color-background: #ffebcd;
     --color-text-light: #606060;
     --color-stop-looking: #f4a216;
 
     /* reviews */
     --color-green-icon: #4dbc15;
+
+    /* checkout */
+    --btn-blue: #0074d4;
+    --btn-blue-hover: #3793df;
+
+    /* Mobile Navbar */
+    --nav-gradient-left: #ffad0d;
+    --nav-gradient-right: #ffd12d;
+    --add-cart-gradient-left: #ff8131;
+    --add-cart-gradient-right: #ffe34d;
+
+    /* Mobile reviews */
+    --green-background: rgba(125, 188, 2, .19);
 
     font-family: "Poppins";
     overflow-x: hidden;
@@ -54,6 +68,11 @@ html, body {
     height: 100vh;
     width: 100%;
 }
+
+.base {
+    overflow-x: hidden;
+}
+
 
 .shop-link {
     width: 7.5rem;
@@ -75,7 +94,7 @@ html, body {
   
 .shop-link::before {
     transition: 300ms;
-    height: .1rem;
+    height: .15rem;
     content: "";
     position: absolute;
     background-color: black;
@@ -97,13 +116,13 @@ html, body {
     margin: 0;
     height: 2rem;
     text-align: center;
-    background-color: white;
+    background-color: black;
 }
 
 .top-text p {
     margin: 0;
     text-align: center;
-    color: #6f98b1;
+    color: var(--color-stop-looking);
     font-family: "Poppins";
 }
 
@@ -120,14 +139,14 @@ html, body {
     color: white;
     transition: all 300ms ease;
     min-height: 6rem;
-    background-color: rgb(110,150,175);
-    background-color: linear-gradient(90deg, rgba(110,150,175,1) 0%, rgba(95,188,209,1) 100%);
+    background-color: var(--color-stop-looking);
+    background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
     z-index: 10;
 }
 
 .navbar.active {
-    animation-name: flash;
-    animation-duration: .3s;
+    /* animation-name: flash;
+    animation-duration: .3s; */
 }
 
 @keyframes flash {
@@ -136,7 +155,7 @@ html, body {
     }
   
     to {
-      background-color: linear-gradient(90deg, rgba(110,150,175,1) 0%, rgba(95,188,209,1) 100%);;
+      background-color: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
     }
 }
 
@@ -225,4 +244,101 @@ html, body {
 /* links */
 a {
     color: var(--text-light);
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .rating-fixed-container, .navbar, .top-text {
+        display: none !important;
+    }
+
+    /* navbar */
+    .mobile-nav {
+        position: fixed !important;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        width: 100%;
+        background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
+        z-index: 5;
+    }
+
+    /* The sidepanel menu */
+    .sidepanel {
+        height: 20rem; /* Specify a height */
+        width: 0px; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 2; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    }
+
+    /* The sidepanel links */
+    .sidepanel a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: .75rem;
+        color: black;
+        display: block;
+        transition: 0.3s;
+        margin-bottom: .5rem;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidepanel a:hover {
+        color: var(--text-light);
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .sidepanel .sidenav-title {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        font-size: 1.5rem;
+        margin-right: 50px;
+        margin-top: 1rem;
+    }
+
+    .top-link {
+        margin-top: 1rem;
+    }
+
+    /* Style the button that is used to open the sidepanel */
+    .openbtn, .bagbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background: transparent;
+        color: white;
+        padding: 20px 25px;
+        border: none;
+    }
+
+    .mobile-nav-title {
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    .bagbtn a {
+        text-decoration: none;
+        color: white;
+    }
 }

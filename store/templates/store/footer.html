@@ -1,6 +1,75 @@
 
 {% load static %}
 
+<div class="mobile-footer">
+
+    <div class="smootie">
+        <p class="smootie-header">S<span>M</span>O<span>O</span>T<span>I</span>E</p>
+        <img class="smootie-img" src="{% static 'images/footer_fingerprint.svg' %}" alt="">
+    </div>
+    
+    <div class="footer-section">
+        <div class="section-top" value="section1" onclick="expand(this)">
+            <div class="section-header">Pages</div>
+            <div class="section-button">
+                <span class="material-symbols-rounded section-btn" id="section1-btn">expand_more</span>
+            </div>
+        </div>
+
+        <div class="section-bottom" id="section1">
+            <a href="/shop" class="mobile-footer-link">Shop</a>
+            <a href="/reviews" class="mobile-footer-link">Reviews</a>
+            <a href="/home" class="mobile-footer-link">Home</a>
+            <a href="/user_guide" class="mobile-footer-link">User Guide</a>
+            <a href="/faq" class="mobile-footer-link">FAQs</a>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="section-top" value="section2" onclick="expand(this)">
+            <div class="section-header">Policy</div>
+            <div class="section-button">
+                <span class="material-symbols-rounded section-btn" id="section2-btn">expand_more</span>
+            </div>
+        </div>
+
+        <div class="section-bottom" id="section2">
+            <a href="#refund" class="mobile-footer-link">Refund Policy</a>
+            <a href="#shipping" class="mobile-footer-link">Shipping Policy</a>
+            <a href="#contact" class="mobile-footer-link">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="section-top" value="section3" onclick="expand(this)">
+            <div class="section-header">Contact Us</div>
+            <div class="section-button">
+                <span class="material-symbols-rounded section-btn" id="section3-btn">expand_more</span>
+            </div>
+        </div>
+
+        <div class="section-bottom" id="section3">
+            <a href="#contact" class="mobile-footer-link">ContactSmootie@gmail.com</a>
+            <div class="social-links">
+                <a href="#facebook" class="facebook"><img src="{% static 'images/facebook_grey.png' %}" alt=""></a>
+                <a href="#pinterest" class="pinterest"><img src="{% static 'images/pinterest_grey.png' %}" alt=""></a>
+                <a href="#tiktok" class="tiktok"><img src="{% static 'images/tiktok_grey.png' %}" alt=""></a>
+                <a href="#instagram" class="instagram"><img src="{% static 'images/instagram_grey.png' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-footer-section">
+        <div class="sub-content">
+            <div class="handle">@2022 Smootie</div>
+            <div class="payments">
+                <img src="{% static 'images/payments.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <div class="footer">
     <div class="left">
         <div class="smootie">
@@ -8,11 +77,11 @@
             <img class="smootie-img" src="{% static 'images/footer_fingerprint.svg' %}" alt="">
         </div>
         <div class="sub-content">
-                <div class="handle">@2022 Smootie</div>
-                <div class="payments">
-                    <img src="{% static 'images/payments.png' %}" alt="">
-                </div>
+            <div class="handle">@2022 Smootie</div>
+            <div class="payments">
+                <img src="{% static 'images/payments.png' %}" alt="">
             </div>
+        </div>
     </div>
 
     <div class="right">
@@ -46,3 +115,11 @@
 <div class="stop-looking">
     <p class="looking-text">Stop looking at my bottom</p>
 </div>
+
+<script>
+    function expand(element) {
+        let dropdown_item = document.getElementById(element.getAttribute("value"));
+        dropdown_item.classList.toggle("open")
+        document.getElementById(element.getAttribute("value") + "-btn").classList.toggle("open");
+    }
+</script>

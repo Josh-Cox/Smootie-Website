@@ -6,17 +6,23 @@
 .reviews-top {
     margin-top: 20rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
 }
 
-.top-top, .top-bottom {
+.top-left, .top-right {
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
     align-items: flex-end;
     gap: 2rem;
+}
+
+.top-right {
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 50rem;
 }
 
 .rating {
@@ -83,6 +89,19 @@
   width: 33%;
   gap: 1rem;
   height: fit-content;
+}
+
+.review-container .flickity-prev-next-button {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+.review-container .flickity-prev-next-button.previous {
+  left: -1.2rem !important;
+}
+
+.review-container .flickity-prev-next-button.next {
+  right: -1.2rem !important;
 }
 
 .review-top {
@@ -176,23 +195,118 @@
   margin-bottom: 10rem;
 }
 
-.flickity-button {
+.box-reviews-container .flickity-button {
   background: var(--color-carousel-btn) !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-.flickity-button-icon {
+.box-reviews-container .flickity-button-icon {
   fill: white !important;
 }
 
-.flickity-prev-next-button {
+.box-reviews-container .flickity-prev-next-button {
   width: 2.2rem !important;
   height: 2.2rem !important;
 }
 
-.flickity-prev-next-button.previous {
+.box-reviews-container .flickity-prev-next-button.previous {
   left: -1.5rem !important;
 }
-.flickity-prev-next-button.next {
+
+.box-reviews-container .flickity-prev-next-button.next {
   right: -1.5rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .reviews-top {
+    margin: 0;
+    padding-top: 5rem;
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+
+  .top-left {
+    margin-bottom: 2rem;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-background);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .rank-number, .rank-text {
+    font-size: clamp(.4rem, 5vw, .5rem);
+  }
+
+  .rating {
+    margin: 0;
+  }
+
+  .rank {
+    width: 8rem;
+  }
+
+  .review-container {
+    width: 80%;
+  }
+
+  .review-cell {
+    width: 100%;
+  }
+
+  .review-text {
+    font-size: clamp(.6rem, 2vw, 1rem);
+  }
+
+  .box-reviews-container {
+    width: 100%;
+  }
+
+  .box-cell {
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    gap: 0;
+    border-radius: .25rem;
+  }
+
+  .box-cell .review-img {
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .box-cell .review-stars span {
+    font-size: .7rem;
+  }
+
+  .box-cell .box-bottom {
+    gap: 0;
+  }
+
+  .box-cell .author-name {
+    font-size: .8rem;
+  }
+
+  .box-cell .author-date {
+    font-size: .5rem;
+  }
+
+  .box-text {
+    font-size: clamp(.5rem, 2vw, .8rem);
+  }
+
+  .box-two {
+    margin-top: 1rem;
+  }
+
 }

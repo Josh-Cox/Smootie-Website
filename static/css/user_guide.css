@@ -23,13 +23,19 @@
 .heading {
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2rem, 4vw, 4rem);
     margin-bottom: 0;
 }
 
 .text-easy {
     font-family: "Poppins";
     margin: 0;
+}
+
+.all-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .vid-container {
@@ -56,7 +62,7 @@
     padding: 1rem;
 }
 
-.step {
+.step-text {
     width: 20rem;
     height: 8rem;
     margin: .5rem;
@@ -67,14 +73,45 @@
     text-align: center;
 }
 
-.step .heading {
+.step-text .heading {
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     margin: 0;
 }
 
-.step .text {
+.step-text .text {
     color: black;
     font-family: 'Poppins', sans-serif;
+    font-size: clamp(.8rem, 2vw, 1rem);
 }
+
+.step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .all-steps {
+        flex-direction: column;
+    }
+
+    .heading {
+        margin: 0;
+        margin-top: 8rem;
+    }
+
+    .content-container {
+        margin: 0;
+    }
+
+    .vid {
+        min-width: 19rem !important; 
+    }
+
+  }

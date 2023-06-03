@@ -22,6 +22,25 @@ let add_cart_button = document.getElementById("submit-button");
 $("input:radio[name=color]").change(function() {
     color_text.innerText = ("Colour: " + this.value);
     add_cart_button.setAttribute("data-product", this.getAttribute("productId"));
+
+    // span of each color button
+    let color_buttons = document.querySelectorAll(".circle-outer");
+    let x = window.matchMedia("(max-width: 600px)")
+    color_buttons.forEach(function(item) {
+        item.style.width = ".1rem";
+        item.style.height = ".1rem";
+    });
+
+    if (x.matches) {
+        this.parentElement.childNodes[3].style.width = "2.3rem";
+        this.parentElement.childNodes[3].style.height = "2.3rem";
+    } else {
+        this.parentElement.childNodes[3].style.width = "1.9rem";
+        this.parentElement.childNodes[3].style.height = "1.9rem";
+    }
+    
+
+    
 });
 
 // quantity picker
@@ -93,6 +112,27 @@ tab_headers.forEach(function(header) {
     });
 }); 
 
+// function selection
+let function_icons = document.querySelectorAll('.function-icon');
+let function_content = document.querySelectorAll('.function-info');
+
+function_icons.forEach(function(header) {
+    header.addEventListener("click", function() {
+        function_icons.forEach(function(item) {
+            item.classList.remove("active");
+        })
+
+        function_content.forEach(function(item) {
+            item.classList.remove("active");
+        })
+
+        let temp_id = "." + header.id;
+
+        document.querySelector(temp_id).classList.add("active");
+        header.classList.add("active");
+    });
+}); 
+
 
 
 // faq section
@@ -104,5 +144,111 @@ dropdown.forEach(dropdown => {
         let heading = dropdown.childNodes[1].childNodes[3];
         content.classList.toggle('active');
         heading.classList.toggle('active');
+    });
+});
+
+// color picker change image
+$("input:radio[value=White]").change(function() {
+
+    mainImage.src = document.getElementById("white-img").src;
+    
+    document
+        .querySelector(".product__image--active")
+        .classList.remove("product__image--active");
+    
+    document.getElementById("white-img").classList.add("product__image--active");
+});
+
+$("input:radio[value=Pink]").change(function() {
+
+    mainImage.src = document.getElementById("pink-img").src;
+    
+    document
+        .querySelector(".product__image--active")
+        .classList.remove("product__image--active");
+    
+    document.getElementById("pink-img").classList.add("product__image--active");
+});
+
+$("input:radio[value=Black]").change(function() {
+
+    mainImage.src = document.getElementById("black-img").src;
+    
+    document
+        .querySelector(".product__image--active")
+        .classList.remove("product__image--active");
+    
+    document.getElementById("black-img").classList.add("product__image--active");
+});
+
+$("input:radio[value=Yellow]").change(function() {
+
+    mainImage.src = document.getElementById("yellow-img").src;
+    
+    document
+        .querySelector(".product__image--active")
+        .classList.remove("product__image--active");
+    
+    document.getElementById("yellow-img").classList.add("product__image--active");
+});
+
+$('.img-carousel').flickity({
+    cellAlign: 'center',
+    wrapAround: true,
+    prevNextButtons: false,
+    imagesLoaded: true,
+    autoPlay: true
+})
+
+$vid_carousel = $('.vid-carousel')
+    
+$vid_carousel.flickity({
+    cellAlign: 'center',
+    wrapAround: true,
+    freeScroll: true,
+    groupCells: 2,
+    imagesLoaded: true
+})
+
+$('.review-carousel').flickity({
+    cellAlign: 'center',
+    wrapAround: true,
+    prevNextButtons: false,
+    imagesLoaded: true,
+    autoPlay: true
+})
+
+// stops videos/images getting cut off
+let x = window.matchMedia("(max-width: 600px)")
+
+if (x.matches) {
+    $(document).ready(function(){
+        $(".flickity-viewport").height("19rem");
+    });
+} else {
+    $(document).ready(function(){
+        $(".flickity-viewport").height("37rem");
+    });
+}
+
+// video custom play button
+let playButtons = document.querySelectorAll(".vid-btn");
+// Event listener for the play/pause button
+
+playButtons.forEach(btn => {
+    btn.addEventListener("click", function() {
+        if (btn.previousElementSibling.paused == true) {
+          // Play the video
+          btn.previousElementSibling.play();
+      
+          // Update the button text to 'Pause'
+          btn.childNodes[1].innerHTML = "pause_circle";
+        } else {
+          // Pause the video
+          btn.previousElementSibling.pause();
+      
+          // Update the button text to 'Play'
+          btn.childNodes[1].innerHTML = "play_circle";
+        }
     });
 });

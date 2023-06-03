@@ -9,196 +9,391 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
+<video class="background-vid" autoplay muted loop>
+    <source src="{% static 'images/home.mp4' %}" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+</video>
 
-    <video class="background-vid" autoplay muted loop>
-        <source src="{% static 'images/home.mp4' %}" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
+<img src="{% static 'images/mobile_home_background.gif' %}" alt="Video of smoothie being used" class="background-vid mobile-background-vid">
 
-    <div class="banner-container">
-        <div class="banner banner-back">
-            <div class="inner-banner inner-back">
-                <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
-            </div>
-            <div class="inner-banner inner-back">
-                <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
-            </div>
+<div class="banner-container">
+    <div class="banner banner-back">
+        <div class="inner-banner inner-back">
+            <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
         </div>
-        <div class="banner banner-front">
-            <div class="inner-banner inner-front">
-                <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
-            </div>
-            <div class="inner-banner inner-front">
-                <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
-                <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
-            </div>
+        <div class="inner-banner inner-back">
+            <img class="banner-img" src="{% static 'images/BRAVO_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/CNN_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Digital_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/FOX_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Kimmel_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NBC_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NCN_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NEWS_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/SHAPE_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/USAToday_pink.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Yahoo_pink.png' %}" alt="">
         </div>
     </div>
-
-    <div class="circle-info-container">
-        <div class="circle-element pink">
-            <div class="circle-info-icon">
-                <span class="material-symbols-rounded">blender</span>
-            </div>
-            <div class="circle-info-title">Perfectly Portable</div>
-            <div class="circle-info-content">
-                Blend the perfect smoothies at breakfast, party with your girls and make frozen cocktails, 
-                make chunk-free protein shakes at the gym, enjoy barista quality lattes at your desk or blend 
-                anytime and anywhere. 
-            </div>
+    <div class="banner banner-front">
+        <div class="inner-banner inner-front">
+            <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
         </div>
-        <div class="circle-element blue">
-            <div class="circle-info-icon">
-                <span class="material-symbols-rounded">format_color_reset</span>
-            </div>
-            <div class="circle-info-title">Dishwasher Safe</div>
-            <div class="circle-info-content">
-                With dishwasher safe parts and fully waterproof, 
-                cleaning the blender will be the easiest part of your day.
-                Fresh Juice Blender is the only portable blender in the market that is fully waterproof.
-            </div>
-        </div>
-        <div class="circle-element pink">
-            <div class="circle-info-icon">
-                <span class="material-symbols-rounded">mode_fan</span>
-            </div>
-            <div class="circle-info-title">Stainless steel blades</div>
-            <div class="circle-info-content">
-                304SUS stainless steel blades and a powerful motor means you can turn frozen fruits, 
-                nuts, leafy greens and more into the perfect smoothie in 30 seconds.
-            </div>
-        </div>
-        <div class="circle-element blue">
-            <div class="circle-info-icon">
-                <span class="material-symbols-rounded">wifi</span>
-            </div>
-            <div class="circle-info-title">Wireless charging</div>
-            <div class="circle-info-content">
-                Just place the blender on the charging pad and it will start to charge. 
-                One charge lasts for 15+ blends & recharges quickly.
-            </div>
+        <div class="inner-banner inner-front">
+            <img class="banner-img" src="{% static 'images/Yahoo.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/USAToday.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/SHAPE.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NEWS.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NCN.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/NBC.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Kimmel.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/FOX.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/Digital.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/CNN.png' %}" alt="">
+            <img class="banner-img" src="{% static 'images/BRAVO.png' %}" alt="">
         </div>
     </div>
+</div>
 
-    <div class="info-one-container">
-        <div class="info-one-img">
-            <img src="{% static 'images/mountains.gif' %}" alt="blender in the mountains">
+<div class="circle-info-container">
+    <div class="circle-element pink">
+        <div class="circle-info-icon">
+            <span class="material-symbols-rounded">blender</span>
         </div>
-        <div class="info-one-content">
-            <div class="one-top-text">Move over, kale smoothies and acai bowls</div>
-            <div class="one-title">Meet the new Fresh Juice Blender!</div>
-            <div class="one-content">
-                With a bigger capacity and a ripple cup, 
-                she's got the power to pulverize any fruit or 
-                veggie that gets in her way, and she comes with 
-                a handy-dandy self-cleaning feature.
-            </div>
-            <div class="shop-link-ltr shop-link">
-                <a href="/shop">Get yours now!</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-container">
-        <div class="vid-title">Mini. Fast. Portable.</div>
-        <div class="vid-top-text">See it in Action</div>
-        <div class="vid-carousel">
-            <div class="cell"><video controls src="{% static 'images/action-vid-1.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-2.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-3.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-4.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-5.mp4' %}"></video></div>
-        </div>
-    </div>
-
-    <div class="info-banner-container">
-        <img class="info-banner-img" src="{% static 'images/banner_strawberry.svg' %}" alt="strawberries">
-        <div class="banner-title">Perfect for Everything - and you!</div>
-        <div class="banner-text">
+        <div class="circle-info-title">Perfectly Portable</div>
+        <div class="circle-info-content">
             Blend the perfect smoothies at breakfast, party with your girls and make frozen cocktails, 
-            make chunk-free protein shakes at the gym, enjoy barista-quality lattes at your desk or blend anytime and anywhere 
-            with this easy-to-use, portable blender.
+            make chunk-free protein shakes at the gym, enjoy barista quality lattes at your desk or blend 
+            anytime and anywhere. 
         </div>
-        <div class="shop-link-ltr shop-link">
+    </div>
+    <div class="circle-element blue">
+        <div class="circle-info-icon">
+            <span class="material-symbols-rounded">format_color_reset</span>
+        </div>
+        <div class="circle-info-title">Dishwasher Safe</div>
+        <div class="circle-info-content">
+            With dishwasher safe parts and fully waterproof, 
+            cleaning the blender will be the easiest part of your day.
+            Fresh Juice Blender is the only portable blender in the market that is fully waterproof.
+        </div>
+    </div>
+    <div class="circle-element pink">
+        <div class="circle-info-icon">
+            <span class="material-symbols-rounded">mode_fan</span>
+        </div>
+        <div class="circle-info-title">Stainless steel blades</div>
+        <div class="circle-info-content">
+            304SUS stainless steel blades and a powerful motor means you can turn frozen fruits, 
+            nuts, leafy greens and more into the perfect smoothie in 30 seconds.
+        </div>
+    </div>
+    <div class="circle-element blue">
+        <div class="circle-info-icon">
+            <span class="material-symbols-rounded">wifi</span>
+        </div>
+        <div class="circle-info-title">Wireless charging</div>
+        <div class="circle-info-content">
+            Just place the blender on the charging pad and it will start to charge. 
+            One charge lasts for 15+ blends & recharges quickly.
+        </div>
+    </div>
+</div>
+
+<div class="mobile-circle-scroll">
+    <div class="circle-carousel">
+        <div class="circle-cell">
+            <div class="circle-element pink">
+                <div class="circle-info-icon">
+                    <span class="material-symbols-rounded">blender</span>
+                </div>
+                <div class="circle-info-title">Perfectly Portable</div>
+                <div class="circle-info-content">
+                    Blend the perfect smoothies at breakfast, party with your girls and make frozen cocktails, 
+                    make chunk-free protein shakes at the gym, enjoy barista quality lattes at your desk or blend 
+                    anytime and anywhere. 
+                </div>
+            </div>
+        </div>
+        <div class="circle-cell">
+            <div class="circle-element blue">
+                <div class="circle-info-icon">
+                    <span class="material-symbols-rounded">format_color_reset</span>
+                </div>
+                <div class="circle-info-title">Dishwasher Safe</div>
+                <div class="circle-info-content">
+                    With dishwasher safe parts and fully waterproof, 
+                    cleaning the blender will be the easiest part of your day.
+                    Fresh Juice Blender is the only portable blender in the market that is fully waterproof.
+                </div>
+            </div>
+        </div>
+        <div class="circle-cell">
+            <div class="circle-element pink">
+                <div class="circle-info-icon">
+                    <span class="material-symbols-rounded">mode_fan</span>
+                </div>
+                <div class="circle-info-title">Stainless steel blades</div>
+                <div class="circle-info-content">
+                    304SUS stainless steel blades and a powerful motor means you can turn frozen fruits, 
+                    nuts, leafy greens and more into the perfect smoothie in 30 seconds.
+                </div>
+            </div>
+        </div>
+        <div class="circle-cell">
+            <div class="circle-element blue">
+                <div class="circle-info-icon">
+                    <span class="material-symbols-rounded">wifi</span>
+                </div>
+                <div class="circle-info-title">Wireless charging</div>
+                <div class="circle-info-content">
+                    Just place the blender on the charging pad and it will start to charge. 
+                    One charge lasts for 15+ blends & recharges quickly.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="info-one-container">
+    <div class="info-one-img">
+        <img src="{% static 'images/mountains.gif' %}" alt="blender in the mountains">
+    </div>
+    <div class="info-one-content">
+        <div class="one-top-text">Move over, kale smoothies and acai bowls</div>
+        <div class="one-title">Meet the new Fresh Juice Blender!</div>
+        <div class="one-content">
+            With a bigger capacity and a ripple cup, 
+            she's got the power to pulverize any fruit or 
+            veggie that gets in her way, and she comes with 
+            a handy-dandy self-cleaning feature.
+        </div>
+        <div class="shop-link-ltr shop-link move-over">
             <a href="/shop">Get yours now!</a>
         </div>
     </div>
+</div>
 
-    <div class="seen-on-container">
-        <img src="{% static 'images/seen_on.jpg' %}" alt="American TV Channels">
+<div class="vid-container">
+    <div class="vid-title">Mini. Fast. Portable.</div>
+    <div class="vid-top-text">See it in Action</div>
+    <div class="vid-carousel">
+        <div class="cell">
+            <video src="{% static 'images/action-vid-1.mp4' %}" id="vid1"></video>
+            <button type="button" class="vid-btn" id="play_button" value="vid1">
+                <span class="material-symbols-rounded">play_circle</span>
+            </button>
+        </div>
+        <div class="cell">
+            <video src="{% static 'images/action-vid-2.mp4' %}" id="vid2"></video>
+            <button type="button" class="vid-btn" id="play_button" value="vid2">
+                <span class="material-symbols-rounded">play_circle</span>
+            </button>
+        </div>
+        <div class="cell">
+            <video src="{% static 'images/action-vid-3.mp4' %}" id="vid3"></video>
+            <button type="button" class="vid-btn" id="play_button" value="vid3">
+                <span class="material-symbols-rounded">play_circle</span>
+            </button>
+        </div>
+        <div class="cell">
+            <video src="{% static 'images/action-vid-4.mp4' %}" id="vid4"></video>
+            <button type="button" class="vid-btn" id="play_button" value="vid4">
+                <span class="material-symbols-rounded">play_circle</span>
+            </button>
+        </div>
+        <div class="cell">
+            <video src="{% static 'images/action-vid-5.mp4' %}" id="vid5"></video>
+            <button type="button" class="vid-btn" id="play_button" value="vid5">
+                <span class="material-symbols-rounded">play_circle</span>
+            </button>
+        </div>
     </div>
+</div>
 
-    <div class="endless-section">
-        <div class="endless-title">
-            <p class="first">One Blender.</p>
-            <p class="second">Endless</p>
-            <p class="third"> Possibilites!</p>
+<div class="info-banner-container">
+    <img class="info-banner-img" src="{% static 'images/banner_strawberry.svg' %}" alt="strawberries">
+    <div class="banner-title">Perfect for Everything - and you!</div>
+    <div class="banner-text">
+        Blend the perfect smoothies at breakfast, party with your girls and make frozen cocktails, 
+        make chunk-free protein shakes at the gym, enjoy barista-quality lattes at your desk or blend anytime and anywhere 
+        with this easy-to-use, portable blender.
+    </div>
+    <div class="shop-link-ltr shop-link">
+        <a href="/shop">Get yours now!</a>
+    </div>
+</div>
+
+<div class="seen-on-container">
+    <img src="{% static 'images/seen_on.jpg' %}" alt="American TV Channels">
+</div>
+
+<div class="endless-section">
+    <div class="endless-title">
+        <p class="first">One Blender.</p>
+        <p class="second">Endless
+            <img src="{% static 'images/orange_underline.svg' %}" alt="" class="underline">
+        </p>
+        <p class="third"> Possibilites!</p>
+    </div>
+    <div class="img-grid">
+        <div class="imgs-first">
+            <img src="{% static 'images/endless-section-yellow-smoothie.svg' %}" alt="">
+            <img src="{% static 'images/endless-section-beach.gif' %}" alt="">
         </div>
-        <div class="lime-underline">
-            <img src="{% static 'images/lime_underline.svg' %}" alt="" class="underline">
-        </div>
-        <div class="img-grid">
-            <div class="imgs-first">
-                <img src="{% static 'images/endless-section-yellow-smoothie.svg' %}" alt="">
-                <img src="{% static 'images/endless-section-beach.gif' %}" alt="">
-            </div>
-            <div class="imgs-scroll">
-                <div class="img-carousel">
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-1.svg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-2.svg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-3.svg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-4.svg' %}"></img></div>
-                    <div class="img-cell"><img src="{% static 'images/img-carousel-5.svg' %}"></img></div>
-                </div>
-            </div>
-            <div class="imgs-last">
-                <img src="{% static 'images/endless-section-park.gif' %}" alt="">
-                <img src="{% static 'images/endless-section-laptop.jpg' %}" alt="">
+        <div class="imgs-scroll">
+            <div class="img-carousel">
+                <div class="img-cell"><img src="{% static 'images/img-carousel-1.svg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/img-carousel-2.svg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/img-carousel-3.svg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/img-carousel-4.svg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/img-carousel-5.svg' %}"></img></div>
             </div>
         </div>
+        <div class="imgs-last">
+            <img src="{% static 'images/endless-section-park.gif' %}" alt="">
+            <img src="{% static 'images/endless-section-laptop.jpg' %}" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="review-container function-review-container">
+    <div class="review-header">
+        <p class="first">Why did more than 5,000 happy customers choose</p>
+        <p class="second">Smootie
+            <img src="{% static 'images/orange_underline.svg' %}" alt="" class="orange-underline">
+        </p>
+        <p class="third"> ?</p>
     </div>
     
-
+    <div class="review-carousel">
+        <div class="review-cell">
+            <div class="review-top">
+                <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                <div class="review-author">
+                    <div class="author-name">Lily Beeston</div>
+                    <div class="author-date">November 20, 2022</div>
+                </div>
+            </div>
+            <div class="review-bottom">
+                <div class="review-stars">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="review-text">
+                    I love this blender. I use it every morning
+                    to make fresh smoothies, and it is perfect for that.
+                    I also use it to blend up baby food for my baby. It's
+                    great for that as well. It is very easy to clean, and it is lightweight and Portable.
+                    This blender is the best.
+                </div>
+                
+            </div>
+        </div>
+        <div class="review-cell">
+            <div class="review-top">
+                <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                <div class="review-author">
+                    <div class="author-name">Lily Beeston</div>
+                    <div class="author-date">November 20, 2022</div>
+                </div>
+            </div>
+            <div class="review-bottom">
+                <div class="review-stars">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="review-text">
+                    I love this blender. I use it every morning
+                    to make fresh smoothies, and it is perfect for that.
+                    I also use it to blend up baby food for my baby. It's
+                    great for that as well. It is very easy to clean, and it is lightweight and Portable.
+                    This blender is the best.
+                </div>
+                
+            </div>
+        </div>
+        <div class="review-cell">
+            <div class="review-top">
+                <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                <div class="review-author">
+                    <div class="author-name">Lily Beeston</div>
+                    <div class="author-date">November 20, 2022</div>
+                </div>
+            </div>
+            <div class="review-bottom">
+                <div class="review-stars">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="review-text">
+                    I love this blender. I use it every morning
+                    to make fresh smoothies, and it is perfect for that.
+                    I also use it to blend up baby food for my baby. It's
+                    great for that as well. It is very easy to clean, and it is lightweight and Portable.
+                    This blender is the best.
+                </div>
+                
+            </div>
+        </div>
+        <div class="review-cell">
+            <div class="review-top">
+                <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                <div class="review-author">
+                    <div class="author-name">Lily Beeston</div>
+                    <div class="author-date">November 20, 2022</div>
+                </div>
+            </div>
+            <div class="review-bottom">
+                <div class="review-stars">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="review-text">
+                    I love this blender. I use it every morning
+                    to make fresh smoothies, and it is perfect for that.
+                    I also use it to blend up baby food for my baby. It's
+                    great for that as well. It is very easy to clean, and it is lightweight and Portable.
+                    This blender is the best.
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

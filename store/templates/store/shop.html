@@ -32,11 +32,13 @@
                         <img
                             src="{% static 'images/blender_pink.jpg' %}"
                             alt=""
+                            id="pink-img"
                             class="product__image"
                         />
                         <img
                             src="{% static 'images/blender_white.jpg' %}"
                             alt=""
+                            id="white-img"
                             class="product__image"
                         />
                         <img
@@ -52,11 +54,13 @@
                         <img
                             src="{% static 'images/blender_black.jpg' %}"
                             alt=""
+                            id="black-img"
                             class="product__image"
                         />
                         <img
                             src="{% static 'images/blender_yellow.jpg' %}"
                             alt=""
+                            id="yellow-img"
                             class="product__image"
                         />
                     </div>
@@ -68,6 +72,19 @@
                     class="product__main-image"
                     id="main-image"
                 />
+            </div>
+        </div>
+
+        <div class="mobile-product-scroll">
+            <div class="img-carousel">
+                <div class="img-cell"><img src="{% static 'images/gallery-img-1.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/gallery-img-3.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/blender_pink.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/blender_white.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/gallery-img-2.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/gallery-img-4.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/blender_black.jpg' %}"></img></div>
+                <div class="img-cell"><img src="{% static 'images/blender_yellow.jpg' %}"></img></div>
             </div>
         </div>
 
@@ -204,29 +221,49 @@
                     </div>
                 </div>
 
+                
+            </div>
+            <div class="top-container">
+                
+                <div id="color-text" class="color-selected mobile-color-text">Colour: Pink</div>
                 <div class="color-picker-container">
                     <label class="white">
                         <input productId={{blender_white.id}} class="item-color" type="radio" name="color" value="White">
+                        <div class="circle-outer"></div>
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="pink">
                         <input productId={{blender_pink.id}} class="item-color" type="radio" name="color" value="Pink">
+                        <div class="circle-outer"></div>
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="yellow">
                         <input productId={{blender_yellow.id}} class="item-color" type="radio" name="color" value="Yellow">
+                        <div class="circle-outer"></div>
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
                     <label class="black">
                         <input productId={{blender_black.id}} class="item-color" type="radio" name="color" value="Black">
+                        <div class="circle-outer"></div>
                         <div class="layer"></div>
                         <div class="button"><span></span></div>
                     </label>
-
+    
                     <div id="color-text" class="color-selected">Colour: Pink</div>
+                </div>
+
+                <div class="quantity-picker mobile-quantity">
+                    <div class="remove-quantity quantity-change">
+                        <span action="remove" class="quantity-update material-symbols-rounded">remove</span>
+                    </div>
+                    <div value="1" class="quantity-number">1</div>
+                    <div class="add-quantity quantity-change">
+                        <span action="add" class="quantity-update material-symbols-rounded">add</span>
+                    </div>
+                    
                 </div>
             </div>
 
@@ -258,13 +295,140 @@
         </div>
     </div>
 
+    <div class="faq-container mobile-product-info">
+    
+        <div class="questions">
+
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">Information</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">The Original Fresh Juice<span>TM</span> Bottle Blender.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Drink your fruits and vegetables.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">2-in-1 blender and bottle.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Create nutrient rich smoothie and juice anywhere.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Super easy to use and self-clean.</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Safe for kids (9+ years).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">Specifications</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Temperature-resistant & dishwasher safe</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Wireless charging dock & cable (USB)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">1400mAh battery (good for 20 blends with 3h charge)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">BPA-Free Plastic</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Waterproof</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Lightweight: 1.1 lb (490 g)</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">304SUS stainless steel blades</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Compact Size: 8.5” x 3” (218mm x 82mm)Capacity: 350 mL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="drop-down-question">
+                <div class="question-heading">
+                    <p class="question-text">What's in the box</p>
+                    <span class="question-icon material-symbols-rounded add active">add</span>
+                    <span class="question-icon material-symbols-rounded">remove</span>
+                </div>
+                <div class="question-content">
+                    <div class="info-container">
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Blending Vessel with Silicon Carry Handle</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Magnetic Wireless Charging Dock</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">Blender Base 350ml</div>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon"><span class="material-symbols-rounded">check_circle</span></div>
+                            <div class="info-text">User Guide</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
     <div class="function-container">
         <div class="function-header">
             <div class="yellow-circle"></div>
             <svg class="function-header-text" viewBox="0 0 600 50">
-                <path class="wave-path" id="curve" d="M 172.2503 7.0201 C 218.7147 48.7221 340.8783 -4.8787 418.0454 41.2216" />
+                <path class="wave-path" id="curve" d="M 192.2503 7.0201 C 238.7147 48.7221 360.8783 -4.8787 438.0454 41.2216" />
                 <text x="25">
                 <textPath class="wave-text" xlink:href="#curve">
+                    Helping you function your best, everywhere.
+                </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <div class="function-header mobile-function">
+            <div class="yellow-circle"></div>
+            <svg class="function-header-text mobile-header-text" viewBox="0 0 600 50">
+                <path class="wave-path" id="curve-mobile" d="M 104.5006 7.0201 C 197.4294 48.7221 441.7566 -4.8787 596.0908 41.2216" />
+                <text x="25">
+                <textPath class="wave-text" xlink:href="#curve-mobile">
                     Helping you function your best, everywhere.
                 </textPath>
                 </text>
@@ -279,38 +443,74 @@
             </div>
             <div class="function-right">
                 <div class="function-icons">
-                    <div class="function-icon blades active">
+                    <div id="function-one" class="function-icon blades active">
                         <img class="function-img" src="{% static 'images/blades.png' %}" alt="Blender blades">
                         <div class="outer-circle"></div>
                         <div class="inner-circle"></div>
                     </div>
-                    <div class="function-icon wifi">
+                    <div id="function-two" class="function-icon wifi">
                         <img class="function-img" src="{% static 'images/wifi-connection.png' %}" alt="Blender blades">
                         <div class="outer-circle"></div>
                         <div class="inner-circle"></div>
                     </div>
-                    <div class="function-icon waterproof">
+                    <div id="function-three" class="function-icon waterproof">
                         <img class="function-img" src="{% static 'images/waterproof.png' %}" alt="Blender blades">
                         <div class="outer-circle"></div>
                         <div class="inner-circle"></div>
                     </div>
-                    <div class="function-icon world">
+                    <div id="function-four" class="function-icon world">
                         <span class="function-img material-symbols-rounded">language</span>
                         <div class="outer-circle"></div>
                         <div class="inner-circle"></div>
                     </div>
-                    <div class="function-icon battery">
+                    <div id="function-five" class="function-icon battery">
                         <img class="function-img" src="{% static 'images/battery.png' %}" alt="Blender blades">
                         <div class="outer-circle"></div>
                         <div class="inner-circle"></div>
                     </div>
                 </div>
-                <div class="function-info function-one">
+                <div class="function-info function-one active">
                     <div class="function-header">Powerful Blend</div>
                     <div class="function-text">
                         Quadruple-blade SUS304 stainless steel head made by food-grade
                         electrolysis technology means the Smootie blender can turn any fruit, vegetable and 
                         more into the smoothest smoothie at the quickest of speeds.
+                    </div>
+                    <div class="function-line"></div>
+                    <div class="shop-link-ltr shop-link">
+                        <a href="#shop">Get yours now!</a>
+                    </div>
+                </div>
+                <div class="function-info function-two">
+                    <div class="function-header">Wireless Charging</div>
+                    <div class="function-text">
+                        To start charging, simply place the Smootie blender on the charging pad. A small
+                         white light will indicate its working. Smootie has a super convenient recharge time 
+                         and one charge lasting for up to 15+ blends!
+                    </div>
+                    <div class="function-line"></div>
+                    <div class="shop-link-ltr shop-link">
+                        <a href="#shop">Get yours now!</a>
+                    </div>
+                </div>
+                <div class="function-info function-three">
+                    <div class="function-header">Dishwasher Safe</div>
+                    <div class="function-text">
+                        100% Dishwasher safe and waterproof, Smootie will allow you to pop it in 
+                        the dishwasher without a fuss. Bing bang bosh! Owning a blender has never 
+                        been more convenient. 
+                    </div>
+                    <div class="function-line"></div>
+                    <div class="shop-link-ltr shop-link">
+                        <a href="#shop">Get yours now!</a>
+                    </div>
+                </div>
+                <div class="function-info function-four">
+                    <div class="function-header">Perfectly Portable</div>
+                    <div class="function-text">
+                        Blend the perfect smoothies at breakfast, party with your girls and make frozen
+                         cocktails, make chunk-free protein shakes at the gym, enjoy barista quality lattes 
+                         at your desk or blend anytime and anywhere. 
                     </div>
                     <div class="function-line"></div>
                     <div class="shop-link-ltr shop-link">
@@ -325,11 +525,36 @@
         <div class="vid-title">Mini. Fast. Portable.</div>
         <div class="vid-top-text">See it in Action</div>
         <div class="vid-carousel">
-            <div class="cell"><video controls src="{% static 'images/action-vid-1.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-2.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-3.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-4.mp4' %}"></video></div>
-            <div class="cell"><video controls src="{% static 'images/action-vid-5.mp4' %}"></video></div>
+            <div class="cell">
+                <video src="{% static 'images/action-vid-1.mp4' %}" id="vid1"></video>
+                <button type="button" class="vid-btn" id="play_button" value="vid1">
+                    <span class="material-symbols-rounded">play_circle</span>
+                </button>
+            </div>
+            <div class="cell">
+                <video src="{% static 'images/action-vid-2.mp4' %}" id="vid2"></video>
+                <button type="button" class="vid-btn" id="play_button" value="vid2">
+                    <span class="material-symbols-rounded">play_circle</span>
+                </button>
+            </div>
+            <div class="cell">
+                <video src="{% static 'images/action-vid-3.mp4' %}" id="vid3"></video>
+                <button type="button" class="vid-btn" id="play_button" value="vid3">
+                    <span class="material-symbols-rounded">play_circle</span>
+                </button>
+            </div>
+            <div class="cell">
+                <video src="{% static 'images/action-vid-4.mp4' %}" id="vid4"></video>
+                <button type="button" class="vid-btn" id="play_button" value="vid4">
+                    <span class="material-symbols-rounded">play_circle</span>
+                </button>
+            </div>
+            <div class="cell">
+                <video src="{% static 'images/action-vid-5.mp4' %}" id="vid5"></video>
+                <button type="button" class="vid-btn" id="play_button" value="vid5">
+                    <span class="material-symbols-rounded">play_circle</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -517,43 +742,11 @@
                     </div>
                     
                 </div>
-            </div>
-              
+            </div>  
     </div>
-
 </div>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-<script>
-    $vid_carousel = $('.vid-carousel')
-    
-    $vid_carousel.flickity({
-        cellAlign: 'left',
-        wrapAround: true,
-        freeScroll: true,
-        imagesLoaded: true
-    })
-
-    $('.review-carousel').flickity({
-        cellAlign: 'center',
-        wrapAround: true,
-        prevNextButtons: false,
-        imagesLoaded: true
-    })
-    
-    // stops videos/images getting cut off
-    $(document).ready(function(){
-        $(".flickity-viewport").height("33rem");
-    });
-
-    function listener() {
-        $(".flickity-viewport").height("33rem");
-    }
-
-    // bind event listener
-    $vid_carousel.on( 'select.flickity', listener);
-</script>
 
 <script>
     let add_cart_btn = document.querySelectorAll(".update-cart");

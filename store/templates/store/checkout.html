@@ -8,25 +8,61 @@
 <div style="margin-top: 10rem;">
     <form id="form-checkout" class="form-checkout" action="">
         <div class="info-user">
-            <input required class="form-item" type="text" name="name" placeholder="Name...">
-            <input required class="form-item" type="text" name="email" placeholder="Email...">
+            <input required id="name" class="form-item" type="text" name="name" placeholder="Name...">
+            <input required id="email" class="form-item" type="email" name="email" placeholder="Email...">
         </div>
         <div class="info-shipping">
-            <input required ="form-item" type="text" name="address" placeholder="Address..">
-            <input required class="form-item" type="text" name="city" placeholder="City..">
-            <input class="form-item" type="text" name="state" placeholder="State..">
-            <input required class="form-item" type="text" name="zipcode" placeholder="ZIP code..">
-            <input required class="form-item" type="text" name="country" placeholder="Country..">
+            <input required id="address" class="form-item" type="text" name="address" placeholder="Address..">
+            <div class="city-container">
+                <input required id="city" class="form-item" type="text" name="city" placeholder="City..">
+                <input  id="state" class="form-item" type="text" name="state" placeholder="State..">
+            </div>
+            <div class="country-container">
+                <input  id="zipcode" required class="form-item" type="text" name="zipcode" placeholder="ZIP code..">
+                <input  id="country" required class="form-item" type="text" name="country" placeholder="Country..">
+            </div>
         </div>
-        <input id="form-button" type="submit" value="Continue">
+        <input class="checkout-btn" id="form-button" type="submit" value="Continue">
     </form>
     <form id="form-payment" class="form-payment hidden" enctype="multipart/form-data" method="post" role="home">
         {% csrf_token %}
-        <button type="submit" href="{% static 'home' %}" data-bind-href="pricing">Payment</button>
+        <button class="checkout-btn" type="submit" href="{% static 'home' %}" data-bind-href="pricing">Payment</button>
     </form>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
+    // ajax request to save shipping info
+    $(document).on('submit','#form-checkout',function(e){
+        e.preventDefault();
+
+        // check if state is blank
+        if($("#state").val() == "") {
+            $state=null;
+        }
+        else {
+            $state = $("#state").val();
+        }
+
+        $.ajax({
+            type:'POST',
+            url:'{% url "shipping_submit" %}',
+            data:
+            {
+                name:$("#name").val(),
+                email:$("#email").val(),
+                address:$("#address").val(),
+                city:$("#city").val(),
+                state:$state,
+                zipcode:$("#zipcode").val(),
+                country:$("#country").val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            },
+            success:function(){
+                  
+                    }
+            })
+        });
 
     // shipping details form
     let form = document.getElementById('form-checkout');
@@ -35,6 +71,8 @@
         document.getElementById('form-button').classList.add('hidden');
         document.getElementById('form-payment').classList.remove('hidden');
     });
+
+
 
 </script>
 

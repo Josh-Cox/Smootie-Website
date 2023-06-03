@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,84 +51,114 @@
     }
     
     document.cookie = "device=" + device + ";domain=;path=/";
-
-    
   </script>
-
 </head>
+
 <body>
-  <div class="top-text">
-    <p>Official #1 UK Portable Blender</p>
-  </div>
-  <nav class="navbar" id="navbar">
+  <div class="base">
+    <!-- Mobile Navbar -->
+    <div class="mobile-nav">
+      <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/" class="sidenav-title">SMOOTIE.</a>
+        <a href="/shop" class="top-link">Shop</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/user_guide">User Guide</a>
+        <a href="/faq">FAQs</a>
+      </div>
+      
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
 
-    <div class="bag-dupe icon nav-link">
-      <a href="{% url 'cart' %}" class="nav-link">
-          <img class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
-      </a>
+      <a href="/" class="mobile-nav-title">SMOOTIE.</a>
+
+      <button class="bagbtn">
+        <a href="/cart"><span class="material-symbols-rounded">shopping_bag</span></a>
+      </button>
     </div>
 
-    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/shop">SHOP</a></div>
-    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/reviews">REVIEWS</a></div>
-
-    <div class="nav-element title">
-        <p class="title-text"><a class="nav-item nav-title" href="/"> SMOOTIE</a></p>
-        <p><a class="nav-item nav-title" href="/">FRESH JUICE</a></p>
+    <div class="top-text">
+      <p>Official #1 UK Portable Blender</p>
     </div>
-    
-    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/user_guide">USER GUIDE</a></div>
-    <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/faq">FAQs</a></div>
+    <nav class="navbar" id="navbar">
 
-    <div class="bag icon nav-link">
+      <div class="bag-dupe icon nav-link">
         <a href="{% url 'cart' %}" class="nav-link">
-          <img id="cart-icon" class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
+            <img class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
         </a>
-    </div>
+      </div>
 
-  </nav>
+      <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/shop">SHOP</a></div>
+      <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/reviews">REVIEWS</a></div>
+
+      <div class="nav-element title">
+          <p class="title-text"><a class="nav-item nav-title" href="/"> SMOOTIE</a></p>
+          <p><a class="nav-item nav-title" href="/">FRESH JUICE</a></p>
+      </div>
+      
+      <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/user_guide">USER GUIDE</a></div>
+      <div class="nav-element"><a class="nav-item nav-link nav-link-ltr" href="/faq">FAQs</a></div>
+
+      <div class="bag icon nav-link">
+          <a href="{% url 'cart' %}" class="nav-link">
+            <img id="cart-icon" class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
+          </a>
+      </div>
+
+    </nav>
 
 
-    {% block content %}
-    {% endblock %}
+      {% block content %}
+      {% endblock %}
 
-    {% include 'store/footer.html' %}
+      {% include 'store/footer.html' %}
 
 
-  <script>
-    const body = document.body;
-    const nav = document.getElementById("navbar")
-    const nav_items = document.querySelectorAll('.nav-item')
-    let body_scroll = 0;
+    <script>
+      const body = document.body;
+      const nav = document.getElementById("navbar")
+      const nav_items = document.querySelectorAll('.nav-item')
+      let body_scroll = 0;
 
-    document.addEventListener("scroll", (event) => {
-      body_scroll = body.scrollTop;
-    });
+      let prevScrollpos = window.pageYOffset;
+      
+      body.addEventListener("scroll", (event) => {
+        body_scroll = body.scrollTop;
+      });
 
-    let prevScrollpos = window.pageYOffset;
+       window.addEventListener("scroll", (event) => {
+        console.log("scrolling");
+        let currentScrollPos = window.pageYOffset;
 
-    window.onscroll = function() {
-      let currentScrollPos = window.pageYOffset;
+        if(body.scrollTop == 0) {
+          nav.style.top = "2rem";
+          /*nav.classList.toggle("active");
+          setTimeout(function() {
+            nav.classList.toggle("active");
+          }, 1000);*/
+            
+        }
+        else if (prevScrollpos > currentScrollPos) {
+          nav.style.top = "0rem";
+        } else {
+          nav.style.top = "-6rem";
+        }
+        prevScrollpos = currentScrollPos;
+      });
 
-      if(body.scrollTop == 0) {
-        nav.style.top = "2rem";
-        nav.classList.toggle("active");
-        setTimeout(function() {
-          nav.classList.toggle("active");
-        }, 1000);
-          
+      /* Set the width of the sidebar to 250px (show it) */
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
       }
-      else if (prevScrollpos > currentScrollPos) {
-        nav.style.top = "0";
-      } else {
-        nav.style.top = "-6rem";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-    
-  </script>
 
-  <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+      /* Set the width of the sidebar to 0 (hide it) */
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      } 
+      
+    </script>
 
-</body>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+  </div>
+  </body>
 </html>
 

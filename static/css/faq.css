@@ -39,6 +39,30 @@
     margin-left: 1rem;
 }
 
+.header-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-info span {
+    font-size: 4rem;
+    margin-left: .5rem;
+    font-weight: 200;
+    margin-bottom: .5rem;
+}
+
+.about-product span {
+    font-size: 3rem !important;
+    margin-bottom: 0;
+}
+
+.question-header-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: .5rem;
+}
+
 .question-heading {
     width: 50rem;
     position: relative;
@@ -102,3 +126,131 @@
     text-align: left;
 }
 
+.faq-contact-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-contact-icon span, .faq-info-section span {
+    color: var(--faq-yellow);
+    font-size: 3rem;
+}
+
+.faq-contact-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.faq-contact-text {
+    margin-top: .5rem;
+    color: var(--break-color);
+}
+
+.faq-contact-btn {
+    margin-top: 1rem;
+    padding: .5rem 3rem;
+    border: solid .2rem var(--faq-yellow);
+    background: transparent;
+    border-radius: .5rem;
+    color: var(--faq-yellow);
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.faq-contact-btn:hover {
+    background-color: var(--faq-yellow);
+    color: white;
+}
+
+.faq-info-container {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.faq-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.faq-info-header {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.faq-info-text {
+    margin-top: .5rem;
+    font-size: .8rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .drop-down-question {
+       width: 80%;
+       margin: auto;
+    }
+
+    .question-heading {
+        width: 100%;
+    }
+
+    .helper-text {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .faq-info-container {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 5rem;
+        gap: 1rem;
+    }
+
+    .faq-info-section span {
+        font-size: 2rem;
+    }
+
+    .faq-info-section {
+        width: 100%;
+    }
+
+    .faq-info-header {
+        font-size: .6rem;
+    }
+
+    .faq-info-text {
+        font-size: .6rem;
+    }
+
+    .question-text {
+        font-size: .8rem;
+    }
+
+    .question-header-text {
+        font-size: 1rem;
+    }
+
+    .header-info span {
+        font-size: 3rem !important;
+    }
+
+    .about-product span {
+        font-size: 2rem !important;
+    }
+
+    .faq-contact-text {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

@@ -134,6 +134,7 @@
     position: relative;
     display: flex;
     width: 100%;
+    height: fit-content;
     margin-top: 1rem;
 }
 
@@ -304,8 +305,115 @@
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-/* @media (min-width: 768px) {
-  .shipping-btn {
-    font-size: 24px;
-    min-width: 196px;
-  } */
+
+@media only screen and (max-width: 600px) {
+
+    .cart-page {
+        margin: 0;
+        padding-top: 5rem;
+        height: 100%;
+        width: 100%;
+    }
+
+    .cart-content {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .heading-text {
+        font-size: clamp(2rem, 2vw, 3rem);
+        font-weight: 500;
+        margin-top: 5rem;
+    }
+
+    .item-count {
+        font-weight: 500;
+        margin-top: .5rem;
+    }
+
+    .total-sub, .quantity-sub, .price-sub {
+        display: none;
+    }
+
+    .product-sub {
+        font-weight: 500 !important;
+        font-size: 1.5rem !important;
+    }
+
+    .item-title {
+        font-size: clamp(.8rem, 2vw, 1rem);
+    }
+
+    .item-color p, .stock-check {
+        font-size: clamp(.7rem, 2vw, .9rem);
+    }
+
+    .remove span {
+        font-size: 1.5rem;
+    }
+
+    .remove-text {
+        font-size: clamp(.8rem, 2vw, 1rem);
+    }
+
+    .item-content {
+        height: 10rem;
+        position: relative;
+    }
+
+    .item-total {
+        display: none;
+    }
+    
+    .item-quantity {
+        margin-right: 0;
+        order: 2;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, .5);
+        gap: 1.5rem;
+        padding: .1rem;
+    }
+
+    .item-price {
+        margin-right: 0;
+        font-weight: 500;
+        order: 1;
+        margin-bottom: .5rem;
+    }
+
+    .right-cart {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .bottom-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .delivery-info-container {
+        position: relative;
+        order: 2;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .checkout-area-container {
+        position: relative;
+        order: 1;
+        width: 100%;
+    }
+
+    .mobile-footer {
+        margin-top: 25rem;
+    }
+}

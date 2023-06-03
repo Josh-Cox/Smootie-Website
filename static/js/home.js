@@ -11,17 +11,60 @@ $('.img-carousel').flickity({
     cellAlign: 'left',
     wrapAround: true,
     prevNextButtons: false,
+    imagesLoaded: true,
+    autoPlay: true
+})
+
+$('.circle-carousel').flickity({
+    cellAlign: 'center',
+    wrapAround: true,
+    imagesLoaded: true,
+    autoPlay: true,
+    pageDots: false
+})
+
+$('.review-carousel').flickity({
+    cellAlign: 'center',
+    wrapAround: true,
+    prevNextButtons: false,
     imagesLoaded: true
 })
 
 // stops videos/images getting cut off
-$(document).ready(function(){
-    $(".flickity-viewport").height("33rem");
-});
+let x = window.matchMedia("(max-width: 600px)")
 
-function listener() {
-    $(".flickity-viewport").height("33rem");
+if (x.matches) {
+    $(document).ready(function(){
+        $(".flickity-viewport").height("19rem");
+    });
+} else {
+    $(document).ready(function(){
+        $(".flickity-viewport").height("37rem");
+    });
 }
 
-// bind event listener
-$vid_carousel.on( 'select.flickity', listener);
+  
+
+
+
+// video custom play button
+let playButtons = document.querySelectorAll(".vid-btn");
+// Event listener for the play/pause button
+
+playButtons.forEach(btn => {
+    btn.addEventListener("click", function() {
+        if (btn.previousElementSibling.paused == true) {
+          // Play the video
+          btn.previousElementSibling.play();
+      
+          // Update the button text to 'Pause'
+          btn.childNodes[1].innerHTML = "pause_circle";
+        } else {
+          // Pause the video
+          btn.previousElementSibling.pause();
+      
+          // Update the button text to 'Play'
+          btn.childNodes[1].innerHTML = "play_circle";
+        }
+    });
+});

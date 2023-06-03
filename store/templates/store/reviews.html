@@ -18,7 +18,7 @@
 
 <div class="main-container">
     <div class="reviews-top">
-        <div class="top-top">
+        <div class="top-left">
             <div class="rating">
                 <div class="points rating-text">4.9/5</div>
                 <div class="review-stars">
@@ -30,6 +30,15 @@
                 </div>
             </div>
 
+            <div class="rating">
+                <div class="percentage rating-text">100%</div>
+                <div class="recommend">Would recommend to a friend</div>
+            </div>
+
+        </div>
+        
+        <div class="top-right">
+            
             <div class="rank">
                 <div class="rank-content">
                     <div class="rank-number rating-small">4.9/5</div>
@@ -65,14 +74,6 @@
                         <div class="w3-light-green" id="bar" style="width: 98%; height:.4rem;"></div>
                     </div><br>
                 </div>
-            </div>
-
-        </div>
-        
-        <div class="top-bottom">
-            <div class="rating">
-                <div class="percentage rating-text">100%</div>
-                <div class="recommend">Would recommend to a friend</div>
             </div>
 
             <div class="rank">
@@ -505,29 +506,56 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <script>
-    $('.review-carousel').flickity({
-        cellAlign: 'center',
-        wrapAround: true,
-        prevNextButtons: false,
-        imagesLoaded: true,
-        pageDots: false,
-        autoPlay: true
-    })
-    
-    $('.box-carousel').flickity({
-        cellAlign: 'left',
-        wrapAround: true,
-        prevNextButtons: false,
-        imagesLoaded: true,
-        prevNextButtons: true,
-        pageDots: false,
-        arrowShape: { 
-            x0: 30,
-            x1: 60, y1: 30,
-            x2: 65, y2: 25,
-            x3: 40
-          }
-    })
+    if ( matchMedia('screen and (min-width: 600px)').matches ) {
+        $('.review-carousel').flickity({
+            cellAlign: 'center',
+            wrapAround: true,
+            prevNextButtons: false,
+            imagesLoaded: true,
+            pageDots: false,
+            autoPlay: true
+        })
+
+        $('.box-carousel').flickity({
+            cellAlign: 'left',
+            wrapAround: true,
+            prevNextButtons: true,
+            imagesLoaded: true,
+            pageDots: false,
+            arrowShape: { 
+                x0: 30,
+                x1: 60, y1: 30,
+                x2: 65, y2: 25,
+                x3: 40
+            }
+        })
+    }
+    else {
+        $('.review-carousel').flickity({
+            cellAlign: 'center',
+            wrapAround: true,
+            prevNextButtons: true,
+            imagesLoaded: true,
+            pageDots: false,
+            autoPlay: true
+        })
+
+        $('.box-carousel').flickity({
+            cellAlign: 'center',
+            wrapAround: true,
+            prevNextButtons: false,
+            imagesLoaded: true,
+            pageDots: false,
+            freeScroll: true,
+            arrowShape: { 
+                x0: 30,
+                x1: 60, y1: 30,
+                x2: 65, y2: 25,
+                x3: 40
+            }
+        })
+    }
+
 </script>
 
 {% endblock %}

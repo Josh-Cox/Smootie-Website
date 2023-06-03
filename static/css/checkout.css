@@ -1,3 +1,62 @@
 .hidden {
     visibility: hidden;
 }
+
+.form-checkout {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 20rem;
+}
+
+.form-payment {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+}
+
+.info-user, .info-shipping {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.city-container, .country-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.form-item {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: .4rem;
+    border: 1px solid rgb(0, 0, 0, .2);
+    box-sizing: border-box;
+
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.checkout-btn {
+    width: 100%;
+    background: var(--btn-blue);
+    color: var(--color-white);
+    padding: .7rem 0;
+    font-family: "Poppins";
+    border: none;
+    outline: none;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: background 300ms ease;
+}
+.checkout-btn:hover {
+    background: var(--btn-blue-hover);
+}

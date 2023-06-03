@@ -3,6 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from datetime import datetime, time
+from django.core.mail import send_mail
 import stripe
 import json
 import time
@@ -13,26 +14,26 @@ def home(request):
     Main page for the website
     """
     
-    # if user is logged in return cart items
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-        cart_items = order.get_cart_items
-    else:
-        items = []
-        order = {
-            "get_cart_total": 0,
-            "get_cart_items": 0,
-        }
-        cart_items = order['get_cart_items']
+    # get customer
+    # try:
+    #     customer = request.user.customer
+    # except:
+    #     device = request.COOKIES['device']
+    #     customer, created = Customer.objects.get_or_create(device=device)
     
-    products = Product.objects.all()
-    context = {
-        "products": products,
-        "cart_items": cart_items,
-        }
-    return render(request, 'store/home.html', context)
+    # try:
+    #     order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    #     items = order.orderitem_set.all()
+    #     cart_items = order.get_cart_items
+    # except:
+    #     HttpResponse(404, "Object not found")
+    
+    # products = Product.objects.all()
+    # context = {
+    #     "products": products,
+    #     "cart_items": cart_items,
+    #     }
+    return render(request, 'store/home.html', {})
 
 def reviews(request):
     return render(request, 'store/reviews.html')
@@ -304,17 +305,122 @@ def update_item(request):
             'redirect': False,
             }, safe=False)
 
+def shipping_submit(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        state = request.POST.get('state')
+        zipcode = request.POST.get('zipcode')
+        country = request.POST.get('country')
+        
+        # get the logged in customer
+        try:
+            customer = request.user.customer
+        # create customer based on device cookie
+        except:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        
+        # set customers name and email address
+        customer.name = name
+        customer.email = email
+        customer.save()
+
+        # if shipping details slready exist, delete them
+        try:
+            ShippingAddress.objects.get(customer=customer).delete()
+        except ShippingAddress.DoesNotExist:
+            pass
+        
+        # get customer's order
+        try:
+            order = Order.objects.get(customer=customer, complete=False)
+        except Order.DoesNotExist:
+            return HttpResponse(404, "Object not found")
+            
+        # create new shipping address with given details
+        new_shipping = ShippingAddress.objects.create(customer=customer, order=order)
+        new_shipping.address = address
+        new_shipping.city = city
+        new_shipping.state = state
+        new_shipping.zipcode = zipcode
+        new_shipping.country = country
+        new_shipping.save()
+
+        return JsonResponse({
+                'data': 'Shipping details saved',
+                }, safe=False)
 
 def payment_successful(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY_TEST
     checkout_session_id = request.GET.get('session_id', None)
     session = stripe.checkout.Session.retrieve(checkout_session_id)
     customer = stripe.Customer.retrieve(session.customer)
-    user = request.user
-    customer = Customer.objects.get(user=user)
+    
+    # get the logged in customer
+    try:
+        customer = request.user.customer
+    # create customer based on device cookie
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
     user_payment = UserPayment.objects.get(customer=customer)
     user_payment.stripe_checkout_id = checkout_session_id
     user_payment.save()
+    
+    # get order
+    try:
+        order = Order.objects.get(customer=customer, complete=False)
+    except:
+        HttpResponse(404, "Order not found")
+        
+    # get shipping
+    try:
+        shipping = ShippingAddress.objects.get(customer=customer)
+    except:
+        HttpResponse(404, "Shipping not found")
+        
+    # email shipping
+    email_subject = "Smootie Order"
+    customer_name = str(customer.name)
+    customer_email = str(customer.email)
+    # TODO: Delete if not needed
+    customer_shipping = {
+        "Address": shipping.address,
+        "City": shipping.city,
+        "State": shipping.state,
+        "ZIPCode": shipping.zipcode,
+        "Country": shipping.country
+    }
+    
+    order_msg = ""
+    order_items = OrderItem.objects.filter(order=order)
+    for item in order_items:
+        order_msg += "Product: " + str(item.product.name) + "\n" + "Colour: " + str(item.product.color) + "\n" + "Quantity: " + str(item.quantity) + "\n\n"
+    
+    send_mail(
+        email_subject,
+        
+        "Customer Name: " + str(customer_name) + "\n" +
+        "Customer Email: " + str(customer_email) + "\n" +
+        "Address: " + str(shipping.address) + "\n" +
+        "City: " + str(shipping.city) + "\n" +
+        "State: " + str(shipping.state) + "\n" +
+        "ZIPCode: " + str(shipping.zipcode) + "\n" +
+        "Country: " + str(shipping.country) + "\n\n\n" +
+        order_msg,
+        
+        settings.EMAIL_HOST_USER,
+        [settings.EMAIL_RECEIVE_USER],
+        fail_silently=False,
+    )
+    
+    # complete order and clear cart
+    order.complete = True
+    order.save()
+    
     return render(request, 'store/payment_successful.html', {'customer': customer})
 
 def payment_cancelled(request):

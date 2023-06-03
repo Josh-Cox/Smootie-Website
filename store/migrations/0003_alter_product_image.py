@@ -21,4 +21,10 @@ class Migration(migrations.Migration):
             name='device',
             field=models.CharField(max_length=200, null=True, blank=True),
         ),
+        
+        migrations.AddField(
+            model_name='shippingaddress',
+            name='country',
+            field=models.CharField(max_length=200, null=True),
+        ),
     ]

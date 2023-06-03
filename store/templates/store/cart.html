@@ -12,13 +12,13 @@
     <div class="cart-heading">
 
         <div class="cart-header">
-            <lord-icon
+            {% comment %} <lord-icon
                 src="https://cdn.lordicon.com/udbbfuld.json"
                 trigger="loop"
                 delay="2000"
                 style="width:150px;height:150px">
-            </lord-icon>
-            <div class="heading-text">My Cart</div>
+            </lord-icon> {% endcomment %}
+            <div class="heading-text">Shopping Cart</div>
         </div>
 
         <div class="item-count">[{{num_items}} Items]</div>
@@ -57,14 +57,17 @@
 
                     <span class="item-total">£<div class="item-total-inner" price="{{item.product.price}}" id="total_{{item.product.id}}">{{item.quantity|multiply:item.product.price}}</div></span>
 
-                    <div class="item-quantity">
-                        <span data-quantity="1" data-product={{item.product.id}} data-action="remove" style="cursor: pointer;" type="remove" class="btn-update material-symbols-rounded update-cart">remove</span>
-                        <div id="{{item.product.id}}" class="quantity-number">{{item.quantity}}</div>
-                        <span data-quantity="1" data-product={{item.product.id}} data-action="add" style="cursor: pointer;" type="add" class="btn-update material-symbols-rounded update-cart">add</span>
+                    <div class="right-cart">
+                        <div class="item-quantity">
+                            <span data-quantity="1" data-product={{item.product.id}} data-action="remove" style="cursor: pointer;" type="remove" class="btn-update material-symbols-rounded update-cart">remove</span>
+                            <div id="{{item.product.id}}" class="quantity-number">{{item.quantity}}</div>
+                            <span data-quantity="1" data-product={{item.product.id}} data-action="add" style="cursor: pointer;" type="add" class="btn-update material-symbols-rounded update-cart">add</span>
+                        </div>
+    
+    
+                        <div class="item-price">£{{item.product.price}}</div>
                     </div>
-
-
-                    <div class="item-price">£{{item.product.price}}</div>
+                    
                 </div>
             </div>
 
