@@ -218,7 +218,7 @@
 .free-shipping-text {
     margin-top: -.15rem;
     color: var(--break-color);
-    font-size: .8rem;
+    font-size: clamp(.5rem, .7vw, .8rem);
 }
 
 .free-shipping-text span {
@@ -370,7 +370,7 @@
         order: 2;
         font-weight: 500;
         border: 1px solid rgba(0, 0, 0, .5);
-        gap: 1.5rem;
+        gap: .5rem;
         padding: .1rem;
     }
 
@@ -415,5 +415,9 @@
 
     .mobile-footer {
         margin-top: 25rem;
+    }
+
+    .tooltip {
+        display: none;
     }
 }

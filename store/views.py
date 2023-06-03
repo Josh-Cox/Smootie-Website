@@ -421,6 +421,7 @@ def payment_successful(request):
     order.complete = True
     order.save()
     
+    
     return render(request, 'store/payment_successful.html', {'customer': customer})
 
 def payment_cancelled(request):

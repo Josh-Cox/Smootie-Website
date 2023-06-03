@@ -59,13 +59,55 @@
     <!-- Mobile Navbar -->
     <div class="mobile-nav">
       <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/" class="sidenav-title">SMOOTIE.</a>
-        <a href="/shop" class="top-link">Shop</a>
-        <a href="/reviews">Reviews</a>
-        <a href="/user_guide">User Guide</a>
-        <a href="/faq">FAQs</a>
+        <a class="mobile-nav-link closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a class="mobile-nav-link sidenav-title" href="/">SMOOTIE.</a>
+        <a class="mobile-nav-link" href="/shop" class="top-link">Shop</a>
+        <a class="mobile-nav-link" href="/reviews">Reviews</a>
+        <a class="mobile-nav-link" href="/user_guide">User Guide</a>
+        <a class="mobile-nav-link" href="/faq">FAQs</a>
+
+        <div class="mobile-nav-bottom" id="nav-bottom">
+          <div class="delivery-info-container">
+            <div class="devliery-info">
+                <div class="info-header">Delivery Info</div>
+                <div class="info-content">See our delivery & returns info <a href='#'>here</a></div>
+            </div>
+            <div class="payment-info">
+                <div class="info-header">Payment Info</div>
+                <div class="info-content">We accept the following methods of payment</div>
+            </div>
+    
+            <div class="cart-payments">
+                <img src="{% static 'images/payments.png' %}" alt="">
+            </div>
+          </div>
+    
+          <div class="checkout-area-container">
+    
+            {% if total_price >= 50 %}
+            <div class="free-shipping-container">
+                <div class="free-shipping-text">You qualify for<span> 15% off your order</span></div>
+
+            </div>
+            {% else %}
+            <div class="free-shipping-container">
+                <div class="free-shipping-text"><span>£</span><span>{{shipping_price|floatformat:2}}</span> away from <span>15% off your order</span></div>
+            </div>
+            {% endif %}
+            
+            <div class="w3-light-grey" style="border-radius: 1rem;">
+                <div class="w3-orange" id="bar" style="width: calc({{total_price}} * 2.23%); height:.4rem;border-radius: 1rem;"></div>
+            </div><br>
+    
+            <div class="subtotal">
+                <div class="subtotal-text">Subtotal</div>
+                <div class="subtotal-amount">£<span id="subtotal">{{total_price|floatformat:2}}</span></div>
+            </div>
+    
+            <div class="taxes">Taxes & shipping calculated at checkout</div>        
+          </div>
       </div>
+    </div>
       
       <button class="openbtn" onclick="openNav()">&#9776;</button>
 
@@ -74,6 +116,7 @@
       <button class="bagbtn">
         <a href="/cart"><span class="material-symbols-rounded">shopping_bag</span></a>
       </button>
+
     </div>
 
     <div class="top-text">
@@ -147,12 +190,14 @@
 
       /* Set the width of the sidebar to 250px (show it) */
       function openNav() {
-        document.getElementById("mySidepanel").style.width = "250px";
+        document.getElementById("mySidepanel").style.width = "90%";
+        document.getElementById("nav-bottom").classList.add("active");
       }
 
       /* Set the width of the sidebar to 0 (hide it) */
       function closeNav() {
         document.getElementById("mySidepanel").style.width = "0";
+        document.getElementById("nav-bottom").classList.remove("active");
       } 
       
     </script>

@@ -2,5 +2,11 @@
 {% load static %}
 {% block title %}Payment{% endblock %}
 {% block content %}
-<h3>Payment Cancelled</h3>
+<link rel="stylesheet" type="text/css" href="{% static 'css/payment_cancelled.css' %}">
+
+
+<h3 class="success-header">Something Went Wrong</h3>
+<p class="success-text">You have not been charged.</p>
+<button class="return-home-btn"><a href="/cart">Return to Cart</a></button>
+
 {% endblock %}

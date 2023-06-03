@@ -133,6 +133,10 @@
     background: black;
 }
 
+.vid-carousel .flickity-page-dots {
+  bottom: -20px;
+}
+
 .flickity-button:hover {
     background: black;
 }
@@ -784,7 +788,7 @@
     margin-bottom: .1rem;
   }
 
-  .flickity-page-dots .dot { 
+  .endless-section .flickity-page-dots .dot { 
     width: .5rem;
     height: .5rem;
   }

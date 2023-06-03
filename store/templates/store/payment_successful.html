@@ -2,5 +2,11 @@
 {% load static %}
 {% block title %}Payment{% endblock %}
 {% block content %}
-<h3>Payment Successful</h3>
+<link rel="stylesheet" type="text/css" href="{% static 'css/payment_successful.css' %}">
+
+
+<h3 class="success-header">Payment Successful</h3>
+<p class="success-text">Your order will be with you shortly.</p>
+<button class="return-home-btn"><a href="/">Return to Home</a></button>
+
 {% endblock %}

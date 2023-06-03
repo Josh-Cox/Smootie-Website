@@ -144,10 +144,6 @@ html, body {
     z-index: 10;
 }
 
-.navbar.active {
-    /* animation-name: flash;
-    animation-duration: .3s; */
-}
 
 @keyframes flash {
     from {
@@ -271,7 +267,7 @@ a {
 
     /* The sidepanel menu */
     .sidepanel {
-        height: 20rem; /* Specify a height */
+        height: 100%; /* Specify a height */
         width: 0px; /* 0 width - change this with JavaScript */
         position: fixed; /* Stay in place */
         z-index: 2; /* Stay on top */
@@ -284,7 +280,7 @@ a {
     }
 
     /* The sidepanel links */
-    .sidepanel a {
+    .sidepanel .mobile-nav-link {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: .75rem;
@@ -295,7 +291,7 @@ a {
     }
 
     /* When you mouse over the navigation links, change their color */
-    .sidepanel a:hover {
+    .sidepanel .mobile-nav-link:hover {
         color: var(--text-light);
     }
 
@@ -341,4 +337,125 @@ a {
         text-decoration: none;
         color: white;
     }
+
+    .mobile-nav-bottom {
+        font-family: "Poppins";
+        margin-left: 32px;
+        width: 100%;
+        margin-top: 10rem;
+        opacity: 0;
+        transition: none;
+    }
+
+    .mobile-nav-bottom.active {
+        transition: all 2s ease;
+        opacity: 1;
+    }
+    
+    .mobile-nav-bottom .delivery-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    
+    .mobile-nav-bottom .info-header {
+        font-size: .7rem;
+        font-weight: 700;
+    }
+    
+    .mobile-nav-bottom .info-content {
+        color: var(--break-color);
+        font-weight: 600;
+        font-size: .6rem;
+        opacity: .7;
+    }
+    
+    .mobile-nav-bottom .info-content a {
+        color: var(--break-color);
+
+    }
+    
+    .mobile-nav-bottom .payment-info {
+        margin-top: 1rem;
+    }
+    
+    .mobile-nav-bottom .cart-payments {
+        width: fit-content;
+        margin-left: -.6rem;
+        margin-top: -.4rem;
+    }
+    
+    .mobile-nav-bottom .cart-payments img {
+        width: 12rem;
+    }
+    
+    .mobile-nav-bottom .checkout-area-container {
+        right: 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mobile-nav-bottom .free-shipping-container {
+        margin-top: 2rem;
+        margin-bottom: .1rem;
+        display: flex;
+    }
+    
+    .mobile-nav-bottom .free-shipping-icon {
+        display: flex;
+        height: 1rem;
+        margin-left: .2rem;
+        cursor: pointer;
+    }
+    
+    .mobile-nav-bottom .free-shipping-icon span {
+        font-size: .4rem;
+        height: 1rem;
+        fill: 0;
+    }
+    
+    .mobile-nav-bottom .free-shipping-text {
+        margin-top: -.15rem;
+        color: var(--break-color);
+        font-size: .6rem;
+    }
+    
+    .mobile-nav-bottom .free-shipping-text span {
+        font-weight: 700;
+    }
+    
+    .mobile-nav-bottom .subtotal {
+        position: relative;
+        display: flex;
+        font-size: 1.1rem;
+        width: 60%;
+    }
+    
+    .mobile-nav-bottom .subtotal-amount {
+        position: absolute;
+        right: 0;
+        font-size: .7rem;
+    }
+
+    .mobile-nav-bottom .subtotal-text {
+        font-size: .7rem;
+    }
+    
+    .mobile-nav-bottom .taxes {
+        font-size: .6rem;
+        color: var(--break-color);
+        margin-bottom: .3rem;
+    }
+    
+    .mobile-nav-bottom .w3-orange {
+        max-width: 100%;
+    }
+
+    .mobile-nav-bottom .w3-light-grey {
+        max-width: 60%;
+    }
 }
+  

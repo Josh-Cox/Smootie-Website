@@ -625,7 +625,7 @@ text {
   cursor: pointer;
 }
 
-.flickity-page-dots { bottom: 10px; }
+.review-container .flickity-page-dots { bottom: 10px; }
 
 .cell video {
   width: 20rem;
@@ -940,10 +940,6 @@ transition: all ease 600ms;
 
 .cart__button.clicked span.added {
   animation: txt2 1.5s ease-in-out forwards;
-}
-
-.footer {
-
 }
 
 @keyframes cart {
