@@ -1,4 +1,5 @@
 // get all 'add to cart' buttons
+
 let btns_update_cart = document.querySelectorAll(".update-cart");
 
 // loop through buttons

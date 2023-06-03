@@ -268,6 +268,7 @@
             </div>
 
             <div class="add-cart-section">
+                {% csrf_token %}
                 <div class="quantity-picker">
                     <div class="remove-quantity quantity-change">
                         <span action="remove" class="quantity-update material-symbols-rounded">remove</span>

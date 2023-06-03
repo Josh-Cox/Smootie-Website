@@ -16,11 +16,13 @@ images.forEach((image) => {
 });
 
 // color picker, product ID
-let color_text = document.getElementById("color-text");
+let color_text_elements = document.querySelectorAll(".color-selected");
 let add_cart_button = document.getElementById("submit-button");
 
 $("input:radio[name=color]").change(function() {
-    color_text.innerText = ("Colour: " + this.value);
+    color_text_elements.forEach((element) => {
+        element.innerText = ("Colour: " + this.value);
+    })
     add_cart_button.setAttribute("data-product", this.getAttribute("productId"));
 
     // span of each color button
