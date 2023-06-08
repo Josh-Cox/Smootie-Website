@@ -148,6 +148,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 ## Stripe
 STRIPE_SECRET_KEY_TEST = os.getenv('STRIPE_SECRET_KEY_TEST')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
 PRODUCT_PRICE_WHITE = os.getenv('PRODUCT_PRICE_WHITE')
 PRODUCT_PRICE_BLACK = os.getenv('PRODUCT_PRICE_BLACK')

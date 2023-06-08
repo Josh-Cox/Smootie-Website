@@ -121,7 +121,7 @@ def checkout(request):
         
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
     
-    stripe.api_key = settings.STRIPE_SECRET_KEY_TEST
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     
     white_q = 0
     black_q = 0
@@ -354,7 +354,7 @@ def shipping_submit(request):
                 }, safe=False)
 
 def payment_successful(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY_TEST
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     checkout_session_id = request.GET.get('session_id', None)
     session = stripe.checkout.Session.retrieve(checkout_session_id)
     customer = stripe.Customer.retrieve(session.customer)
@@ -429,7 +429,7 @@ def payment_cancelled(request):
 
 @csrf_exempt
 def stripe_webhook(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY_TEST
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     time.sleep(10)
     payload = request.body
     signature_header = request.META['HTTP_STRIPE_SIGNATURE']
