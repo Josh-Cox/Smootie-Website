@@ -43,10 +43,6 @@ if (x.matches) {
     });
 }
 
-  
-
-
-
 // video custom play button
 let playButtons = document.querySelectorAll(".vid-btn");
 // Event listener for the play/pause button
@@ -68,3 +64,13 @@ playButtons.forEach(btn => {
         }
     });
 });
+
+let navbar = document.getElementById("navbar");
+window.addEventListener("scroll", (event) => {
+    if(body.scrollTop == 0) {
+        document.documentElement.style.setProperty('--navbar-opacity', "0")
+    }
+    else {
+        document.documentElement.style.setProperty('--navbar-opacity', "1")
+    }
+  });

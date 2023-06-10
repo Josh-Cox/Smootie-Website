@@ -1,3 +1,13 @@
+
+* {
+    font-family: "Poppins";
+    box-sizing: content-box;
+}
+
+html, body {
+    font-size: 100%;
+}
+
 .cart-page {
     margin-left: auto;
     margin-right: auto;

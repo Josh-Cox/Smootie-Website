@@ -7,6 +7,7 @@
     --color-grey: #faf9f6;
     --text-light: #6b6964;
     --underline-color: white;
+    --navbar-opacity: 1;
 
     /* faq */
     --color-add: #f4a216;
@@ -44,10 +45,10 @@
 
     /* reviews */
     --color-green-icon: #4dbc15;
-
+    --box-background-color: rgb(250, 250, 250);
     /* checkout */
-    --btn-blue: #0074d4;
-    --btn-blue-hover: #3793df;
+    --btn-yellow: #ffad0d;
+    --btn-yellow-hover: #ffd12d;;
 
     /* Mobile Navbar */
     --nav-gradient-left: #ffad0d;
@@ -139,24 +140,28 @@ html, body {
     color: white;
     transition: all 300ms ease;
     min-height: 6rem;
-    background-color: var(--color-stop-looking);
+    background: transparent;
+    z-index: 0;
+}
+
+.navbar:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3em;
     background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
-    z-index: 10;
+    transition: opacity 0.5s ease-out;
+    z-index: 1;
+    opacity: var(--navbar-opacity);
 }
 
-
-@keyframes flash {
-    from {
-      background-color: white;
-    }
-  
-    to {
-      background-color: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
-    }
-}
 
 .nav-element {
     width: 8rem;
+    z-index: 2;
 }
 
 .nav-title {
@@ -201,12 +206,14 @@ html, body {
 }
 
 .title-text {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 
 .bag {
     margin-right: 15rem;
     margin-left: auto;
+    z-index: 2;
+    position: relative;
 }
 
 .bag-dupe {
@@ -229,6 +236,24 @@ html, body {
     overflow-y: scroll;
     height: 100vh;
     overflow: hidden;
+}
+
+.cart-quantity {
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: .5rem;
+    right: -.5rem;
+    border-radius: 100%;
+    width: .7rem;
+    height: .7rem;
+    padding: .3rem;
+    font-size: .7rem !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
 }
 
 /* Stars */
@@ -263,6 +288,7 @@ a {
         width: 100%;
         background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
         z-index: 5;
+        font-family: "Poppins" !important;
     }
 
     /* The sidepanel menu */
@@ -283,7 +309,7 @@ a {
     .sidepanel .mobile-nav-link {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
-        font-size: .75rem;
+        font-size: .75rem !important;
         color: black;
         display: block;
         transition: 0.3s;
@@ -300,7 +326,7 @@ a {
         position: absolute;
         top: 0;
         right: 25px;
-        font-size: 36px;
+        font-size: 36px !important;
         margin-left: 50px;
     }
 
@@ -308,7 +334,7 @@ a {
         position: absolute;
         top: 0;
         left: 0px;
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
         margin-right: 50px;
         margin-top: 1rem;
     }
@@ -319,7 +345,7 @@ a {
 
     /* Style the button that is used to open the sidepanel */
     .openbtn, .bagbtn {
-        font-size: 20px;
+        font-size: 20px !important;
         cursor: pointer;
         background: transparent;
         color: white;
@@ -329,7 +355,7 @@ a {
 
     .mobile-nav-title {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
         text-decoration: none;
     }
 
@@ -360,14 +386,14 @@ a {
     }
     
     .mobile-nav-bottom .info-header {
-        font-size: .7rem;
+        font-size: .7rem !important;
         font-weight: 700;
     }
     
     .mobile-nav-bottom .info-content {
         color: var(--break-color);
         font-weight: 600;
-        font-size: .6rem;
+        font-size: .6rem !important;
         opacity: .7;
     }
     
@@ -412,7 +438,7 @@ a {
     }
     
     .mobile-nav-bottom .free-shipping-icon span {
-        font-size: .4rem;
+        font-size: .4rem !important;
         height: 1rem;
         fill: 0;
     }
@@ -420,7 +446,7 @@ a {
     .mobile-nav-bottom .free-shipping-text {
         margin-top: -.15rem;
         color: var(--break-color);
-        font-size: .6rem;
+        font-size: .6rem !important;
     }
     
     .mobile-nav-bottom .free-shipping-text span {
@@ -430,22 +456,22 @@ a {
     .mobile-nav-bottom .subtotal {
         position: relative;
         display: flex;
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
         width: 60%;
     }
     
     .mobile-nav-bottom .subtotal-amount {
         position: absolute;
         right: 0;
-        font-size: .7rem;
+        font-size: .7rem !important;
     }
 
     .mobile-nav-bottom .subtotal-text {
-        font-size: .7rem;
+        font-size: .7rem !important;
     }
     
     .mobile-nav-bottom .taxes {
-        font-size: .6rem;
+        font-size: .6rem !important;
         color: var(--break-color);
         margin-bottom: .3rem;
     }

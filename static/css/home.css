@@ -10,10 +10,11 @@
 }
 
 .background-vid {
-    top: 0;
-    margin-top: 0;
-    width: 100vw;
-    z-index: -1;
+  position: relative;
+  top: 0;
+  margin-top: 0;
+  width: 100vw;
+  z-index: -2;
 }
 /* ---------- Moving Banners ---------- */
 
@@ -693,11 +694,11 @@
   }
 
   .circle-info-title {
-    font-size: .8rem;
+    font-size: .7rem;
   }
 
   .circle-info-icon span {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .circle-info-content {
@@ -805,7 +806,7 @@
   }
 
   .info-banner-img {
-    width: 155%;
+    width: 190%;
   }
 
   .seen-on-container {
@@ -839,7 +840,7 @@
 
   .review-container {
     margin-top: 2rem;
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
   
@@ -858,11 +859,17 @@
   }
 
   .review-header .first {
-    font-size: .52rem;
+    font-size: .6rem;
   }
 
   .second {
-    font-size: .52rem;
+    font-size: .6rem;
+  }
+
+  .review-carousel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .review-cell {
@@ -887,7 +894,7 @@
   
   .author-name {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: .8rem;
   }
   
   .author-date {
@@ -916,8 +923,8 @@
   }
   
   .review-cell .review-top .review-img {
-    width: 4rem !important;
-    height: 4rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
   }
   
   .review-cell .review-top .review-author {
@@ -925,7 +932,7 @@
   }
   
   .review-cell .review-top .review-author .author-date {
-    font-size: 1rem !important;
+    font-size: .6rem !important;
   }
   
   .review-cell .review-bottom .review-text {

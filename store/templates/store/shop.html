@@ -76,6 +76,7 @@
         </div>
 
         <div class="mobile-product-scroll">
+            <div class="amount-sold">2K+ Sold<span class="material-symbols-rounded">favorite</span></div>
             <div class="img-carousel">
                 <div class="img-cell"><img src="{% static 'images/gallery-img-1.jpg' %}"></img></div>
                 <div class="img-cell"><img src="{% static 'images/gallery-img-3.jpg' %}"></img></div>
@@ -287,7 +288,11 @@
                     <i class="fa-solid fa-blender"></i>
                 </span>
 
+                <canvas id="confetti"></canvas>
+
             </div>
+
+            <div class="guarantee-safe">Guaranteed Safe Checkout</div>
 
             <div class="safe-checkout">
                 <img src="{% static 'images/safe_checkout.png' %}" alt="">
@@ -748,6 +753,7 @@
 </div>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 
 <script>
     let add_cart_btn = document.querySelectorAll(".update-cart");
@@ -775,6 +781,17 @@
             button.classList.remove("clicked");
         }, 2000);
     }
+
+    // confetti
+    const confetti_btn = document.getElementById("submit-button");
+    const canvas = document.getElementById("confetti");
+
+    const jsConfetti = new JSConfetti();
+
+    confetti_btn.addEventListener("click", () => {
+        jsConfetti.addConfetti();
+    });
+
 
 </script>
 

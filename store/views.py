@@ -14,35 +14,98 @@ def home(request):
     Main page for the website
     """
     
-    # get customer
-    # try:
-    #     customer = request.user.customer
-    # except:
-    #     device = request.COOKIES['device']
-    #     customer, created = Customer.objects.get_or_create(device=device)
+    #get customer
+    try:
+        customer = request.user.customer
+    except:
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/home.html', {"first": True})
     
-    # try:
-    #     order, created = Order.objects.get_or_create(customer=customer, complete=False)
-    #     items = order.orderitem_set.all()
-    #     cart_items = order.get_cart_items
-    # except:
-    #     HttpResponse(404, "Object not found")
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cart_items = order.get_cart_items
+    except:
+        HttpResponse(404, "Object not found")
     
-    # products = Product.objects.all()
-    # context = {
-    #     "products": products,
-    #     "cart_items": cart_items,
-    #     }
-    return render(request, 'store/home.html', {})
+    products = Product.objects.all()
+    context = {
+        "products": products,
+        "cart_items": cart_items,
+        }
+    return render(request, 'store/home.html', context)
 
 def reviews(request):
-    return render(request, 'store/reviews.html')
+    #get customer
+    try:
+        customer = request.user.customer
+    except:
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/reviews.html', {"first": True})
+    
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        cart_items = order.get_cart_items
+    except:
+        HttpResponse(404, "Object not found")
+    
+    products = Product.objects.all()
+    context = {
+        "cart_items": cart_items,
+        }
+    return render(request, 'store/reviews.html', context)
 
 def user_guide(request):
-    return render(request, 'store/user_guide.html')
+    #get customer
+    try:
+        customer = request.user.customer
+    except:
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/user_guide.html', {"first": True})
+    
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        cart_items = order.get_cart_items
+    except:
+        HttpResponse(404, "Object not found")
+    
+    products = Product.objects.all()
+    context = {
+        "cart_items": cart_items,
+        }
+    return render(request, 'store/user_guide.html', context)
 
 def faq(request):
-    return render(request, 'store/faq.html')
+    #get customer
+    try:
+        customer = request.user.customer
+    except:
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/faq.html', {"first": True})
+    
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        cart_items = order.get_cart_items
+    except:
+        HttpResponse(404, "Object not found")
+    
+    products = Product.objects.all()
+    context = {
+        "cart_items": cart_items,
+        }
+    return render(request, 'store/faq.html', context)
 
 def shop(request):
     
@@ -60,32 +123,59 @@ def shop(request):
         "blender_black": blender_black,
         "blender_pink": blender_pink,
         "blender_yellow": blender_yellow,
+        "first": True,
     }
+    
+    #get customer
+    try:
+        customer = request.user.customer
+    except:
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/shop.html', context)
+    
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        cart_items = order.get_cart_items
+    except:
+        HttpResponse(404, "Object not found")
+
+    context = {
+        "blender_white": blender_white,
+        "blender_black": blender_black,
+        "blender_pink": blender_pink,
+        "blender_yellow": blender_yellow,
+        "cart_items": cart_items,
+    }
+    
     return render(request, 'store/shop.html', context)
 
 def cart(request):
     """ 
     Cart page for each user
     """
+    
 
     # get customer
     try:
         customer = request.user.customer
     except:
-        device = request.COOKIES['device']
-        customer, created = Customer.objects.get_or_create(device=device)
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return render(request, 'store/home.html', {"first": True})
         
-    else:
-        items = []
-        order = {
-            "get_cart_total": 0,
-            "get_cart_items": 0,
-        }
-        
-    order, created = Order.objects.get_or_create(customer=customer, complete=False)
-    items = order.orderitem_set.all()
+    try:
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        cart_items = order.get_cart_items
+        items = order.orderitem_set.all()
+    except:
+        HttpResponse(404, "Object not found")
     
-    num_items=  0
+    num_items = 0
     for item in items:
         num_items += item.quantity
         
@@ -100,10 +190,10 @@ def cart(request):
         "order": order,
         "num_items": num_items,
         "total_price": total,
-        "shipping_price": shipping_price
+        "shipping_price": shipping_price,
+        "cart_items": cart_items,
         }
     
-    print(total)
     
     return render(request, 'store/cart.html', context)
 

@@ -145,6 +145,11 @@
           <a href="{% url 'cart' %}" class="nav-link">
             <img id="cart-icon" class="cart-icon nav-item" src="{% static 'images/cart.png' %}" alt="Cart animation">
           </a>
+          {% if first == True %}
+            <div class="cart-quantity">0</div>
+          {% else %}
+            <div class="cart-quantity">{{cart_items}}</div>
+          {% endif %}
       </div>
 
     </nav>
@@ -169,7 +174,6 @@
       });
 
        window.addEventListener("scroll", (event) => {
-        console.log("scrolling");
         let currentScrollPos = window.pageYOffset;
 
         if(body.scrollTop == 0) {

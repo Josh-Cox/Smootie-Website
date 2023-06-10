@@ -359,6 +359,16 @@ label:hover .circle-outer {
   cursor: pointer;
 } */
 
+
+.guarantee-safe {
+  color: rgba(0, 0, 0, .7);
+  font-size: 1rem;
+  margin-top: .8rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .safe-checkout {
   margin-top: 1rem;
   width: 100%;
@@ -1016,6 +1026,7 @@ transition: all ease 600ms;
   }
 
   .mobile-product-scroll {
+    position: relative;
     display: block;
     margin-top: 6rem;
     width: 90%;
@@ -1023,12 +1034,36 @@ transition: all ease 600ms;
     margin-right: auto;
   }
 
+  .amount-sold {
+    background-color: black;
+    color: white;
+    border-radius: .8rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    padding: 0 2rem 0 .5rem;
+    font-size: .65rem;
+    font-weight: 600;
+    position: absolute;
+    right: -2.5rem;
+    bottom: 1rem;
+    z-index: 2;
+  }
+
+  .amount-sold span {
+    margin-left: .3rem;
+    font-size: .9rem;
+    font-variation-settings: 'FILL' 1;
+  }
+
   .img-carousel {
     width: 100%;
   }
 
   .img-cell {
-    width: 100%;
+    width: 90%;
     height: fit-content;
   }
 
@@ -1060,11 +1095,11 @@ transition: all ease 600ms;
     position: absolute;
     right: 0;
     display: flex;
-    margin-left: 1rem;
+    margin-left: .5rem;
     width: 50%;
     gap: 3.5rem;
     padding: .7rem .3rem;
-    border: .1rem solid black;
+    border: .01rem solid black;
   }
 
   .quantity-change span {
@@ -1094,8 +1129,28 @@ transition: all ease 600ms;
 
   .color-picker-container {
     margin-top: 0;
-    margin-left: .3rem;
+    margin-left: 1rem;
     gap: .5rem;
+  }
+
+  .price-container {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .product-reviews .review-stars {
+    font-size: .7rem;
+  }
+
+  .product-reviews .review-text {
+    font-size: .7rem;
+  }
+
+  .guarantee-safe {
+    text-decoration: underline;
+    color: rgba(0, 0, 0, .7);
+    font-size: .7rem;
+    margin-top: .8rem;
   }
 
   .mobile-color-text {
@@ -1103,12 +1158,12 @@ transition: all ease 600ms;
     position: absolute;
     left: 0;
     top: -2rem;
-    margin-left: 0;
+    margin-left: 1rem;
   }
 
   .color-selected {
     display: none;
-    margin-left: .3rem;
+    margin-left: 1rem;
   }
 
   .button span {
@@ -1138,6 +1193,23 @@ transition: all ease 600ms;
   .drop-down-question {
     width: 100%;
     margin: auto;
+ }
+
+ .mobile-product-info {
+  display: block;
+ }
+
+ .info-content {
+  align-items: center;
+ }
+
+ .info-icon span {
+  font-size: .7rem;
+ }
+
+ .info-text {
+  font-size: .5rem;
+  margin-left: 0;
  }
 
  .question-heading {
@@ -1263,6 +1335,18 @@ transition: all ease 600ms;
 .faq-container {
   width: 80%;
   margin: auto;
+}
+
+.faq-text .title {
+  font-size: 2rem;
+}
+
+.faq-text .title-small {
+  font-size: 1.4rem;
+}
+
+.faq-text .helper-text {
+  font-size: 1rem;
 }
 
 .review-container {
