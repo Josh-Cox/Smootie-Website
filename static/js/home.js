@@ -65,7 +65,10 @@ playButtons.forEach(btn => {
     });
 });
 
-let navbar = document.getElementById("navbar");
+
+// set it when page loads
+document.documentElement.style.setProperty('--navbar-opacity', "0")
+
 window.addEventListener("scroll", (event) => {
     if(body.scrollTop == 0) {
         document.documentElement.style.setProperty('--navbar-opacity', "0")

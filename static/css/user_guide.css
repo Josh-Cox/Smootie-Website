@@ -52,6 +52,10 @@
     background-size: cover;
 }
 
+.vid2 {
+    width: 22.2rem;
+}
+
 .text-container {
     display: flex;
     justify-content: center;
@@ -112,6 +116,14 @@
 
     .vid {
         min-width: 19rem !important; 
+    }
+
+    .step-text .heading{
+        font-size: 1.5rem;
+    }
+
+    .step-text .text {
+        font-size: 1rem;
     }
 
   }

@@ -254,3 +254,21 @@ playButtons.forEach(btn => {
         }
     });
 });
+
+
+// product img expand
+let imgs = document.querySelectorAll(".img-cell");
+let area = document.querySelector(".expandable-img");
+
+imgs.forEach(img => {
+    img.addEventListener("click", () => {
+        
+        area.childNodes[1].src = img.firstChild.src;
+        area.style.visibility = "visible";
+    });
+});
+
+area.addEventListener("click", () => {
+    area.style.visibility = "hidden";
+});
+

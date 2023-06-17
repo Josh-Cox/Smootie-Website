@@ -249,8 +249,22 @@
         font-size: 2rem !important;
     }
 
+    .faq-contact-container {
+        width: 80%;
+    }
+
     .faq-contact-text {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
+    .faq-contact-header {
+        font-size: 1.5rem;
+    }
+
+    .faq-contact-btn {
+        padding: .5rem 2rem;
+        font-size: 1.2rem;
+    }
+
 }

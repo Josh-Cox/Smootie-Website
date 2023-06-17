@@ -312,7 +312,7 @@ html, body {
   }
 
   .box-text {
-    font-size: clamp(.5rem, 2vw, .8rem);
+    font-size: clamp(.5rem, 2.5vw, 1rem);
   }
 
   .box-two {

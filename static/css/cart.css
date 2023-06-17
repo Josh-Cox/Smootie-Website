@@ -114,6 +114,7 @@ html, body {
 
 .remove {
     margin-top: 2rem;
+    width: fit-content;
     cursor: pointer;
 }
 
@@ -123,6 +124,7 @@ html, body {
     align-items: center;
     font-size: .8rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .remove span {
@@ -424,10 +426,24 @@ html, body {
     }
 
     .mobile-footer {
-        margin-top: 25rem;
+        margin-top: 6rem;
     }
 
     .tooltip {
         display: none;
     }
+
+    .info-header {
+        font-size: 1rem;
+    }
+
+    .info-content {
+        font-size: .8rem;
+    }
+
+    .cart-payments img {
+        width: 15rem;
+        margin-left: .3rem;
+    }
+
 }
