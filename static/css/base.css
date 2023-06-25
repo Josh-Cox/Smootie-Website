@@ -147,7 +147,7 @@ html, body {
     transition: all 300ms ease;
     min-height: 6rem;
     background: transparent;
-    z-index: 0;
+    z-index: 9;
 }
 
 .navbar:after {
@@ -160,14 +160,14 @@ html, body {
     border-radius: 0.3em;
     background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
     transition: opacity 0.5s ease-out;
-    z-index: 1;
+    z-index: 10;
     opacity: var(--navbar-opacity);
 }
 
 
 .nav-element {
     width: 8rem;
-    z-index: 2;
+    z-index: 11;
 }
 
 .nav-title {
@@ -218,7 +218,7 @@ html, body {
 .bag {
     margin-right: 15rem;
     margin-left: auto;
-    z-index: 2;
+    z-index: 11;
     position: relative;
 }
 

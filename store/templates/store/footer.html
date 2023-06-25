@@ -34,9 +34,9 @@
         </div>
 
         <div class="section-bottom" id="section2">
-            <a href="#refund" class="mobile-footer-link">Refund Policy</a>
-            <a href="#shipping" class="mobile-footer-link">Shipping Policy</a>
-            <a href="#contact" class="mobile-footer-link">Contact Us</a>
+            <a href="#refund" class="mobile-footer-link return_link">Refund Policy</a>
+            <a href="#shipping" class="mobile-footer-link shipping_link">Shipping Policy</a>
+            <a href="#contact" class="mobile-footer-link contact_link">Contact Us</a>
         </div>
     </div>
 
@@ -51,9 +51,9 @@
         <div class="section-bottom" id="section3">
             <a href="#contact" class="mobile-footer-link">ContactSmootie@gmail.com</a>
             <div class="social-links">
-                <a href="#facebook" class="facebook"><img src="{% static 'images/facebook_grey.png' %}" alt=""></a>
-                <a href="#pinterest" class="pinterest"><img src="{% static 'images/pinterest_grey.png' %}" alt=""></a>
-                <a href="#tiktok" class="tiktok"><img src="{% static 'images/tiktok_grey.png' %}" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100090567912455" class="facebook"><img src="{% static 'images/facebook_grey.png' %}" alt=""></a>
+                <a href="https://www.pinterest.co.uk/SmootieUK/" class="pinterest"><img src="{% static 'images/pinterest_grey.png' %}" alt=""></a>
+                <a href="https://www.tiktok.com/@smootieuk_" class="tiktok"><img src="{% static 'images/tiktok_grey.png' %}" alt=""></a>
                 <a href="#instagram" class="instagram"><img src="{% static 'images/instagram_grey.png' %}" alt=""></a>
             </div>
         </div>
@@ -95,17 +95,17 @@
         </div>
         <div class="link-section">
             <p class="link-header">Policy</p>
-            <a href="#refund" class="footer-link">Refund Policy</a>
-            <a href="#shipping" class="footer-link">Shipping Policy</a>
-            <a href="#contact" class="footer-link">Contact Us</a>
+            <a class="footer-link return_link">Refund Policy</a>
+            <a class="footer-link shipping_link">Shipping Policy</a>
+            <a class="footer-link contact_link email-link">Contact Us</a>
         </div>
         <div class="link-section">
             <p class="link-header">Contact Us</p>
-            <a href="#contact" class="footer-link">ContactSmootie@gmail.com</a>
+            <a href="#contact" class="footer-link email-link">ContactSmootie@gmail.com</a>
             <div class="social-links">
-                <a href="#facebook" class="facebook"><img src="{% static 'images/facebook_grey.png' %}" alt=""></a>
-                <a href="#pinterest" class="pinterest"><img src="{% static 'images/pinterest_grey.png' %}" alt=""></a>
-                <a href="#tiktok" class="tiktok"><img src="{% static 'images/tiktok_grey.png' %}" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100090567912455" class="facebook"><img src="{% static 'images/facebook_grey.png' %}" alt=""></a>
+                <a href="https://www.pinterest.co.uk/SmootieUK/" class="pinterest"><img src="{% static 'images/pinterest_grey.png' %}" alt=""></a>
+                <a href="https://www.tiktok.com/@smootieuk_" class="tiktok"><img src="{% static 'images/tiktok_grey.png' %}" alt=""></a>
                 <a href="#instagram" class="instagram"><img src="{% static 'images/instagram_grey.png' %}" alt=""></a>
             </div>
         </div>
@@ -122,4 +122,49 @@
         dropdown_item.classList.toggle("open")
         document.getElementById(element.getAttribute("value") + "-btn").classList.toggle("open");
     }
+
+    // bottom faq links activation
+    let return_links = document.querySelectorAll(".return_link");
+    let shipping_links = document.querySelectorAll(".shipping_link");
+
+    if(document.title != "FAQs") {
+        return_links.forEach((link) => {
+            link.addEventListener("click", () => {
+                window.location.replace("http://127.0.0.1:8000/faq")
+            });
+        });
+
+        shipping_links.forEach((link) => {
+            link.addEventListener("click", () => {
+                window.location.replace("http://127.0.0.1:8000/faq")
+            });
+        });
+    }
+    else {
+        let return_dropdown = document.getElementById("return-drop-down");
+        let shipping_dropdown = document.getElementById("shipping-drop-down");
+
+        return_links.forEach((link) => {
+            link.addEventListener("click", () => {
+                return_dropdown.click();
+                location.href = "#return-drop-down";
+            });
+        });
+
+        shipping_links.forEach((link) => {
+            link.addEventListener("click", () => {
+                shipping_dropdown.click();
+                location.href = "#shipping-drop-down";
+            });
+        });
+    }
+
+    // contact via email
+    let email_links = document.querySelectorAll(".email-link");
+    email_links.forEach((link) => {
+        link.addEventListener("click", () => {
+            window.location.href = "mailto:ContactSmootie@gmail.com?subject=Customer Query&body=";
+        });
+    });
+
 </script>

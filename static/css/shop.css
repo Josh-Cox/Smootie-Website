@@ -1082,7 +1082,7 @@ transition: all ease 600ms;
   }
 
   .img-cell {
-    width: 90%;
+    width: 100%;
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -1517,5 +1517,17 @@ transition: all ease 600ms;
 .review-cell .review-bottom .review-stars {
   font-size: 1rem !important;
   margin-top: .2rem;
+}
+
+.mobile-function {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -3rem;
+  padding-top: 2rem;
+}
+
+.mobile-function img {
+  width: 15rem;
 }
 }

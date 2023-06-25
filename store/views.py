@@ -148,6 +148,7 @@ def shop(request):
         "blender_pink": blender_pink,
         "blender_yellow": blender_yellow,
         "cart_items": cart_items,
+        "stripe_key": settings.STRIPE_PUBLIC_KEY,
     }
     
     return render(request, 'store/shop.html', context)
@@ -492,7 +493,7 @@ def payment_successful(request):
     
     send_mail(
         email_subject,
-        
+        "Order Number: " + str(order.transaction_id) + "\n" +
         "Customer Name: " + str(customer_name) + "\n" +
         "Customer Email: " + str(customer_email) + "\n" +
         "Address: " + str(shipping.address) + "\n" +
@@ -512,7 +513,7 @@ def payment_successful(request):
     order.save()
     
     
-    return render(request, 'store/payment_successful.html', {'customer': customer})
+    return render(request, 'store/payment_successful.html', {'customer': customer, 'order': order.transaction_id})
 
 def payment_cancelled(request):
     return render(request, 'store/payment_cancelled.html')

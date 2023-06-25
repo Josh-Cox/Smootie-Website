@@ -96,6 +96,7 @@
     text-decoration: none;
     color: var(--color-text-light);
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 .social-links {

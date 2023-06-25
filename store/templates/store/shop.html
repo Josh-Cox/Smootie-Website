@@ -55,6 +55,11 @@
                             class="product__image"
                         />
                         <img
+                            src="{% static 'images/gallery-img-5.jpg' %}"
+                            alt=""
+                            class="product__image"
+                        />
+                        <img
                             src="{% static 'images/blender_black.jpg' %}"
                             alt=""
                             id="black-img"
@@ -291,6 +296,10 @@
                     <i class="fa-solid fa-blender"></i>
                 </span>
 
+                <div id="payment-request-button">
+                    <!-- Stripe gpay button -->
+                </div>
+
 
             </div>
 
@@ -431,7 +440,7 @@
             </svg>
         </div>
 
-        <div class="function-header mobile-function">
+        {% comment %} <div class="function-header mobile-function">
             <div class="yellow-circle"></div>
             <svg class="function-header-text mobile-header-text" viewBox="0 0 600 50">
                 <path class="wave-path" id="curve-mobile" d="M 104.5006 7.0201 C 197.4294 48.7221 441.7566 -4.8787 596.0908 41.2216" />
@@ -441,6 +450,10 @@
                 </textPath>
                 </text>
             </svg>
+        </div> {% endcomment %}
+
+        <div class="function-header mobile-function">
+            <img src="{% static 'images/function_wavy_text.png' %}" alt="Helping you function wavy text">
         </div>
 
         <div class="function-content">
@@ -525,6 +538,16 @@
                         <a href="#shop">Get yours now!</a>
                     </div>
                 </div>
+                <div class="function-info function-five">
+                    <div class="function-header">Bountiful Battery</div>
+                    <div class="function-text">
+                        With a 1400mAh battery the Smootie blender can blend up to 15 times in a single charge, resulting in a perfect travel companion on any adventure. This also translates to 6 hours of charge!
+                    </div>
+                    <div class="function-line"></div>
+                    <div class="shop-link-ltr shop-link">
+                        <a href="#shop">Get yours now!</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -597,7 +620,7 @@
                 </div>
                 <div class="question-content">
                     <p class="content-text">
-                        To start a return, you can contact us at (insert email) informing us of your request. Once we've received and inspected your return,
+                        To start a return, you can contact us at ContactSmootie@gmail.com informing us of your request. Once we've received and inspected your return,
                         you will be notified to let you know if the refund was approved or not. If approved, you'll be automatically refunded on your original
                         payment method. Note, items sent back to us without first requesting a return will not be accepted. 
                     </p>
@@ -649,9 +672,9 @@
         <div class="review-carousel">
             <div class="review-cell">
                 <div class="review-top">
-                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <img class="review-img" src="{% static 'images/pfp20.avif'%}"></img>
                     <div class="review-author">
-                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-name">Karen Spiff</div>
                         <div class="author-date">November 20, 2022</div>
                     </div>
                 </div>
@@ -664,20 +687,16 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <div class="review-text">
-                        I love this blender. I use it every morning
-                        to make fresh smoothies, and it is perfect for that.
-                        I also use it to blend up baby food for my baby. It's
-                        great for that as well. It is very easy to clean, and it is lightweight and Portable.
-                        This blender is the best.
+                        I dropped the blender a couple of times, and it won't work anymore.
                     </div>
                     
                 </div>
             </div>
             <div class="review-cell">
                 <div class="review-top">
-                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <img class="review-img" src="{% static 'images/pfp7.jpg'%}"></img>
                     <div class="review-author">
-                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-name">Tracy Caine</div>
                         <div class="author-date">November 20, 2022</div>
                     </div>
                 </div>
@@ -690,20 +709,16 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <div class="review-text">
-                        I love this blender. I use it every morning
-                        to make fresh smoothies, and it is perfect for that.
-                        I also use it to blend up baby food for my baby. It's
-                        great for that as well. It is very easy to clean, and it is lightweight and Portable.
-                        This blender is the best.
+                        Made an order at 4pm and it came the next day, wasn't expecting that!
                     </div>
                     
                 </div>
             </div>
             <div class="review-cell">
                 <div class="review-top">
-                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <img class="review-img" src="{% static 'images/pfp5.jpg'%}"></img>
                     <div class="review-author">
-                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-name">Joanna</div>
                         <div class="author-date">November 20, 2022</div>
                     </div>
                 </div>
@@ -716,20 +731,18 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <div class="review-text">
-                        I love this blender. I use it every morning
-                        to make fresh smoothies, and it is perfect for that.
-                        I also use it to blend up baby food for my baby. It's
-                        great for that as well. It is very easy to clean, and it is lightweight and Portable.
-                        This blender is the best.
+                        Great Portable Blender, just what I needed. Easy to charge and works well.
+Also received an email from Smootie with different juice recipe ideas, which was really great!
+
                     </div>
                     
                 </div>
             </div>
             <div class="review-cell">
                 <div class="review-top">
-                    <img class="review-img" src="{% static 'images/gallery-img-1.jpg'%}"></img>
+                    <img class="review-img" src="{% static 'images/pfp9.jpg'%}"></img>
                     <div class="review-author">
-                        <div class="author-name">Lily Beeston</div>
+                        <div class="author-name">Daniel Bennet</div>
                         <div class="author-date">November 20, 2022</div>
                     </div>
                 </div>
@@ -742,11 +755,7 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <div class="review-text">
-                        I love this blender. I use it every morning
-                        to make fresh smoothies, and it is perfect for that.
-                        I also use it to blend up baby food for my baby. It's
-                        great for that as well. It is very easy to clean, and it is lightweight and Portable.
-                        This blender is the best.
+                        I got this for my son for Christmas and it was his favourite present.
                     </div>
                     
                 </div>
@@ -757,6 +766,7 @@
 <div class="seen-on-container">
     <img src="{% static 'images/seen_on.jpg' %}" alt="American TV Channels">
 </div>
+
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
@@ -804,5 +814,6 @@
 </script>
 
 <script src={% static 'js/shop.js' %} type="text/javascript"></script>
+
 
 {% endblock %}
