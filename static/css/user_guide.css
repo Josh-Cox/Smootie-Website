@@ -126,4 +126,7 @@
         font-size: 1rem;
     }
 
+    .vid2 {
+        width: fit-content;
+    }
   }

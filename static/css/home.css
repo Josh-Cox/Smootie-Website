@@ -211,6 +211,16 @@
     font-size: .7rem;
 }
 
+.function-line {
+  margin-top: .1rem;
+  margin-bottom: 1rem;
+  height: .2rem;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-add);
+}
+
 /* ---------- First Info Section ---------- */
 
 .info-one-container {
@@ -658,7 +668,8 @@
     display: block !important;
     top: 0;
     margin-top: 0;
-    width: 100vw;
+    margin-left: -2rem;
+    width: 150vw;
     z-index: -1;
   }
 
@@ -681,7 +692,7 @@
 
   .mobile-circle-scroll {
     display: block;
-    margin-top: 2rem;
+    margin-top: -2rem;
     height: fit-content;
   }
 
@@ -716,7 +727,7 @@
   .info-one-container {
     width: 100%;
     height: calc(11rem + 2vw);
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   .info-one-content {
@@ -1018,7 +1029,7 @@
   }
 
   .circle-info-icon img {
-    width: 4rem;
+    width: 3rem;
   }
 
   .perfect-mobile-section {

@@ -1053,6 +1053,11 @@ transition: all ease 600ms;
     margin-right: auto;
   }
 
+  .mobile-product-scroll .flickity-page-dots .dot {
+    width: .5rem;
+    height: .5rem;
+  }
+
   .amount-sold {
     background-color: black;
     color: white;
