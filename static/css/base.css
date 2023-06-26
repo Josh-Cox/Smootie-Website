@@ -294,7 +294,7 @@ a {
         width: 100%;
         height: 5rem;
         background: transparent;
-        z-index: 0;
+        z-index: 10;
         font-family: "Poppins" !important;
     }
     
@@ -307,12 +307,12 @@ a {
         height: 100%;
         background: linear-gradient(to right, var(--nav-gradient-left) , var(--nav-gradient-right));
         transition: opacity 0.5s ease-out;
-        z-index: 1;
+        z-index: 11;
         opacity: var(--navbar-opacity);
     }
 
-    .mobile-nav button, .mobile-nav a {
-        z-index: 2;
+    .mobile-nav-element {
+        z-index: 12 !important;
     }
 
     /* The sidepanel menu */
@@ -320,7 +320,7 @@ a {
         height: 100%; /* Specify a height */
         width: 0px; /* 0 width - change this with JavaScript */
         position: fixed; /* Stay in place */
-        z-index: 3; /* Stay on top */
+        z-index: 13 !important; /* Stay on top */
         top: 0;
         left: 0;
         background-color: white;
