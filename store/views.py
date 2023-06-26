@@ -167,7 +167,7 @@ def cart(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/home.html', {"first": True})
+            return render(request, 'store/shop.html')
         
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
