@@ -22,7 +22,7 @@ def home(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/home.html', {"first": True})
+            return render(request, 'store/home.html', {"cart_items": 0})
     
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -47,7 +47,7 @@ def reviews(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/reviews.html', {"first": True})
+            return redirect('/')
     
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -70,7 +70,7 @@ def user_guide(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/user_guide.html', {"first": True})
+            return redirect('/')
     
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -93,7 +93,7 @@ def faq(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/faq.html', {"first": True})
+            return redirect('/')
     
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -134,7 +134,7 @@ def shop(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/shop.html', context)
+            return redirect('/')
     
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -167,7 +167,7 @@ def cart(request):
             device = request.COOKIES['device']
             customer, created = Customer.objects.get_or_create(device=device)
         except:
-            return render(request, 'store/shop.html')
+            return redirect('/')
         
     try:
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -207,8 +207,11 @@ def checkout(request):
     try:
         customer = request.user.customer
     except:
-        device = request.COOKIES['device']
-        customer, created = Customer.objects.get_or_create(device=device)
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return redirect('/')
         
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
     
@@ -455,8 +458,11 @@ def payment_successful(request):
         customer = request.user.customer
     # create customer based on device cookie
     except:
-        device = request.COOKIES['device']
-        customer, created = Customer.objects.get_or_create(device=device)
+        try:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+        except:
+            return redirect('/')
     user_payment = UserPayment.objects.get(customer=customer)
     user_payment.stripe_checkout_id = checkout_session_id
     user_payment.save()
