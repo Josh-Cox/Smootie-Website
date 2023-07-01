@@ -400,6 +400,9 @@ def update_item(request):
     return JsonResponse({
             'data': 'Item updated',
             'redirect': False,
+            'product_id': product_id,
+            'action': action,
+            'quantity': quantity,
             }, safe=False)
 
 def shipping_submit(request):
