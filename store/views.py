@@ -176,6 +176,7 @@ def cart(request):
     except:
         HttpResponse(404, "Object not found")
     
+    
     num_items = 0
     for item in items:
         num_items += item.quantity
@@ -391,18 +392,12 @@ def update_item(request):
         return JsonResponse({
             'data': 'Item updated',
             'redirect': True,
-            'product_id': product_id,
-            'action': action,
-            'quantity': quantity,
             }, safe=False)
         
         
     return JsonResponse({
             'data': 'Item updated',
             'redirect': False,
-            'product_id': product_id,
-            'action': action,
-            'quantity': quantity,
             }, safe=False)
 
 def shipping_submit(request):
@@ -505,7 +500,7 @@ def payment_successful(request):
     
     send_mail(
         email_subject,
-        "Order Number: " + str(order.transaction_id) + "\n" +
+        "Order Number: " + str(order.pk) + "\n" +
         "Customer Name: " + str(customer_name) + "\n" +
         "Customer Email: " + str(customer_email) + "\n" +
         "Address: " + str(shipping.address) + "\n" +
@@ -525,7 +520,7 @@ def payment_successful(request):
     order.save()
     
     
-    return render(request, 'store/payment_successful.html', {'customer': customer, 'order': order.transaction_id})
+    return render(request, 'store/payment_successful.html', {'customer': customer, 'order': order.pk})
 
 def payment_cancelled(request):
     return render(request, 'store/payment_cancelled.html')
