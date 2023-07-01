@@ -353,9 +353,9 @@ def update_item(request):
     action = data['action']
     quantity = data['quantity']
     
-    print("Action: " + action)
-    print("Product ID: " + product_id)
-    print("Quantity: " + quantity)
+    # print("Action: " + action)
+    # print("Product ID: " + product_id)
+    # print("Quantity: " + quantity)
 
     # get the logged in customer
     try:
@@ -391,6 +391,9 @@ def update_item(request):
         return JsonResponse({
             'data': 'Item updated',
             'redirect': True,
+            'product_id': product_id,
+            'action': action,
+            'quantity': quantity,
             }, safe=False)
         
         

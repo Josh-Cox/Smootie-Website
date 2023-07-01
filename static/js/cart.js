@@ -53,7 +53,12 @@ function update_user_order(product_id, action) {
     })
 
     .then((data) => {
+        alert(data['redirect']);
+        alert(data['product_id']);
+        alert(data['action']);
+        alert(data['quantity']);
         if(data['redirect']) {
+            
             window.location.reload();
         }
     })
