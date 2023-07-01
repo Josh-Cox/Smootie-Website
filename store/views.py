@@ -449,6 +449,9 @@ def shipping_submit(request):
                 }, safe=False)
 
 def payment_successful(request):
+    
+    return render(request, 'store/payment_successful.html')
+    
     stripe.api_key = settings.STRIPE_SECRET_KEY
     checkout_session_id = request.GET.get('session_id', None)
     session = stripe.checkout.Session.retrieve(checkout_session_id)

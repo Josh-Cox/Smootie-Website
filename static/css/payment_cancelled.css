@@ -17,7 +17,7 @@
 
 .return-home-btn {
     position: relative;
-    background: var(--btn-blue);
+    background: var(--btn-yellow);
     color: var(--color-white);
     font-family: "Poppins";
     border: none;
@@ -38,7 +38,7 @@
 }
 
 .return-home-btn:hover {
-    background: var(--btn-blue-hover);
+    background: var(--btn-yellow-hover);
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,6 +51,17 @@
     }
 
     .return-home-btn {
+        margin-top: 2rem;
         font-size: 1rem;
+    }
+
+    .base {
+        height: 100vh;
+        position: relative;
+    }
+
+    .mobile-footer {
+        position: absolute;
+        bottom: 0;
     }
 }
