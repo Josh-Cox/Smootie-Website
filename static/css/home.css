@@ -740,19 +740,19 @@
   }
 
   .one-top-text {
-    font-size: clamp(.4rem, 5vw, .6rem);
+    font-size: clamp(.7rem, 5vw, .9rem);
   }
 
   .one-title {
-    font-size: clamp(.8rem, 5vw, 1.1rem);
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
   }
 
   .one-content {
-    font-size: clamp(.4rem, 5vw, .6rem);
+    font-size: clamp(.7rem, 5vw, .9rem);
   }
 
   .shop-link a {
-    font-size: clamp(.4rem, 5vw, .6rem);
+    font-size: clamp(.7rem, 5vw, .9rem);
   }
 
   .shop-link {
@@ -804,7 +804,7 @@
   }
   
   .banner-title {
-    font-size: clamp(.9rem, 2vw, 1rem);
+    font-size: clamp(.8rem, 2vw, 1rem);
     margin-bottom: .1rem;
   }
 
@@ -823,7 +823,7 @@
 
   .banner-text {
     width: 90%;
-    font-size: clamp(.6rem, 2vw, .8rem);
+    font-size: clamp(.5rem, 2vw, .6rem);
     margin-bottom: 0;
   }
 
@@ -912,7 +912,7 @@
   }
 
   .review-header .first, .review-header .second, .review-header .third {
-    font-size: clamp(.55rem, 3vw, 1rem);
+    font-size: clamp(1rem, 3vw, 2rem);
   }
 
   .review-carousel {
@@ -1021,7 +1021,7 @@
   }
 
   .info-one-content .one-title {
-    width: 70%;
+    width: 80%;
   }
 
   .move-over {

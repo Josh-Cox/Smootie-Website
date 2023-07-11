@@ -1058,6 +1058,11 @@ transition: all ease 600ms;
     height: .5rem;
   }
 
+  .function-review-container .flickity-page-dots .dot {
+    width: .5rem;
+    height: .5rem;
+  }
+
   .amount-sold {
     background-color: black;
     color: white;
@@ -1115,7 +1120,7 @@ transition: all ease 600ms;
   }
 
   .expandable-img img {
-    width: 80%;
+    width: 120%;
   }
 
   .flickity-slider {
@@ -1262,12 +1267,13 @@ transition: all ease 600ms;
  }
 
  .info-icon span {
-  font-size: .7rem;
+  font-size: .8rem;
  }
 
  .info-text {
-  font-size: .5rem;
+  font-size: .8rem;
   margin-left: 0;
+  text-align: left;
  }
 
  .question-heading {
@@ -1275,10 +1281,6 @@ transition: all ease 600ms;
  }
 
  .question-heading p {
-  font-size: .7rem;
- }
-
- .content-text {
   font-size: .7rem;
  }
 
@@ -1381,6 +1383,7 @@ transition: all ease 600ms;
   width: 100%;
   height: fit-content;
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .vid-title {
@@ -1408,6 +1411,7 @@ transition: all ease 600ms;
 .faq-container {
   width: 95%;
   margin: auto;
+  
 }
 
 .faq-text {
@@ -1448,7 +1452,7 @@ transition: all ease 600ms;
 }
 
 .review-header .first, .review-header .second, .review-header .third {
-  font-size: clamp(.55rem, 3vw, 1rem);
+  font-size: clamp(1rem, 3vw, 2rem);
 }
 
 .review-cell {
@@ -1533,6 +1537,6 @@ transition: all ease 600ms;
 }
 
 .mobile-function img {
-  width: 15rem;
+  width: 20rem;
 }
 }

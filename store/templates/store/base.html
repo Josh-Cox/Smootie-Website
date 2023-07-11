@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
   <title>{% block title %}Home{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.jpg' %}">
 
   <script>
     // guest user devices
@@ -115,6 +116,11 @@
 
       <button class="bagbtn mobile-nav-element">
         <a href="/cart"><span class="material-symbols-rounded">shopping_bag</span></a>
+        {% if first == True %}
+          <div class="cart-quantity">0</div>
+        {% else %}
+          <div class="cart-quantity">{{cart_items}}</div>
+        {% endif %}
       </button>
 
     </div>
